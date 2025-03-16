@@ -1,0 +1,25 @@
+{
+  "name": "rim-ijar-turbo",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "build:only": "turbo run build:only",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "check-types": "turbo run check-types"
+  },
+  "dependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3",
+    "turbo": "^2.4.4",
+    "typescript": "5.8.2",
+    "@types/react": "^18.0.26"
+  },
+  "packageManager": "pnpm@10.6.3",
+  "engines": {
+    "node": ">=22"
+  }
+}

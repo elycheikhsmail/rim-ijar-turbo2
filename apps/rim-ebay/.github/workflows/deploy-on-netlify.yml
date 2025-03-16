@@ -1,0 +1,37 @@
+name: Deploy on netlify
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04  # ou ubuntu-24.04 selon votre préférence
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+
+      # Installer Bun en utilisant l'action officielle
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 'latest'  # Vous pouvez spécifier une version spécifique si nécessaire
+
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Build project
+        run: bun run build
+
+      - name: Deploy to Netlify
+        uses: jsmrcaga/action-netlify-deploy@master
+        with:
+            NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+            NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+            NETLIFY_DEPLOY_MESSAGE: "Prod deploy v${{ github.ref }}" 

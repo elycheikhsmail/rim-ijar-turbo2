@@ -1,0 +1,108 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../prisma-client"
+}
+
+datasource db {
+  provider     = "mongodb"
+  //provider = "postgresql"
+  url          = env("DATABASE_URL")
+  // (optionnel) Vous pouvez préciser des options spécifiques à MongoDB, comme relationMode = "prisma"
+  relationMode = "prisma"
+}
+
+model User {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  //id String @id @default(uuid())
+  email     String    @unique
+  password  String
+  createdAt DateTime  @default(now())
+  lastLogin DateTime?
+  isActive  Boolean   @default(true)
+  //sessions  UserSession[]
+  //annonces  Annonce[]
+}
+
+model UserSession {
+  id           String    @id @default(auto()) @map("_id") @db.ObjectId
+  //id String @id @default(uuid())
+  //userId      String @db.ObjectId 
+  userId       String
+  token        String
+  isExpired    Boolean   @default(false)
+  createdAt    DateTime  @default(now())
+  lastAccessed DateTime?
+
+  //user        User      @relation(fields: [userId], references: [id])
+}
+
+model OptionsModel {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  //id String @id @default(uuid())
+  name      String
+  nameAr    String
+  priority  Int
+  depth     Int
+  tag       String
+  createdAt DateTime @default(now())
+  // parentID   String? @db.ObjectId
+  parentID  String? // @db.ObjectId
+}
+
+model Image {
+  //id String @id @default(uuid())
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  imagePath String
+  createdAt DateTime? @default(now())
+  altText   String?
+
+  annonceImages AnnonceImage[]
+}
+
+model Annonce {
+  //id String @id @default(uuid())
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  typeAnnonceId  String //@db.ObjectId 
+  categorieId    String //@db.ObjectId 
+  lieuId         String //@db.ObjectId 
+  userId         String //@db.ObjectId 
+  subcategorieId String //@db.ObjectId 
+  title          String
+  description    String
+  price          Float?
+  contact        String
+  haveImage      Boolean  @default(false)
+  firstImagePath String?
+  status         String
+  updatedAt      DateTime @default(now()) @updatedAt
+  createdAt      DateTime @default(now())
+
+  typeAnnonce  Json?
+  categorie    Json?
+  subcategorie Json?
+
+  //user              User        @relation(fields: [userId], references: [id])
+  annonceImages AnnonceImage[]
+}
+
+model AnnonceImage {
+  //id String @id @default(uuid())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  annonceId String   @db.ObjectId
+  imageId   String   @db.ObjectId
+  createdAt DateTime @default(now())
+
+  annonce Annonce @relation(fields: [annonceId], references: [id])
+  //image     Image   @relation(fields: [imageId], references: [id])
+  image   Image   @relation(fields: [imageId], references: [id])
+
+  @@unique([annonceId, imageId])
+  @@index([imageId])
+}
