@@ -20,10 +20,10 @@ jobs:
           version: 8
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install 
 
       - name: Build Next.js app
-        run: pnpm turbo run build --filter=rim-ebqy
+        run: pnpm turbo run build --filter=rim-ebay
 
       - name: Install Netlify CLI
         run: npm install -g netlify-cli
