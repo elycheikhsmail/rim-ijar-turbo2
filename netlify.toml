@@ -1,0 +1,10 @@
+[build]
+  # Le répertoire de base pour la construction (chemin relatif à la racine du monorepo)
+  base    = "/"
+  # La commande de build, en utilisant pnpm pour installer et lancer le build
+  command = "pnpm install && pnpm run build"
+  # Le répertoire à publier ; pour Next.js, c'est souvent le dossier .next
+  publish = "apps/rim-ebay/.next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
