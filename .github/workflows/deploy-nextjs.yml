@@ -34,6 +34,7 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         run:
           netlify deploy  \
+            --filter "rim-ebay" \
             --dir=apps/rim-ebay/.next \
             --prod \
             --message="Deploy from GitHub Actions"
