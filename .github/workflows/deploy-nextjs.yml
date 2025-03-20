@@ -1,9 +1,10 @@
 name: Deploy to Netlify
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:  # Déclenchement manuel
+  # push:            # Décommentez cette section si vous voulez conserver le déploiement automatique
+  #   branches:
+  #     - main
 
 jobs:
   build-and-deploy:
