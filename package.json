@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
+    "generate": "turbo run generate",
     "build:only": "turbo run build:only",
     "dev": "turbo run dev",
     "lint": "turbo run lint",

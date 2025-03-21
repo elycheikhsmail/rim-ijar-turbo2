@@ -4,8 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "generate": "prisma generate",
     "build:only": "next build",
-    "build": "prisma generate && next build",
+    "build": "next build",
     "start": "next start", 
     "dev": "next dev", 
     "check-types": "tsc --noEmit",
