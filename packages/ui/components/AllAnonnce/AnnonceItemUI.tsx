@@ -17,7 +17,7 @@ export default function AnnonceItemUI(annonce: Annonce) {
       />
     );
   };
-  
+
   return (
     <article className="flex flex-col w-full bg-white shadow-md rounded-lg overflow-hidden cursor-pointer hover:shadow-lg transition-shadow h-full sm:flex-row sm:max-w-lg sm:mx-auto mx-2">
       <div className="relative h-48 sm:h-auto w-full sm:w-1/2">
