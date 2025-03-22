@@ -1,36 +1,18 @@
-Extrait toutes les valeurs et textes de cette liste déroulante au format JSON : 
-
-
-
+Extrait toutes les valeurs et textes de cette liste déroulante au format JSON :
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head><script type="text/javascript" src="/cf_scripts/scripts/cfform.js"></script>
 <script type="text/javascript" src="/cf_scripts/scripts/masks.js"></script>
 
-
-
- 
-
-
-
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
 
 <title>Annonces en Mauritanie, Location-Vente, Maison, Voitures, Ordinateurs..</title>
 <meta name="description" content="voursa, le site de toutes annonces gratuites en Mauritanie, Vente, Location, Immobilier, Voitures, Ordinateurs, Téléphones...">
 
 <meta name="keywords" content="voursa, Annonces Mauritanie, Free Classifieds, Jobs & Services, sell, buy, Parcel-land-house-apartment, House tools - furniture, Automobile-Car, Computer, mobiles, Electronics, Annonces gratuites en Mauritanie, Mauritanie, Vente, Location, Immobilier, Maison, Appartement, Studio, Voitures, Ordinateurs, Téléphones, Nouakchott, Ksar, TVZ">
 
-
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
-
-
-
 
 <style type="text/css">
 <!--
@@ -986,11 +968,6 @@ h1, h2 {
 -->
 </style>
 
-
-
-
-
-
 <script>
 var vscd = 1;
 function disp_vscd(w) {
@@ -1008,9 +985,6 @@ document.getElementById("vsd"+vscd).style.display = 'block';
 }
 tvscd = setInterval("disp_vscd(vscd)", 2500);
 </script>
-
-
-
 
 <script>
 var mssgm = 1;
@@ -1032,8 +1006,6 @@ document.getElementById("massagem"+mssgm).style.display = 'block';
 tmssgm = setInterval("disp_mssgm(mssgm)", 2800);
 </script>
 
-
-
 <script>
 var mssgd = 1;
 function disp_mssgd(w) {
@@ -1053,11 +1025,6 @@ document.getElementById("massaged"+mssgd).style.display = 'block';
 }
 tmssgd = setInterval("disp_mssgd(mssgd)", 2800);
 </script>
-
-
-
-
-
 
 <script type="text/JavaScript">
 <!--
@@ -1082,14 +1049,8 @@ tmssgd = setInterval("disp_mssgd(mssgd)", 2800);
 //-->
 </script>
 
-
-
-
-
 <SCRIPT language="JavaScript" SRC="recherche-ar_d.js"></SCRIPT>
 <SCRIPT language="JavaScript" SRC="recherche-fr_d_r.js"></SCRIPT>
-
-
 
 <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
@@ -1235,7 +1196,6 @@ tmssgd = setInterval("disp_mssgd(mssgd)", 2800);
 </script>
 </head>
 
-
 <body>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQE7Z44LQ1"></script>
@@ -1244,16 +1204,12 @@ tmssgd = setInterval("disp_mssgd(mssgd)", 2800);
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-CQE7Z44LQ1');
+gtag('config', 'G-CQE7Z44LQ1');
 </script>
-
-
 
 <div class="fsdn" id="nbrannonces">125823</div>
 
-
 <div id="container">
-
 
 <style type="text/css">
 <!--
@@ -1289,10 +1245,6 @@ tmssgd = setInterval("disp_mssgd(mssgd)", 2800);
 -->
 </style>
 
-
-
-
-
 <script>
 var tym = 1;
 function disp_tym(w) {
@@ -1314,8 +1266,6 @@ document.getElementById("toyotam"+tym).style.display = 'block';
 ttym = setInterval("disp_tym(tym)", 2800);
 </script>
 
-
-
 <script>
 var tyc = 1;
 function disp_tyc(w) {
@@ -1336,9 +1286,6 @@ document.getElementById("toyotac"+tyc).style.display = 'block';
 }
 ttyc = setInterval("disp_tyc(tyc)", 2800);
 </script>
-
-
-
 
 <style type="text/css">
 <!--
@@ -1409,24 +1356,8 @@ ttyc = setInterval("disp_tyc(tyc)", 2800);
 -->
 </style>
 
-
-
-
-
-
-
-
 <div id="top_cont">
 
-  
-
-
- 
-
-
-
-  
-  
   <div id="Top">
   
  <div id="resp_menu_fr"><a href="javascript:void(0);" onClick="mob_navbar()"><img src="/accueil.gif" alt="Menu" width="30" height="30" /></a></div>
@@ -1456,9 +1387,7 @@ ttyc = setInterval("disp_tyc(tyc)", 2800);
 <li><a href="/membres/loginm.cfm">تسجيل الدخول</a></li>
 </ul>
 
-</ul>  
-
-
+</ul>
 
 <ul class="topnav_fr">
      
@@ -1473,9 +1402,6 @@ ttyc = setInterval("disp_tyc(tyc)", 2800);
 
 </ul>  
 </div>
-
-
-
 
 <div id="mobile_nav_bar">
     <div id="mobile_nav_close">
@@ -1493,22 +1419,17 @@ ttyc = setInterval("disp_tyc(tyc)", 2800);
     </div>
 
     <div id="mobile_nav_fr">
-		     
+
             <a href="/index.cfm">Accueil</a><br />
             <a href="/produitsedr/conditions-fr.html">Déposer une annonce</a><br />
             <a href="/emplois/deposer-cv.cfm" style="color:#66FFFF">Déposer votre CV</a><br />
             <a href="/avis/publier-un-avis.cfm" style="color:#66FFFF">Espace Entreprise</a><br />
-			<a href="/emplois/index.cfm" style="color:#66FFFF">Consulter les CVs</a><br />
+    		<a href="/emplois/index.cfm" style="color:#66FFFF">Consulter les CVs</a><br />
             <a href="/membres/loginm.cfm">Connexion</a><br />
-        
+
     </div>
 
 </div>
-
-
-
-
-
 
 <script>
 
@@ -1530,97 +1451,59 @@ function mob_navclose() {
 
 
 </script>
-   
-
 
 <div id="separateur"></div>
-    
-
-  
 
 
-    
-  
-  
-   
- 
 </div>
-
 
   <div id="separateur1"></div>
 
-
 <div id="wrapper">
 
-
-
-
   <div id="dync">
-
-
 
 <div id="direct_links_cont">
 <div id="direct_links">
 
-
-<a href="Index.cfm?gct=5&sct=0&gv=99">أجهزة كهربائية منزلية، أواني</a> | 
-<a href="/avis/index.cfm">توظيف-مناقصات</a> | 
-<a href="Index.cfm?gct=1&sct=11&gv=13">سيارات</a> | 
-<a href="Index.cfm?gct=3&gv=13">عقارات</a> | 
+<a href="Index.cfm?gct=5&sct=0&gv=99">أجهزة كهربائية منزلية، أواني</a> |
+<a href="/avis/index.cfm">توظيف-مناقصات</a> |
+<a href="Index.cfm?gct=1&sct=11&gv=13">سيارات</a> |
+<a href="Index.cfm?gct=3&gv=13">عقارات</a> |
 <a onClick="recherche_av_f();" style="cursor:pointer; color:#0FF">بحث متقدم</a>
 
-
 </div>
-
 
 <div id="direct_links">
 
-
-<a href="Index.cfm?gct=5&sct=0&gv=99">Electroménager et Vaisselles</a> | 
-<a href="/avis/index.cfm">Appels d'offres - emploi</a> | 
-<a href="Index.cfm?gct=1&sct=11&gv=13">Voitures</a> | 
-<a href="Index.cfm?gct=3&gv=13">Immobilièrs</a> | 
-<a onClick="recherche_av_f();" style="cursor:pointer; color:#0FF">Recherche avancée</a> 
-
+<a href="Index.cfm?gct=5&sct=0&gv=99">Electroménager et Vaisselles</a> |
+<a href="/avis/index.cfm">Appels d'offres - emploi</a> |
+<a href="Index.cfm?gct=1&sct=11&gv=13">Voitures</a> |
+<a href="Index.cfm?gct=3&gv=13">Immobilièrs</a> |
+<a onClick="recherche_av_f();" style="cursor:pointer; color:#0FF">Recherche avancée</a>
 
 </div>
 </div>
-
-
-
 
 <div id="recherche_container">
 
-
-  
-
 <div id="recherche_arabe">
 
- 
-  
-  
     <form name="form_rech" id="form_rech" action="&#x2f;index.cfm" method="post" style=" direction:rtl" onreset="return reinitmss(document.form_rech)" enctype="multipart/form-data" onsubmit="return _CF_checkform_rech(this)">
-
-
-
-    
 
 <section class="tb_speci">
 
- 
     <div id="bloc_titre">
-    
-      <a onClick="recherche_fr_f();" style="cursor:pointer">Recherche en Français</a>            
-    
-    </div>
 
+      <a onClick="recherche_fr_f();" style="cursor:pointer">Recherche en Français</a>
+
+    </div>
 
 <div id="ctnt_wrapper">
 
   <dl>
     <dt id="dt_ar"><span class="Etoiless">*</span> التصنيف</dt>
   </dl>
-
 
   <dl>
     <dd>
@@ -1638,23 +1521,20 @@ function mob_navclose() {
         <option value="8">سياحة، سفر وعطل</option>
         <option value="9">وظائف، خدمات، شركات</option>
         <option value="10">تصنيف آخر</option>
-        </select>    
-	</dd>
+        </select>
+    </dd>
+
   </dl>
           <dl>
             <dt id="dt_ar"><div class="csvalidation" id="categcsvg"></div></dt>
           </dl>
 <div id="separationf"></div>
 
-<div id="sou_categorie" class="fsdn_rech">    
+<div id="sou_categorie" class="fsdn_rech">
 
   <dl>
     <dt id="dt_ar">التصنيف الفرعي </dt>
   </dl>
-
-
-
-
 
   <dl>
     <dd>
@@ -1668,6 +1548,7 @@ document.write('<select name="categorie" id="categorie" class="requireddropdownl
 </noscript>
 
       </dd>
+
   </dl>
 
 <div id="separationf"></div>
@@ -1675,12 +1556,6 @@ document.write('<select name="categorie" id="categorie" class="requireddropdownl
 
         <dl>
             <dt id="dt_ar">
-            
-
-
-
-
-
 
 
 <div class="ordinateurz" id="ordinateur">
@@ -1710,6 +1585,7 @@ document.write('<select name="categorie" id="categorie" class="requireddropdownl
         <option value="14">ماركة أخرى</option>
       </select>
     </dd>
+
   </dl>
 
   <div id="separationf">
@@ -1737,6 +1613,7 @@ document.write('<select name="categorie" id="categorie" class="requireddropdownl
         <option value="10">معالج آخر</option>
       </select>
     </dd>
+
   </dl>
 
   <div id="separationf">
@@ -1771,6 +1648,7 @@ document.write('<select name="categorie" id="categorie" class="requireddropdownl
         <option value="17" style="direction:ltr">64 GB et plus</option>
       </select>
     </dd>
+
   </dl>
 
   <div id="separationf">
@@ -1797,10 +1675,10 @@ document.write('<select name="categorie" id="categorie" class="requireddropdownl
         <option value="9" style="direction:ltr">plus de 2000 GB (2 TB)</option>
       </select>
     </dd>
+
   </dl>
 
 </div>
-
 
 <div class="televisionz" id="television">
 
@@ -1825,6 +1703,7 @@ document.write('<select name="categorie" id="categorie" class="requireddropdownl
         <option value="10">ماركة أخرى</option>
       </select>
     </dd>
+
   </dl>
 
   <div id="separationf">
@@ -1854,6 +1733,7 @@ document.write('<select name="categorie" id="categorie" class="requireddropdownl
         <option value="12" style="direction:ltr">حجم آخر</option>
       </select>
     </dd>
+
   </dl>
 
   <div id="separationf">
@@ -1872,23 +1752,16 @@ document.write('<select name="categorie" id="categorie" class="requireddropdownl
         <option value="3">غير محدد</option>
       </select>
     </dd>
+
   </dl>
 
 </div>
 
-
-
-
-
-
-
-
-<div class="lieu_none" id="services_div"> 
+<div class="lieu_none" id="services_div">
 
 <dl>
 <dt id="dt_ar">المجال</dt>
 </dl>
-
 
   <dl>
     <dd>
@@ -1912,21 +1785,14 @@ document.write('<select name="categorie" id="categorie" class="requireddropdownl
         <option value="15">Secrétariat</option>
         <option value="16">Traduction, rédaction</option>
         <option value="17">خدمات أخرى</option>
-        </select>    
-	</dd>
+        </select>
+    </dd>
+
   </dl>
 
 </div>
 
-
-
-
-
-
-
-
-
-<div class="lieu_none" id="jeux_video"> 
+<div class="lieu_none" id="jeux_video">
 
 <dl>
 <dt id="dt_ar">النوع</dt>
@@ -1940,8 +1806,9 @@ document.write('<select name="categorie" id="categorie" class="requireddropdownl
         <option value="1">Console لعبة</option>
         <option value="2">Jeux (CD/DVD/Blue-Ray...)</option>
         <option value="3">ملحقات (مانت، كاسك...)</option>
-        </select>    
-	</dd>
+        </select>
+    </dd>
+
   </dl>
 
 <div id="separationf"></div>
@@ -1949,7 +1816,6 @@ document.write('<select name="categorie" id="categorie" class="requireddropdownl
 <dl>
 <dt id="dt_ar">اللعبة أو المنصة</dt>
 </dl>
-
 
   <dl>
     <dd>
@@ -1970,21 +1836,14 @@ document.write('<select name="categorie" id="categorie" class="requireddropdownl
         <option value="12">Nintendo DS</option>
         <option value="13">Sony PSP</option>
         <option value="14">أخرى</option>
-        </select>    
-	</dd>
+        </select>
+    </dd>
+
   </dl>
 
 </div>
 
-
-
-
-
-
-
-
-
-<div class="lieu_none" id="mntr_bijd"> 
+<div class="lieu_none" id="mntr_bijd">
 
 <dl>
 <dt id="dt_ar">النوع</dt>
@@ -1997,20 +1856,14 @@ document.write('<select name="categorie" id="categorie" class="requireddropdownl
         <option value="0">تحديد النوع</option>
         <option value="1">للرجال</option>
         <option value="2">للنساء</option>
-        </select>    
-	</dd>
+        </select>
+    </dd>
+
   </dl>
 
 </div>
 
-
-
-
-
-
-
-
-<div class="lieu_none" id="chaussure"> 
+<div class="lieu_none" id="chaussure">
 
 <dl>
 <dt id="dt_ar">النوع</dt>
@@ -2024,8 +1877,9 @@ document.write('<select name="categorie" id="categorie" class="requireddropdownl
         <option value="1">للرجال</option>
         <option value="2">للنساء</option>
         <option value="3">للأطفال</option>
-        </select>    
-	</dd>
+        </select>
+    </dd>
+
   </dl>
 
 <div id="separationf"></div>
@@ -2033,7 +1887,6 @@ document.write('<select name="categorie" id="categorie" class="requireddropdownl
 <dl>
 <dt id="dt_ar">المقاس</dt>
 </dl>
-
 
   <dl>
     <dd>
@@ -2075,20 +1928,14 @@ document.write('<select name="categorie" id="categorie" class="requireddropdownl
         <option value="48">48</option>
         <option value="49">49</option>
         <option value="50">50 et plus</option>
-        </select>    
-	</dd>
+        </select>
+    </dd>
+
   </dl>
 
 </div>
 
-
-
-
-
-
-
-
-<div class="lieu_none" id="vetem_homme"> 
+<div class="lieu_none" id="vetem_homme">
 
 <dl>
 <dt id="dt_ar">نوع الملابس</dt>
@@ -2109,8 +1956,9 @@ document.write('<select name="categorie" id="categorie" class="requireddropdownl
         <option value="8">T-Shirt</option>
         <option value="9">Veste</option>
         <option value="10">أخرى</option>
-        </select>    
-	</dd>
+        </select>
+    </dd>
+
   </dl>
 
 <div id="separationf"></div>
@@ -2118,7 +1966,6 @@ document.write('<select name="categorie" id="categorie" class="requireddropdownl
 <dl>
 <dt id="dt_ar">قياس الملابس</dt>
 </dl>
-
 
   <dl>
     <dd>
@@ -2136,21 +1983,14 @@ document.write('<select name="categorie" id="categorie" class="requireddropdownl
         <option value="9">Boubou 9m</option>
         <option value="10">Boubou 8m</option>
         <option value="11">قياس آخر</option>
-        </select>    
-	</dd>
+        </select>
+    </dd>
+
   </dl>
 
 </div>
 
-
-
-
-
-
-
-
-
-<div class="lieu_none" id="phonemc"> 
+<div class="lieu_none" id="phonemc">
 
 <dl>
 <dt id="dt_ar">ماركة الهاتف</dt>
@@ -2177,31 +2017,24 @@ document.write('<select name="categorie" id="categorie" class="requireddropdownl
         <option value="14">Sony</option>
         <option value="15">Xiaomi</option>
         <option value="16">ماركة أخرى</option>
-        </select>    
-	</dd>
+        </select>
+    </dd>
+
   </dl>
 
       <dl>
         <dt id="dt_ar"><div class="csvalidation" id="phone_marquev"></div></dt>
       </dl>
 
-
 <div id="separationf"></div>
 
-
-
-
-
-
-
-<div class="lieu_none1" id="mobile_m"> 
+<div class="lieu_none1" id="mobile_m">
 
 <div id="separationf"></div>
 
 <dl>
 <dt id="dt_ar">آيفون مودل</dt>
 </dl>
-
 
   <dl>
     <dd>
@@ -2247,34 +2080,22 @@ document.write('<select name="categorie" id="categorie" class="requireddropdownl
         <option value="53">iPhone 15 Plus</option>
         <option value="54">iPhone 15 Pro</option>
         <option value="55">iPhone 15 Pro Max</option>
-        </select>    
-	</dd>
-  </dl>
+        </select>
+    </dd>
 
+  </dl>
 
       <dl>
         <dt id="dt_ar"><div class="csvalidation" id="phone_modelv"></div> </dt>
       </dl>
+
 </div>
 
 <div id="separationf"></div>
 
-
-
-
-
-
-
-
-
-
-
-
-
 <dl>
 <dt id="dt_ar">سعة التخزين الداخلية</dt>
 </dl>
-
 
   <dl>
     <dd>
@@ -2291,20 +2112,12 @@ document.write('<select name="categorie" id="categorie" class="requireddropdownl
         <option value="8" style="direction:ltr">256GB</option>
         <option value="9" style="direction:ltr">Plus de 256GB</option>
         <option value="10" style="direction:ltr">Autre capacité</option>
-        </select>    
-	</dd>
+        </select>
+    </dd>
+
   </dl>
 
 </div>
-
-
-
-
-
-
-
-
-            
 
 <div class="lieu_none" id="div_lieu"> 
     <div id="tf_surf_lft"> 
@@ -2314,15 +2127,14 @@ document.write('<select name="categorie" id="categorie" class="requireddropdownl
         <option value="1">نعم</option>
         <option value="2">لا</option>
         <option value="3">غير محدد</option>
-        </select>    
+        </select>
     </div>
 
-    <div id="tf_surf_rt"> 
+    <div id="tf_surf_rt">
     المساحة(م<sup>2</sup>)  <input name="surface" type="text" maxlength="11"  autocomplete="off"  onkeypress="return isNumberKey(event)"  size="2"  class="requiredinput_surf"  id="surface"  onfocusout="surfvalid()"  />
     </div>
 
 <br clear="all">
-
 
 </div>
  
@@ -2332,15 +2144,12 @@ document.write('<select name="categorie" id="categorie" class="requireddropdownl
  
  
             
-<div class="lieu_none" id="div_marque"> 
-
-
+<div class="lieu_none" id="div_marque">
 
 <div id="car_left">
 
 ماركة السيارة
 <br />
-
 
         <select name="marque" id="marque"  onchange="javascript: dropdownlistv(this.options[this.selectedIndex].value);"  class="requireddropdownlist1_2"  onfocusout="marquef()" >
 
@@ -2363,19 +2172,19 @@ document.write('<select name="categorie" id="categorie" class="requireddropdownl
         <option value="16">Seat</option>
         <option value="17">Suzuki</option>
         <option value="18">ماركة أخرى</option>
-        </select>    
-<br />
+        </select>
 
+<br />
 
 <br />
 
 مودل السيارة
 <br />
 
-    
 <script type="text/javascript" language="JavaScript">
 document.write('<select name="modele" id="modele" class="requireddropdownlist1_2" onchange="modelef()" onfocusout="modelef()"><option value="0">مودل السيارة: الكل</option></select>')
 </script>
+
 <noscript><select name="modele" id="modele" >
 
 <option value="0">مودل السيارة: الكل</option>
@@ -2458,7 +2267,6 @@ document.write('<select name="modele" id="modele" class="requireddropdownlist1_2
 
 </div>
 
-
 <div id="car_right">
 
 الوقود
@@ -2477,7 +2285,6 @@ document.write('<select name="modele" id="modele" class="requireddropdownlist1_2
 <br />
 
 <br />
-
 
 علبة السرعة
 <br />
@@ -2507,24 +2314,16 @@ document.write('<select name="modele" id="modele" class="requireddropdownlist1_2
 <option value="9">أكثر من 300.000</option>
 </select>
 
-
 <br />
-
 
 </div>
 
-
-
-
 </div>            
             
-            
+
 
 <div id="separationf"></div>
 
-
-
-            
 <div id="prix-prixpar" class="fsdn_rech"> 
     <div id="prix_lft"> 
     
@@ -2534,15 +2333,16 @@ document.write('<select name="modele" id="modele" class="requireddropdownlist1_2
   
 السعر من: <input name="prix_min" type="text" maxlength="11"  autocomplete="off"  onkeypress="return isNumberKey(event)"  size="28"  class="requiredinput_price"  id="prix_min"  onkeyup="formatprix()"  onfocusout="prixcontrole()"  />
 
-
 إلى: <input name="prix_max" type="text" maxlength="11"  autocomplete="off"  onkeypress="return isNumberKey(event)"  size="28"  class="requiredinput_price"  id="prix_max"  onkeyup="formatprix()"  onfocusout="prixcontrole()"  />
-	</dd>
+</dd>
+
   </dl>
 
     </div>
+
 <div id="separationf"></div>
 
-    <div class="lieu_none1" id="prix_par_rt"> 
+    <div class="lieu_none1" id="prix_par_rt">
 
   <dl>
     <dd>
@@ -2554,15 +2354,15 @@ document.write('<select name="modele" id="modele" class="requireddropdownlist1_2
         <option value="3">الاسبوع</option>
         <option value="4">الشهر</option>
         <option value="5">السنة</option>
-        </select>    
-	</dd>
+        </select>
+    </dd>
+
   </dl>
 
     </div>
 
 <br clear="all">
 </div>
-
 
 <div id="localib1" class="fsdn">
 <div id="separationf"></div>
@@ -2589,18 +2389,18 @@ document.write('<select name="modele" id="modele" class="requireddropdownlist1_2
         <option value="11">سيليبابي</option>
         <option value="12">تجكجة</option>
         <option value="13">ازويرات</option>
-        </select>    
-	</dd>
+        </select>
+    </dd>
+
   </dl>
 
-<div class="lieu_none1" id="div_ville"> 
+<div class="lieu_none1" id="div_ville">
 
 <div id="separationf"></div>
 
 <dl>
 <dt id="dt_ar">المقاطعة</dt>
 </dl>
-
 
   <dl>
     <dd>
@@ -2616,29 +2416,20 @@ document.write('<select name="modele" id="modele" class="requireddropdownlist1_2
         <option value="20">الرياض</option>
         <option value="21">السبخة</option>
         <option value="22">توجونين</option>
-        </select>    
-	</dd>
+        </select>
+    </dd>
+
   </dl>
 
-
-
 </div>
 
-
 </div>
-
-
-            
-
-
-
 
   <dl>
     <dd>
     <input name="recherche_f" type="text" value="search_ar_v" class="fsdn"  id="recherche_f"  /> <input name="email" type="text" class="fsdn"  id="email"  /><input name="comment" type="text" class="fsdn"  id="comment"  /><input name="ar_search" type="hidden" value="ar_search" id="ar_search"  />
     </dd>
   </dl>
-  
 
 
 <dl>
@@ -2648,61 +2439,28 @@ document.write('<select name="modele" id="modele" class="requireddropdownlist1_2
 </dt>
 </dl>
 
-
-
-
-
-
-
-      
-  
-
-  
-  
-  
- 
  </section>   
  
     <input type='hidden' name='surface_CFFORMINTEGER' value='veuillez entrer la surface (sans espace, sans virgule, maximum 10 chiffres)'>
 </form>
 
-    
 </div>
-
-
-
-
-
-
-
-
-
-
 
 <div id="recherche_francais">
 
- 
-  
-  
     <form name="form_rech_fr" id="form_rech_fr" action="&#x2f;index.cfm" method="post" onreset="return reinitmss(document.form_rech_fr)" enctype="multipart/form-data" onsubmit="return _CF_checkform_rech_fr(this)">
-
-
-
-    
 
 <section class="tb_speci">
 
     <div id="bloc_titre">
-      <a onClick="recherche_ar_f();" style="cursor:pointer"> البحث باللغة العربية</a>            
+      <a onClick="recherche_ar_f();" style="cursor:pointer"> البحث باللغة العربية</a>
     </div>
- 
 
 <div id="ctnt_wrapper">
 
   <dl>
     <dt id="dt_fr">Catégorie <span class="Etoiless">*</span></dt>
   </dl>
-
 
   <dl>
     <dd>
@@ -2720,23 +2478,20 @@ document.write('<select name="modele" id="modele" class="requireddropdownlist1_2
         <option value="8">Tourisme, voyage & vacance</option>
         <option value="9">Emploi, services et Entreprises</option>
         <option value="10">Autres</option>
-        </select>    
-	</dd>
+        </select>
+    </dd>
+
   </dl>
           <dl>
             <dt id="dt_fr"><div class="csvalidation" id="categcsvg_fr"></div></dt>
           </dl>
 <div id="separationf"></div>
 
-<div id="sou_categorie_fr" class="fsdn_rech">    
+<div id="sou_categorie_fr" class="fsdn_rech">
 
   <dl>
     <dt id="dt_fr">Sous catégorie</dt>
   </dl>
-
-
-
-
 
   <dl>
     <dd>
@@ -2750,6 +2505,7 @@ document.write('<select name="categorie_fr" id="categorie_fr" class="requireddro
 </noscript>
 
       </dd>
+
   </dl>
 
 <div id="separationf"></div>
@@ -2757,12 +2513,6 @@ document.write('<select name="categorie_fr" id="categorie_fr" class="requireddro
 
         <dl>
             <dt id="dt_fr">
-            
-
-
-
-
-
 
 
 <div class="ordinateurz" id="ordinateur_fr">
@@ -2792,6 +2542,7 @@ document.write('<select name="categorie_fr" id="categorie_fr" class="requireddro
         <option value="14">Autre marque</option>
       </select>
     </dd>
+
   </dl>
   <dl>
     <dt id="dt_fr">
@@ -2823,6 +2574,7 @@ document.write('<select name="categorie_fr" id="categorie_fr" class="requireddro
         <option value="10">Autre processeur</option>
       </select>
     </dd>
+
   </dl>
 
   <div id="separationf">
@@ -2857,6 +2609,7 @@ document.write('<select name="categorie_fr" id="categorie_fr" class="requireddro
         <option value="17">64 GB et plus</option>
       </select>
     </dd>
+
   </dl>
 
   <div id="separationf">
@@ -2883,10 +2636,10 @@ document.write('<select name="categorie_fr" id="categorie_fr" class="requireddro
         <option value="9">plus de 2000 GB (2 TB)</option>
       </select>
     </dd>
+
   </dl>
 
 </div>
-
 
 <div class="televisionz" id="television_fr">
 
@@ -2911,6 +2664,7 @@ document.write('<select name="categorie_fr" id="categorie_fr" class="requireddro
         <option value="10">Autre marque</option>
       </select>
     </dd>
+
   </dl>
 
   <div id="separationf">
@@ -2940,6 +2694,7 @@ document.write('<select name="categorie_fr" id="categorie_fr" class="requireddro
         <option value="12">Autre taille</option>
       </select>
     </dd>
+
   </dl>
 
   <div id="separationf">
@@ -2958,23 +2713,16 @@ document.write('<select name="categorie_fr" id="categorie_fr" class="requireddro
         <option value="3">Indeterminé</option>
       </select>
     </dd>
+
   </dl>
 
 </div>
 
-
-
-
-
-
-
-
-<div class="lieu_none" id="services_div_fr"> 
+<div class="lieu_none" id="services_div_fr">
 
 <dl>
 <dt id="dt_fr">Domaine</dt>
 </dl>
-
 
   <dl>
     <dd>
@@ -2998,21 +2746,14 @@ document.write('<select name="categorie_fr" id="categorie_fr" class="requireddro
         <option value="15">Secrétariat</option>
         <option value="16">Traduction, rédaction</option>
         <option value="17">Autre service</option>
-        </select>    
-	</dd>
+        </select>
+    </dd>
+
   </dl>
 
 </div>
 
-
-
-
-
-
-
-
-
-<div class="lieu_none" id="jeux_video_fr"> 
+<div class="lieu_none" id="jeux_video_fr">
 
 <dl>
 <dt id="dt_fr">Type</dt>
@@ -3026,8 +2767,9 @@ document.write('<select name="categorie_fr" id="categorie_fr" class="requireddro
         <option value="1">Console</option>
         <option value="2">Jeux (CD/DVD/Blue-Ray...)</option>
         <option value="3">Accessoires (Manette/Casque ...)</option>
-        </select>    
-	</dd>
+        </select>
+    </dd>
+
   </dl>
 
 <div id="separationf"></div>
@@ -3035,7 +2777,6 @@ document.write('<select name="categorie_fr" id="categorie_fr" class="requireddro
 <dl>
 <dt id="dt_fr">Platforme ou Console</dt>
 </dl>
-
 
   <dl>
     <dd>
@@ -3056,21 +2797,14 @@ document.write('<select name="categorie_fr" id="categorie_fr" class="requireddro
         <option value="12">Nintendo DS</option>
         <option value="13">Sony PSP</option>
         <option value="14">Autre</option>
-        </select>    
-	</dd>
+        </select>
+    </dd>
+
   </dl>
 
 </div>
 
-
-
-
-
-
-
-
-
-<div class="lieu_none" id="mntr_bijd_fr"> 
+<div class="lieu_none" id="mntr_bijd_fr">
 
 <dl>
 <dt id="dt_fr">Type</dt>
@@ -3083,20 +2817,14 @@ document.write('<select name="categorie_fr" id="categorie_fr" class="requireddro
         <option value="0">Choisissez Type</option>
         <option value="1">Homme</option>
         <option value="2">Femme</option>
-        </select>    
-	</dd>
+        </select>
+    </dd>
+
   </dl>
 
 </div>
 
-
-
-
-
-
-
-
-<div class="lieu_none" id="chaussure_fr"> 
+<div class="lieu_none" id="chaussure_fr">
 
 <dl>
 <dt id="dt_fr">Type</dt>
@@ -3110,8 +2838,9 @@ document.write('<select name="categorie_fr" id="categorie_fr" class="requireddro
         <option value="1">Homme</option>
         <option value="2">Femme</option>
         <option value="3">Enfant</option>
-        </select>    
-	</dd>
+        </select>
+    </dd>
+
   </dl>
 
 <div id="separationf"></div>
@@ -3119,7 +2848,6 @@ document.write('<select name="categorie_fr" id="categorie_fr" class="requireddro
 <dl>
 <dt id="dt_fr">Pointure</dt>
 </dl>
-
 
   <dl>
     <dd>
@@ -3161,20 +2889,14 @@ document.write('<select name="categorie_fr" id="categorie_fr" class="requireddro
         <option value="48">48</option>
         <option value="49">49</option>
         <option value="50">50 et plus</option>
-        </select>    
-	</dd>
+        </select>
+    </dd>
+
   </dl>
 
 </div>
 
-
-
-
-
-
-
-
-<div class="lieu_none" id="vetem_homme_fr"> 
+<div class="lieu_none" id="vetem_homme_fr">
 
 <dl>
 <dt id="dt_fr">Vêtement Type</dt>
@@ -3195,8 +2917,9 @@ document.write('<select name="categorie_fr" id="categorie_fr" class="requireddro
         <option value="8">T-Shirt</option>
         <option value="9">Veste</option>
         <option value="10">Autre</option>
-        </select>    
-	</dd>
+        </select>
+    </dd>
+
   </dl>
 
 <div id="separationf"></div>
@@ -3204,7 +2927,6 @@ document.write('<select name="categorie_fr" id="categorie_fr" class="requireddro
 <dl>
 <dt id="dt_fr">Vêtement Taille</dt>
 </dl>
-
 
   <dl>
     <dd>
@@ -3222,21 +2944,14 @@ document.write('<select name="categorie_fr" id="categorie_fr" class="requireddro
         <option value="9">Boubou 9m</option>
         <option value="10">Boubou 8m</option>
         <option value="11">Autre</option>
-        </select>    
-	</dd>
+        </select>
+    </dd>
+
   </dl>
 
 </div>
 
-
-
-
-
-
-
-
-
-<div class="lieu_none" id="phonemc_fr"> 
+<div class="lieu_none" id="phonemc_fr">
 
 <dl>
 <dt id="dt_fr">Marque</dt>
@@ -3263,31 +2978,24 @@ document.write('<select name="categorie_fr" id="categorie_fr" class="requireddro
         <option value="14">Sony</option>
         <option value="15">Xiaomi</option>
         <option value="16">Autre marque</option>
-        </select>    
-	</dd>
+        </select>
+    </dd>
+
   </dl>
 
       <dl>
         <dt id="dt_fr"><div class="csvalidation" id="phone_marquev"></div></dt>
       </dl>
 
-
 <div id="separationf"></div>
 
-
-
-
-
-
-
-<div class="lieu_none1" id="mobile_m_fr"> 
+<div class="lieu_none1" id="mobile_m_fr">
 
 <div id="separationf"></div>
 
 <dl>
 <dt id="dt_fr">iPhone Modele</dt>
 </dl>
-
 
   <dl>
     <dd>
@@ -3333,34 +3041,22 @@ document.write('<select name="categorie_fr" id="categorie_fr" class="requireddro
         <option value="53">iPhone 15 Plus</option>
         <option value="54">iPhone 15 Pro</option>
         <option value="55">iPhone 15 Pro Max</option>
-        </select>    
-	</dd>
-  </dl>
+        </select>
+    </dd>
 
+  </dl>
 
       <dl>
         <dt id="dt_fr"><div class="csvalidation" id="phone_modelv"></div> </dt>
       </dl>
+
 </div>
 
 <div id="separationf"></div>
 
-
-
-
-
-
-
-
-
-
-
-
-
 <dl>
 <dt id="dt_fr">Stockage: Mémoire du Téléphone</dt>
 </dl>
-
 
   <dl>
     <dd>
@@ -3377,20 +3073,12 @@ document.write('<select name="categorie_fr" id="categorie_fr" class="requireddro
         <option value="8">256GB</option>
         <option value="9">Plus de 256GB</option>
         <option value="10">Autre capacité</option>
-        </select>    
-	</dd>
+        </select>
+    </dd>
+
   </dl>
 
 </div>
-
-
-
-
-
-
-
-
-            
 
 <div class="lieu_none" id="div_lieu_fr"> 
     <div id="tf_surf_lft_fr"> 
@@ -3400,15 +3088,14 @@ document.write('<select name="categorie_fr" id="categorie_fr" class="requireddro
         <option value="1">Titré</option>
         <option value="2">Non Titré</option>
         <option value="3">Indeterminé</option>
-        </select>    
+        </select>
     </div>
 
-    <div id="tf_surf_rt"> 
+    <div id="tf_surf_rt">
     Surface(m<sup>2</sup>) <input name="surface_fr" type="text" maxlength="11"  autocomplete="off"  onkeypress="return isNumberKey(event)"  size="2"  class="requiredinput_surf"  id="surface_fr"  onfocusout="surfvalid()"  />
     </div>
 
 <br clear="all">
-
 
 </div>
  
@@ -3418,13 +3105,12 @@ document.write('<select name="categorie_fr" id="categorie_fr" class="requireddro
  
  
             
-<div class="lieu_none" id="div_marque_fr"> 
+<div class="lieu_none" id="div_marque_fr">
 
 <div id="car_left_fr">
 
 Marque
 <br />
-
 
         <select name="marque_fr" id="marque_fr"  onchange="javascript: dropdownlistv_fr(this.options[this.selectedIndex].value);"  class="requireddropdownlist1_2_fr"  onfocusout="marquef()" >
 
@@ -3447,17 +3133,18 @@ Marque
         <option value="16">Seat</option>
         <option value="17">Suzuki</option>
         <option value="18">Autre Marque</option>
-        </select>    
+        </select>
+
 <br />
 <br />
 
 Modèle
 <br />
 
-    
 <script type="text/javascript" language="JavaScript">
 document.write('<select name="modele_fr" id="modele_fr" class="requireddropdownlist1_2_fr" onchange="modelef()" onfocusout="modelef()"><option value="0">Choisissez un modele</option></select>')
 </script>
+
 <noscript><select name="modele_fr" id="modele_fr" >
 
 <option value="0">Choisissez un modele</option>
@@ -3556,7 +3243,6 @@ Carburant
 <br />
 <br />
 
-
 Boîte de vitesse
 <br />
 <select name="gearbox" id="gearbox"  class="requireddropdownlist1_2_fr"  onchange="gearboxf()"  onfocusout="gearboxf()" >
@@ -3584,19 +3270,14 @@ Kilométrage (km)
 <option value="9">Plus de 300.000</option>
 </select>
 
-
-
 </div>
 
 </div>            
             
-            
+
 
 <div id="separationf"></div>
 
-
-
-            
 <div id="prix-prixpar_fr" class="fsdn_rech"> 
     <div id="prix_lft"> 
     
@@ -3606,15 +3287,16 @@ Kilométrage (km)
   
 Prix (MRU) de: <input name="prix_min" type="text" maxlength="11"  autocomplete="off"  onkeypress="return isNumberKey(event)"  size="28"  class="requiredinput_price_fr"  id="prix_min"  onkeyup="formatprix_fr()"  onfocusout="prixcontrole()"  />
 
-
 à: <input name="prix_max" type="text" maxlength="11"  autocomplete="off"  onkeypress="return isNumberKey(event)"  size="28"  class="requiredinput_price_fr"  id="prix_max"  onkeyup="formatprix_fr()"  onfocusout="prixcontrole()"  />
-	</dd>
+</dd>
+
   </dl>
 
     </div>
+
 <div id="separationf"></div>
 
-    <div class="lieu_none1" id="prix_par_rt_fr"> 
+    <div class="lieu_none1" id="prix_par_rt_fr">
 
   <dl>
     <dd>
@@ -3626,15 +3308,15 @@ Prix (MRU) de: <input name="prix_min" type="text" maxlength="11"  autocomplete="
         <option value="3">Semaine</option>
         <option value="4">Mois</option>
         <option value="5">Année</option>
-        </select>    
-	</dd>
+        </select>
+    </dd>
+
   </dl>
 
     </div>
 
 <br clear="all">
 </div>
-
 
 <div id="localib1_fr" class="fsdn">
 <div id="separationf"></div>
@@ -3661,18 +3343,18 @@ Prix (MRU) de: <input name="prix_min" type="text" maxlength="11"  autocomplete="
         <option value="11">Sélibaby</option>
         <option value="12">Tidjikja</option>
         <option value="13">Zouérat</option>
-        </select>    
-	</dd>
+        </select>
+    </dd>
+
   </dl>
 
-<div class="lieu_none1" id="div_ville_fr"> 
+<div class="lieu_none1" id="div_ville_fr">
 
 <div id="separationf"></div>
 
 <dl>
 <dt id="dt_fr">Moughataa</dt>
 </dl>
-
 
   <dl>
     <dd>
@@ -3688,29 +3370,20 @@ Prix (MRU) de: <input name="prix_min" type="text" maxlength="11"  autocomplete="
         <option value="20">Riyad</option>
         <option value="21">Sebkha</option>
         <option value="22">Toujounine</option>
-        </select>    
-	</dd>
+        </select>
+    </dd>
+
   </dl>
 
-
-
 </div>
 
-
 </div>
-
-
-            
-
-
-
 
   <dl>
     <dd>
     <input name="recherche_f" type="text" value="search_ar_v" class="fsdn"  id="recherche_f"  /><input name="email" type="text" class="fsdn"  id="email"  /><input name="comment" type="text" class="fsdn"  id="comment"  /><input name="fr_search" type="hidden" value="fr_search" id="fr_search"  />
     </dd>
   </dl>
-  
 
 
 <dl>
@@ -3720,38 +3393,14 @@ Prix (MRU) de: <input name="prix_min" type="text" maxlength="11"  autocomplete="
 </dt>
 </dl>
 
-
-
-
-
-
-
-      
-  
-
-  
-  
-  
- 
  </section>   
  
     <input type='hidden' name='surface_fr_CFFORMINTEGER' value='veuillez entrer la surface (sans espace, sans virgule, maximum 10 chiffres)'>
 </form>
 
-    
 </div>
 
-
-
-
 </div>
-
-
-
-
-
-
-
 
     <div id="paginorder1">
       <table width="100%" border="0">
@@ -3759,6 +3408,7 @@ Prix (MRU) de: <input name="prix_min" type="text" maxlength="11"  autocomplete="
           <td nowrap="nowrap">          </td>
           <td height="22" nowrap="nowrap" class="Style15 Style18">Page</td>
           <td nowrap="nowrap"><form name="form3" id="form3" action="&#x2f;index.cfm" method="post" onsubmit="return _CF_checkform3(this)"><input name="pgdemande1" type="text" value="1" id="pgdemande1"  onkeypress="return isNumberKeyc(event)"  size="2"  /><input name="Submit" id="Submit"  type="submit" value="Aller" class="allercacher"  /></form>
+
 </td>
           <td nowrap="nowrap">
               <div id="ttpn1"><span class="Style19">de</span> <span class="Style18">1936</span></div>
@@ -3774,18 +3424,11 @@ Prix (MRU) de: <input name="prix_min" type="text" maxlength="11"  autocomplete="
   
 <div id="separa"></div>
 
-
-
-
-
-
   <a href="/annonces.cfm?pdtid=357890&adtre=كورولا جديدة ما فات أُرقمت 2015 Corolla LE">  
     
   
     <div id="rptregion" class="rptregion">
   
-        
-
 
 
 <div id="photo">
@@ -3794,18 +3437,14 @@ Prix (MRU) de: <input name="prix_min" type="text" maxlength="11"  autocomplete="
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">كورولا جديدة ما فات أُرقمت 2015 Corolla LE</div>
-
 
 <div id="prix">
 370,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -3821,28 +3460,19 @@ Nouakchott
 
 <span class="payeeee">Annonce Payée</span>
 
-
-
-
-
 </div>
 
 </div>
 
-
 </div>
-
 
 </a>
-
 
   <a href="/annonces.cfm?pdtid=341195&adtre=Appartement meubler شقق مفروشه">  
     
     
     <div id="rptregion" class="rptregion_locat" style="background-color: #424B59">
   
-        
-
 
 
 <div id="photo">
@@ -3850,19 +3480,15 @@ Nouakchott
  	  	<img src="/produitsedr/produit_smph/341195_psp.jpg" title="Appartement meubler شقق مفروشه" border="0"/ alt="Appartement meubler شقق مفروشه">      
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">Appartement meubler شقق مفروشه</div>
 
-
 <div id="prix">
 
 prix indéterminé
- 
-</div>
 
+</div>
 
 <div id="vendue_loue">
 
@@ -3878,28 +3504,19 @@ Tevragh-Zeina
 
 <span class="payeeee">Annonce Payée</span>
 
-
-
-
-
 </div>
 
 </div>
 
-
 </div>
-
 
 </a>
-
 
   <a href="/annonces.cfm?pdtid=352175&adtre=Anker P20i">  
     
   
     <div id="rptregion" class="rptregion">
   
-        
-
 
 
 <div id="photo">
@@ -3907,18 +3524,14 @@ Tevragh-Zeina
  	  	<img src="/produitsedr/produit_smph/352175_psp.jpg" title="Anker P20i" border="0"/ alt="Anker P20i">      
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">Anker P20i</div>
-
 
 <div id="prix">
 1,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -3934,28 +3547,19 @@ Nouakchott
 
 <span class="payeeee">Annonce Payée</span>
 
-
-
-
-
 </div>
 
 </div>
 
-
 </div>
-
 
 </a>
-
 
   <a href="/annonces.cfm?pdtid=343075&adtre=Power Banks (بنوك طاقة)">  
     
   
     <div id="rptregion" class="rptregion">
   
-        
-
 
 
 <div id="photo">
@@ -3963,19 +3567,15 @@ Nouakchott
  	  	<img src="/produitsedr/produit_smph/343075_psp.jpg" title="Power Banks (بنوك طاقة)" border="0"/ alt="Power Banks (بنوك طاقة)">      
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">Power Banks (بنوك طاقة)</div>
 
-
 <div id="prix">
 
 prix indéterminé
- 
-</div>
 
+</div>
 
 <div id="vendue_loue">
 
@@ -3991,28 +3591,18 @@ Nouakchott
 
 <span class="payeeee">Annonce Payée</span>
 
-
-
-
-
 </div>
 
 </div>
 
-
 </div>
-
 
 </a>
-
 
   	<a href="/annonces.cfm?pdtid=358327&adtre=فرصة حقيقية"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -4021,18 +3611,14 @@ Nouakchott
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">فرصة حقيقية</div>
-
 
 <div id="prix">
 4,000,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -4042,39 +3628,24 @@ Nouakchott
 <span class="StylH2">
 Terrain 
 	<br />
-	Tevragh-Zeina 
+	Tevragh-Zeina
 
 </span>
 <br />
 <span class="datestyle">13-02-2025 17:56</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358333&adtre=منزل للبيع شانتيه حذه شركة الوطنيه "> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -4083,18 +3654,14 @@ Terrain
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">منزل للبيع شانتيه حذه شركة الوطنيه </div>
-
 
 <div id="prix">
 7,700,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -4104,39 +3671,24 @@ Terrain
 <span class="StylH2">
 Maison - Villa 
 	<br />
-	Toujounine 
+	Toujounine
 
 </span>
 <br />
 <span class="datestyle">13-02-2025 17:47</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358308&adtre=PlayStation 4"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -4145,18 +3697,14 @@ Maison - Villa
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">PlayStation 4</div>
-
 
 <div id="prix">
 11,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -4166,39 +3714,24 @@ Maison - Villa
 <span class="StylH2">
 Jeux vidéo et Consoles 
 	<br />
-	Nouakchott 
+	Nouakchott
 
 </span>
 <br />
 <span class="datestyle">13-02-2025 16:31</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358315&adtre=عمارة اكبيرثلاثة طوابق فيه 8 شقق وطابق أرضي تفرغ زينة "> 
     
     <div id="rptregion" class="rptregion_locat" style="background-color: #424B59">
   
-        
-
-
 
 
 <div id="photo">
@@ -4207,19 +3740,15 @@ Jeux vidéo et Consoles
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">عمارة اكبيرثلاثة طوابق فيه 8 شقق وطابق أرضي تفرغ زينة </div>
-
 
 <div id="prix">
 500,000 MRU
  / Mois  
 </div>
 
-
 <div id="vendue_loue">
 
 </div>
@@ -4227,42 +3756,27 @@ Jeux vidéo et Consoles
 <div id="autre_infos">
 <span class="StylH2">
 
-    	Location - 
-    Bâtiment 
-	<br />
-	Tevragh-Zeina 
+    	Location -
+    Bâtiment
+    <br />
+    Tevragh-Zeina
 
 </span>
 <br />
 <span class="datestyle">13-02-2025 15:06</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358311&adtre=260م# فيها بتيك ف الجامعه لاول للببع "> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -4271,19 +3785,15 @@ Jeux vidéo et Consoles
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">260م# فيها بتيك ف الجامعه لاول للببع </div>
-
 
 <div id="prix">
 2,200,000 MRU
  
 </div>
 
-
 <div id="vendue_loue">
 
 </div>
@@ -4292,39 +3802,24 @@ Jeux vidéo et Consoles
 <span class="StylH2">
 Terrain 
 	<br />
-	Tevragh-Zeina 
+	Tevragh-Zeina
 
 </span>
 <br />
 <span class="datestyle">13-02-2025 14:09</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358303&adtre=دار فعرفات بالقرب من حمام الياسمين للبيع "> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -4333,18 +3828,14 @@ Terrain
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">دار فعرفات بالقرب من حمام الياسمين للبيع </div>
-
 
 <div id="prix">
 550,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -4354,39 +3845,24 @@ Terrain
 <span class="StylH2">
 Terrain 
 	<br />
-	Arafat 
+	Arafat
 
 </span>
 <br />
 <span class="datestyle">13-02-2025 11:59</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358298&adtre=5 شقق عند كرفور عين الطلح "> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -4395,18 +3871,14 @@ Terrain
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">5 شقق عند كرفور عين الطلح </div>
-
 
 <div id="prix">
 4,500,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -4416,39 +3888,24 @@ Terrain
 <span class="StylH2">
 Appartement 
 	<br />
-	Teyarett 
+	Teyarett
 
 </span>
 <br />
 <span class="datestyle">13-02-2025 11:18</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358294&adtre=فرصة 600م٢ عل گدروه للبيع "> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -4457,18 +3914,14 @@ Appartement
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">فرصة 600م٢ عل گدروه للبيع </div>
-
 
 <div id="prix">
 1,200,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -4478,39 +3931,24 @@ Appartement
 <span class="StylH2">
 Commerces et Locaux industriels 
 	<br />
-	Toujounine 
+	Toujounine
 
 </span>
 <br />
 <span class="datestyle">13-02-2025 09:53</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=348645&adtre=Machen à café WEGA"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -4518,18 +3956,14 @@ Commerces et Locaux industriels
  	  	<img src="/produitsedr/produit_smph/348645_psp.jpg" title="Machen à café WEGA" border="0"/ alt="Machen à café WEGA">      
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">Machen à café WEGA</div>
-
 
 <div id="prix">
 75,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -4539,39 +3973,24 @@ Commerces et Locaux industriels
 <span class="StylH2">
 Electroménager et Vaisselles 
 	<br />
-	Nouakchott 
+	Nouakchott
 
 </span>
 <br />
 <span class="datestyle">13-02-2025 09:18</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=351702&adtre=Tvz"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -4579,18 +3998,14 @@ Electroménager et Vaisselles
  	  	<img src="/produitsedr/produit_smph/351702_psp.jpg" title="Tvz" border="0"/ alt="Tvz">      
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">Tvz</div>
-
 
 <div id="prix">
 6,500 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -4600,39 +4015,24 @@ Electroménager et Vaisselles
 <span class="StylH2">
 Ordinateurs portables 
 	<br />
-	Nouakchott 
+	Nouakchott
 
 </span>
 <br />
 <span class="datestyle">13-02-2025 09:17</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=357631&adtre=MACBOOK AIR M3 13 POUCES((13inch)2024"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -4640,18 +4040,14 @@ Ordinateurs portables
  	  	<img src="/produitsedr/produit_smph/357631_psp.jpg" title="MACBOOK AIR M3 13 POUCES((13inch)2024" border="0"/ alt="MACBOOK AIR M3 13 POUCES((13inch)2024">      
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">MACBOOK AIR M3 13 POUCES((13inch)2024</div>
-
 
 <div id="prix">
 50,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -4661,39 +4057,24 @@ Ordinateurs portables
 <span class="StylH2">
 Ordinateurs portables 
 	<br />
-	Nouakchott 
+	Nouakchott
 
 </span>
 <br />
 <span class="datestyle">13-02-2025 09:17</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=344335&adtre=Chevrolet équinox LT 2018 arrivage "> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -4701,18 +4082,14 @@ Ordinateurs portables
  	  	<img src="/produitsedr/produit_smph/344335_psp.jpg" title="Chevrolet équinox LT 2018 arrivage " border="0"/ alt="Chevrolet équinox LT 2018 arrivage ">      
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">Chevrolet équinox LT 2018 arrivage </div>
-
 
 <div id="prix">
 370,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -4722,39 +4099,24 @@ Ordinateurs portables
 <span class="StylH2">
 Voitures 
 	<br />
-	Nouakchott 
+	Nouakchott
 
 </span>
 <br />
 <span class="datestyle">13-02-2025 09:13</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358292&adtre=نيمرو من سكتير1 كتاب الضبط حذا طب القلب وزين"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -4763,18 +4125,14 @@ Voitures
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">نيمرو من سكتير1 كتاب الضبط حذا طب القلب وزين</div>
-
 
 <div id="prix">
 2,100,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -4784,39 +4142,24 @@ Voitures
 <span class="StylH2">
 Terrain 
 	<br />
-	Tevragh-Zeina 
+	Tevragh-Zeina
 
 </span>
 <br />
 <span class="datestyle">13-02-2025 09:12</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358289&adtre=دار ما فات اندخلت بالقرب من اوفي الكيل للبيع "> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -4825,18 +4168,14 @@ Terrain
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">دار ما فات اندخلت بالقرب من اوفي الكيل للبيع </div>
-
 
 <div id="prix">
 1,300,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -4846,39 +4185,24 @@ Terrain
 <span class="StylH2">
 Maison - Villa 
 	<br />
-	Arafat 
+	Arafat
 
 </span>
 <br />
 <span class="datestyle">13-02-2025 00:14</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358287&adtre=نص نيمرو فالكرن من سكتير 4 مبيوع ب 36"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -4887,19 +4211,15 @@ Maison - Villa
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">نص نيمرو فالكرن من سكتير 4 مبيوع ب 36</div>
-
 
 <div id="prix">
 36 MRU
  
 </div>
 
-
 <div id="vendue_loue">
 
 </div>
@@ -4908,39 +4228,24 @@ Maison - Villa
 <span class="StylH2">
 Terrain 
 	<br />
-	Tevragh-Zeina 
+	Tevragh-Zeina
 
 </span>
 <br />
 <span class="datestyle">12-02-2025 22:23</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358282&adtre=تنويش "> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -4949,19 +4254,15 @@ Terrain
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">تنويش </div>
-
 
 <div id="prix">
 220 MRU
  
 </div>
 
-
 <div id="vendue_loue">
 
 </div>
@@ -4970,39 +4271,24 @@ Terrain
 <span class="StylH2">
 Terrain 
 	<br />
-	Toujounine 
+	Toujounine
 
 </span>
 <br />
 <span class="datestyle">12-02-2025 20:29</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358281&adtre=ديبلكس اجديد  5   غرف وجسلة وكراج ب300   الف"> 
     
     <div id="rptregion" class="rptregion_locat" style="background-color: #424B59">
   
-        
-
-
 
 
 <div id="photo">
@@ -5011,19 +4297,15 @@ Terrain
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">ديبلكس اجديد  5   غرف وجسلة وكراج ب300   الف</div>
-
 
 <div id="prix">
 30,000 MRU
  / Mois  
 </div>
 
-
 <div id="vendue_loue">
 
 </div>
@@ -5031,42 +4313,27 @@ Terrain
 <div id="autre_infos">
 <span class="StylH2">
 
-    	Location - 
-    Appartement 
-	<br />
-	Tevragh-Zeina 
+    	Location -
+    Appartement
+    <br />
+    Tevragh-Zeina
 
 </span>
 <br />
 <span class="datestyle">12-02-2025 19:45</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358270&adtre=نيمرو من شرم الشيخ "> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -5075,19 +4342,15 @@ Terrain
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">نيمرو من شرم الشيخ </div>
-
 
 <div id="prix">
 28 MRU
  
 </div>
 
-
 <div id="vendue_loue">
 
 </div>
@@ -5096,39 +4359,24 @@ Terrain
 <span class="StylH2">
 Terrain 
 	<br />
-	Teyarett 
+	Teyarett
 
 </span>
 <br />
 <span class="datestyle">12-02-2025 18:28</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358258&adtre=200م من ام اسويت اعل شارع اكبير فرصة "> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -5137,19 +4385,15 @@ Terrain
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">200م من ام اسويت اعل شارع اكبير فرصة </div>
-
 
 <div id="prix">
 1,100,000 MRU
  
 </div>
 
-
 <div id="vendue_loue">
 
 </div>
@@ -5158,39 +4402,24 @@ Terrain
 <span class="StylH2">
 Terrain 
 	<br />
-	Tevragh-Zeina 
+	Tevragh-Zeina
 
 </span>
 <br />
 <span class="datestyle">12-02-2025 17:23</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358260&adtre=نيمرو من سكتير  4 مساحة 600 مبيوع ب45مليون"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -5199,19 +4428,15 @@ Terrain
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">نيمرو من سكتير  4 مساحة 600 مبيوع ب45مليون</div>
-
 
 <div id="prix">
 4,500,000 MRU
  
 </div>
 
-
 <div id="vendue_loue">
 
 </div>
@@ -5220,39 +4445,24 @@ Terrain
 <span class="StylH2">
 Terrain 
 	<br />
-	Tevragh-Zeina 
+	Tevragh-Zeina
 
 </span>
 <br />
 <span class="datestyle">12-02-2025 16:38</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358259&adtre=نيمرو فكرن من سوكوجيم ام فرصة اعل شارعين "> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -5261,18 +4471,14 @@ Terrain
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">نيمرو فكرن من سوكوجيم ام فرصة اعل شارعين </div>
-
 
 <div id="prix">
 2,200,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -5282,39 +4488,24 @@ Terrain
 <span class="StylH2">
 Terrain 
 	<br />
-	Tevragh-Zeina 
+	Tevragh-Zeina
 
 </span>
 <br />
 <span class="datestyle">12-02-2025 16:21</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=357740&adtre=باص للبيع و بحالة ممتازة"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -5323,18 +4514,14 @@ Terrain
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">باص للبيع و بحالة ممتازة</div>
-
 
 <div id="prix">
 600,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -5344,39 +4531,24 @@ Terrain
 <span class="StylH2">
 Voitures 
 	<br />
-	Nouakchott 
+	Nouakchott
 
 </span>
 <br />
 <span class="datestyle">12-02-2025 15:49</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=348545&adtre=Moulin à café"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -5384,18 +4556,14 @@ Voitures
  	  	<img src="/produitsedr/produit_smph/348545_psp.jpg" title="Moulin à café" border="0"/ alt="Moulin à café">      
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">Moulin à café</div>
-
 
 <div id="prix">
 14,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -5405,39 +4573,24 @@ Voitures
 <span class="StylH2">
 Electroménager et Vaisselles 
 	<br />
-	Nouakchott 
+	Nouakchott
 
 </span>
 <br />
 <span class="datestyle">12-02-2025 15:28</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358250&adtre=شانتيه وافيه مغطيه كامل اف ملح سكتير 5 "> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -5446,18 +4599,14 @@ Electroménager et Vaisselles
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">شانتيه وافيه مغطيه كامل اف ملح سكتير 5 </div>
-
 
 <div id="prix">
 550,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -5467,39 +4616,24 @@ Electroménager et Vaisselles
 <span class="StylH2">
 Bâtiment 
 	<br />
-	Toujounine 
+	Toujounine
 
 </span>
 <br />
 <span class="datestyle">12-02-2025 15:17</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358247&adtre=ديبلكس 5غرف وجلسة وكراج يسع سيارتين ب200الف"> 
     
     <div id="rptregion" class="rptregion_locat" style="background-color: #424B59">
   
-        
-
-
 
 
 <div id="photo">
@@ -5508,18 +4642,14 @@ Bâtiment
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">ديبلكس 5غرف وجلسة وكراج يسع سيارتين ب200الف</div>
-
 
 <div id="prix">
 20,000 MRU
  / Mois  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -5528,42 +4658,27 @@ Bâtiment
 <div id="autre_infos">
 <span class="StylH2">
 
-    	Location - 
-    Duplexe 
-	<br />
-	Tevragh-Zeina 
+    	Location -
+    Duplexe
+    <br />
+    Tevragh-Zeina
 
 </span>
 <br />
 <span class="datestyle">12-02-2025 13:53</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358246&adtre=عرض جديد"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -5572,19 +4687,15 @@ Bâtiment
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">عرض جديد</div>
 
-
 <div id="prix">
 
 prix indéterminé
- 
-</div>
 
+</div>
 
 <div id="vendue_loue">
 
@@ -5594,39 +4705,24 @@ prix indéterminé
 <span class="StylH2">
 Terrain 
 	<br />
-	Tevragh-Zeina 
+	Tevragh-Zeina
 
 </span>
 <br />
 <span class="datestyle">12-02-2025 13:52</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358245&adtre=ابرتماه 4غرف وكراج ب120الف"> 
     
     <div id="rptregion" class="rptregion_locat" style="background-color: #424B59">
   
-        
-
-
 
 
 <div id="photo">
@@ -5635,18 +4731,14 @@ Terrain
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">ابرتماه 4غرف وكراج ب120الف</div>
-
 
 <div id="prix">
 1,200 MRU
  / Mois  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -5655,42 +4747,27 @@ Terrain
 <div id="autre_infos">
 <span class="StylH2">
 
-    	Location - 
-    Appartement 
-	<br />
-	Tevragh-Zeina 
+    	Location -
+    Appartement
+    <br />
+    Tevragh-Zeina
 
 </span>
 <br />
 <span class="datestyle">12-02-2025 13:51</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358244&adtre=سمعه ف ملح سكتير 4 للبيع "> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -5699,18 +4776,14 @@ Terrain
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">سمعه ف ملح سكتير 4 للبيع </div>
-
 
 <div id="prix">
 1,900,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -5720,39 +4793,24 @@ Terrain
 <span class="StylH2">
 Commerces et Locaux industriels 
 	<br />
-	Toujounine 
+	Toujounine
 
 </span>
 <br />
 <span class="datestyle">12-02-2025 13:42</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358236&adtre=سكتير5فنور"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -5761,18 +4819,14 @@ Commerces et Locaux industriels
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">سكتير5فنور</div>
-
 
 <div id="prix">
 52 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -5782,39 +4836,24 @@ Commerces et Locaux industriels
 <span class="StylH2">
 Terrain 
 	<br />
-	Tevragh-Zeina 
+	Tevragh-Zeina
 
 </span>
 <br />
 <span class="datestyle">12-02-2025 13:02</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358235&adtre=عمارة للبيع في ملح سكتير 4"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -5823,18 +4862,14 @@ Terrain
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">عمارة للبيع في ملح سكتير 4</div>
-
 
 <div id="prix">
 1,900,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -5844,39 +4879,24 @@ Terrain
 <span class="StylH2">
 Bâtiment 
 	<br />
-	Toujounine 
+	Toujounine
 
 </span>
 <br />
 <span class="datestyle">12-02-2025 12:42</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358226&adtre=عرض جديد"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -5885,19 +4905,15 @@ Bâtiment
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">عرض جديد</div>
 
-
 <div id="prix">
 
 prix indéterminé
- 
-</div>
 
+</div>
 
 <div id="vendue_loue">
 
@@ -5907,39 +4923,24 @@ prix indéterminé
 <span class="StylH2">
 Maison - Villa 
 	<br />
-	Teyarett 
+	Teyarett
 
 </span>
 <br />
 <span class="datestyle">12-02-2025 11:50</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=354212&adtre=RAV4 diesel"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -5947,18 +4948,14 @@ Maison - Villa
  	  	<img src="/produitsedr/produit_smph/354212_psp.jpg" title="RAV4 diesel" border="0"/ alt="RAV4 diesel">      
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">RAV4 diesel</div>
-
 
 <div id="prix">
 410,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -5968,39 +4965,24 @@ Maison - Villa
 <span class="StylH2">
 Voitures 
 	<br />
-	Nouakchott 
+	Nouakchott
 
 </span>
 <br />
 <span class="datestyle">12-02-2025 10:17</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=350738&adtre=Prado 2009 "> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -6008,63 +4990,44 @@ Voitures
  	  	<img src="/produitsedr/produit_smph/350738_psp.jpg" title="Prado 2009 " border="0"/ alt="Prado 2009 ">      
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">Prado 2009 </div>
 
-
 <div id="prix">
 
 prix indéterminé
- 
-</div>
 
+</div>
 
 <div id="vendue_loue">
 
     Vendue تم البيع
-  
+
 </div>
 
 <div id="autre_infos">
 <span class="StylH2">
 Voitures 
 	<br />
-	Nouakchott 
+	Nouakchott
 
 </span>
 <br />
 <span class="datestyle">12-02-2025 10:16</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=352199&adtre=Range rover évoque 2018 jdide mavat ora9met"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -6072,18 +5035,14 @@ Voitures
  	  	<img src="/produitsedr/produit_smph/352199_psp.jpg" title="Range rover évoque 2018 jdide mavat ora9met" border="0"/ alt="Range rover évoque 2018 jdide mavat ora9met">      
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">Range rover évoque 2018 jdide mavat ora9met</div>
-
 
 <div id="prix">
 650,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -6093,39 +5052,24 @@ Voitures
 <span class="StylH2">
 Voitures 
 	<br />
-	Nouakchott 
+	Nouakchott
 
 </span>
 <br />
 <span class="datestyle">12-02-2025 07:58</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358222&adtre=نيمروات للبيع فنواذيب"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -6134,19 +5078,15 @@ Voitures
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">نيمروات للبيع فنواذيب</div>
 
-
 <div id="prix">
 
 prix indéterminé
- 
-</div>
 
+</div>
 
 <div id="vendue_loue">
 
@@ -6156,39 +5096,24 @@ prix indéterminé
 <span class="StylH2">
 Terrain 
 	<br />
-	Nouadhibou 
+	Nouadhibou
 
 </span>
 <br />
 <span class="datestyle">12-02-2025 01:43</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=354885&adtre=فرصة فرصة حقيقية راف4فتحة ملفه جديد مانييل فول ابسيوه"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -6196,18 +5121,14 @@ Terrain
  	  	<img src="/produitsedr/produit_smph/354885_psp.jpg" title="فرصة فرصة حقيقية راف4فتحة ملفه جديد مانييل فول ابسيوه" border="0"/ alt="فرصة فرصة حقيقية راف4فتحة ملفه جديد مانييل فول ابسيوه">      
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">فرصة فرصة حقيقية راف4فتحة ملفه جديد مانييل فول ابسيوه</div>
-
 
 <div id="prix">
 675,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -6217,39 +5138,24 @@ Terrain
 <span class="StylH2">
 Voitures 
 	<br />
-	Nouakchott 
+	Nouakchott
 
 </span>
 <br />
 <span class="datestyle">11-02-2025 20:57</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358214&adtre=الدار فوكه ستديوهن فملح سكتير 4 "> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -6258,19 +5164,15 @@ Voitures
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">الدار فوكه ستديوهن فملح سكتير 4 </div>
-
 
 <div id="prix">
 1,900,000 MRU
  
 </div>
 
-
 <div id="vendue_loue">
 
 </div>
@@ -6279,39 +5181,24 @@ Voitures
 <span class="StylH2">
 Maison - Villa 
 	<br />
-	Toujounine 
+	Toujounine
 
 </span>
 <br />
 <span class="datestyle">11-02-2025 19:45</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358206&adtre=نيمرو فسكتير 4"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -6320,19 +5207,15 @@ Maison - Villa
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">نيمرو فسكتير 4</div>
-
 
 <div id="prix">
 2,500,000 MRU
  
 </div>
 
-
 <div id="vendue_loue">
 
 </div>
@@ -6341,39 +5224,24 @@ Maison - Villa
 <span class="StylH2">
 Terrain 
 	<br />
-	Tevragh-Zeina 
+	Tevragh-Zeina
 
 </span>
 <br />
 <span class="datestyle">11-02-2025 17:10</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358205&adtre=نيمرو من سكتير 4"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -6382,18 +5250,14 @@ Terrain
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">نيمرو من سكتير 4</div>
-
 
 <div id="prix">
 2,100,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -6403,39 +5267,24 @@ Terrain
 <span class="StylH2">
 Terrain 
 	<br />
-	Tevragh-Zeina 
+	Tevragh-Zeina
 
 </span>
 <br />
 <span class="datestyle">11-02-2025 17:05</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358195&adtre=دار احذ كارفور السدراي منقوش ومكروي فلكرن مبيوع فرص "> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -6444,18 +5293,14 @@ Terrain
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">دار احذ كارفور السدراي منقوش ومكروي فلكرن مبيوع فرص </div>
-
 
 <div id="prix">
 10 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -6465,39 +5310,24 @@ Terrain
 <span class="StylH2">
 Maison - Villa 
 	<br />
-	Teyarett 
+	Teyarett
 
 </span>
 <br />
 <span class="datestyle">11-02-2025 12:01</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=352181&adtre=Hp 19 بوصة "> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -6505,18 +5335,14 @@ Maison - Villa
  	  	<img src="/produitsedr/produit_smph/352181_psp.jpg" title="Hp 19 بوصة " border="0"/ alt="Hp 19 بوصة ">      
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">Hp 19 بوصة </div>
-
 
 <div id="prix">
 5,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -6526,39 +5352,24 @@ Maison - Villa
 <span class="StylH2">
 Ordinateurs portables 
 	<br />
-	Nouakchott 
+	Nouakchott
 
 </span>
 <br />
 <span class="datestyle">11-02-2025 11:05</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=355369&adtre=استابيليزاتير 5000 مزال اجديد"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -6566,18 +5377,14 @@ Ordinateurs portables
  	  	<img src="/produitsedr/produit_smph/355369_psp.jpg" title="استابيليزاتير 5000 مزال اجديد" border="0"/ alt="استابيليزاتير 5000 مزال اجديد">      
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">استابيليزاتير 5000 مزال اجديد</div>
-
 
 <div id="prix">
 3,500 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -6587,39 +5394,24 @@ Ordinateurs portables
 <span class="StylH2">
 Electroménager et Vaisselles 
 	<br />
-	Nouakchott 
+	Nouakchott
 
 </span>
 <br />
 <span class="datestyle">11-02-2025 11:05</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358185&adtre=نيمروين للبيع عين الطلح شارع تجاري"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -6628,18 +5420,14 @@ Electroménager et Vaisselles
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">نيمروين للبيع عين الطلح شارع تجاري</div>
-
 
 <div id="prix">
 2,200,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -6649,39 +5437,24 @@ Electroménager et Vaisselles
 <span class="StylH2">
 Commerces et Locaux industriels 
 	<br />
-	Teyarett 
+	Teyarett
 
 </span>
 <br />
 <span class="datestyle">10-02-2025 22:23</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=356332&adtre=Bus Mercedes Sprinter 2001"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -6689,62 +5462,43 @@ Commerces et Locaux industriels
  	  	<img src="/produitsedr/produit_smph/356332_psp.jpg" title="Bus Mercedes Sprinter 2001" border="0"/ alt="Bus Mercedes Sprinter 2001">      
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">Bus Mercedes Sprinter 2001</div>
-
 
 <div id="prix">
 380,000 MRU
  
 </div>
 
-
 <div id="vendue_loue">
 
     Vendue تم البيع
-  
+
 </div>
 
 <div id="autre_infos">
 <span class="StylH2">
 Voitures 
 	<br />
-	Nouakchott 
+	Nouakchott
 
 </span>
 <br />
 <span class="datestyle">10-02-2025 21:13</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=334426&adtre=Acura RDX Sport full option"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -6752,62 +5506,43 @@ Voitures
  	  	<img src="/produitsedr/produit_smph/334426_psp.jpg" title="Acura RDX Sport full option" border="0"/ alt="Acura RDX Sport full option">      
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">Acura RDX Sport full option</div>
-
 
 <div id="prix">
 260,000 MRU
  
 </div>
 
-
 <div id="vendue_loue">
 
     Vendue تم البيع
-  
+
 </div>
 
 <div id="autre_infos">
 <span class="StylH2">
 Voitures 
 	<br />
-	Nouakchott 
+	Nouakchott
 
 </span>
 <br />
 <span class="datestyle">10-02-2025 21:13</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358178&adtre=ديبلكس 7غرف وكراج مدخل سيارتين في سانتر امتير ب250الف"> 
     
     <div id="rptregion" class="rptregion_locat" style="background-color: #424B59">
   
-        
-
-
 
 
 <div id="photo">
@@ -6816,18 +5551,14 @@ Voitures
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">ديبلكس 7غرف وكراج مدخل سيارتين في سانتر امتير ب250الف</div>
-
 
 <div id="prix">
 25,000 MRU
  / Mois  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -6836,42 +5567,27 @@ Voitures
 <div id="autre_infos">
 <span class="StylH2">
 
-    	Location - 
-    Duplexe 
-	<br />
-	Tevragh-Zeina 
+    	Location -
+    Duplexe
+    <br />
+    Tevragh-Zeina
 
 </span>
 <br />
 <span class="datestyle">10-02-2025 19:17</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358173&adtre=عرض جديد"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -6880,19 +5596,15 @@ Voitures
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">عرض جديد</div>
 
-
 <div id="prix">
 
 prix indéterminé
- 
-</div>
 
+</div>
 
 <div id="vendue_loue">
 
@@ -6902,39 +5614,24 @@ prix indéterminé
 <span class="StylH2">
 Duplexe 
 	<br />
-	Teyarett 
+	Teyarett
 
 </span>
 <br />
 <span class="datestyle">10-02-2025 17:14</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358165&adtre=أبرتماهات فاتحين أعل كدروه الصكوك دخلهم الشهري 420 "> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -6943,18 +5640,14 @@ Duplexe
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">أبرتماهات فاتحين أعل كدروه الصكوك دخلهم الشهري 420 </div>
-
 
 <div id="prix">
 9,500,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -6964,39 +5657,24 @@ Duplexe
 <span class="StylH2">
 Bâtiment 
 	<br />
-	Teyarett 
+	Teyarett
 
 </span>
 <br />
 <span class="datestyle">10-02-2025 15:46</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358150&adtre=فرصة TOYOTA Drogba Gris"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -7005,18 +5683,14 @@ Bâtiment
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">فرصة TOYOTA Drogba Gris</div>
-
 
 <div id="prix">
 260,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -7026,39 +5700,24 @@ Bâtiment
 <span class="StylH2">
 Voitures 
 	<br />
-	Nouakchott 
+	Nouakchott
 
 </span>
 <br />
 <span class="datestyle">10-02-2025 15:44</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=308494&adtre=Raf 4 2014"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -7066,62 +5725,43 @@ Voitures
  	  	<img src="/produitsedr/produit_smph/308494_psp.jpg" title="Raf 4 2014" border="0"/ alt="Raf 4 2014">      
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">Raf 4 2014</div>
-
 
 <div id="prix">
 420,000 MRU
  
 </div>
 
-
 <div id="vendue_loue">
 
     Vendue تم البيع
-  
+
 </div>
 
 <div id="autre_infos">
 <span class="StylH2">
 Voitures 
 	<br />
-	Nouakchott 
+	Nouakchott
 
 </span>
 <br />
 <span class="datestyle">10-02-2025 15:33</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=346389&adtre=TOYOTA COROLLA 2010"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -7129,62 +5769,43 @@ Voitures
  	  	<img src="/produitsedr/produit_smph/346389_psp.jpg" title="TOYOTA COROLLA 2010" border="0"/ alt="TOYOTA COROLLA 2010">      
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">TOYOTA COROLLA 2010</div>
-
 
 <div id="prix">
 250,000 MRU
  
 </div>
 
-
 <div id="vendue_loue">
 
     Vendue تم البيع
-  
+
 </div>
 
 <div id="autre_infos">
 <span class="StylH2">
 Voitures 
 	<br />
-	Nouakchott 
+	Nouakchott
 
 </span>
 <br />
 <span class="datestyle">10-02-2025 15:32</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358162&adtre=قطعة أرض"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -7193,19 +5814,15 @@ Voitures
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">قطعة أرض</div>
 
-
 <div id="prix">
 
 prix indéterminé
- 
-</div>
 
+</div>
 
 <div id="vendue_loue">
 
@@ -7215,39 +5832,24 @@ prix indéterminé
 <span class="StylH2">
 Terrain 
 	<br />
-	Teyarett 
+	Teyarett
 
 </span>
 <br />
 <span class="datestyle">10-02-2025 14:39</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358146&adtre=الصحراوي سمعة للبيع"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -7256,18 +5858,14 @@ Terrain
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">الصحراوي سمعة للبيع</div>
-
 
 <div id="prix">
 9,000,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -7277,39 +5875,24 @@ Terrain
 <span class="StylH2">
 Maison - Villa 
 	<br />
-	Tevragh-Zeina 
+	Tevragh-Zeina
 
 </span>
 <br />
 <span class="datestyle">10-02-2025 13:39</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=352195&adtre=RAV4 D4D 2008 جديده ميهي مرقمه"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -7317,62 +5900,43 @@ Maison - Villa
  	  	<img src="/produitsedr/produit_smph/352195_psp.jpg" title="RAV4 D4D 2008 جديده ميهي مرقمه" border="0"/ alt="RAV4 D4D 2008 جديده ميهي مرقمه">      
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">RAV4 D4D 2008 جديده ميهي مرقمه</div>
-
 
 <div id="prix">
 370,000 MRU
  
 </div>
 
-
 <div id="vendue_loue">
 
     Vendue تم البيع
-  
+
 </div>
 
 <div id="autre_infos">
 <span class="StylH2">
 Voitures 
 	<br />
-	Nouakchott 
+	Nouakchott
 
 </span>
 <br />
 <span class="datestyle">10-02-2025 11:51</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358135&adtre=فرصة نيمرو فى الترحيل Secteur 20-extM"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -7381,18 +5945,14 @@ Voitures
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">فرصة نيمرو فى الترحيل Secteur 20-extM</div>
-
 
 <div id="prix">
 85,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -7402,39 +5962,24 @@ Voitures
 <span class="StylH2">
 Terrain 
 	<br />
-	Toujounine 
+	Toujounine
 
 </span>
 <br />
 <span class="datestyle">10-02-2025 11:25</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=356310&adtre=مكاتب للبيع حالة جيدة "> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -7442,19 +5987,15 @@ Terrain
  	  	<img src="/produitsedr/produit_smph/356310_psp.jpg" title="مكاتب للبيع حالة جيدة " border="0"/ alt="مكاتب للبيع حالة جيدة ">      
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">مكاتب للبيع حالة جيدة </div>
 
-
 <div id="prix">
 
 prix indéterminé
- 
-</div>
 
+</div>
 
 <div id="vendue_loue">
 
@@ -7464,39 +6005,24 @@ prix indéterminé
 <span class="StylH2">
 Autres 
 	<br />
-	Nouakchott 
+	Nouakchott
 
 </span>
 <br />
 <span class="datestyle">10-02-2025 09:18</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=341759&adtre=BECOTECH sarl"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -7504,19 +6030,15 @@ Autres
  	  	<img src="/produitsedr/produit_smph/341759_psp.jpg" title="BECOTECH sarl" border="0"/ alt="BECOTECH sarl">      
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">BECOTECH sarl</div>
 
-
 <div id="prix">
 
 prix indéterminé
- 
-</div>
 
+</div>
 
 <div id="vendue_loue">
 
@@ -7526,39 +6048,24 @@ prix indéterminé
 <span class="StylH2">
 Prestations de services 
 	<br />
-	Nouakchott 
+	Nouakchott
 
 </span>
 <br />
 <span class="datestyle">10-02-2025 09:18</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=355947&adtre=Xbox one s avec 7 games "> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -7566,18 +6073,14 @@ Prestations de services
  	  	<img src="/produitsedr/produit_smph/355947_psp.jpg" title="Xbox one s avec 7 games " border="0"/ alt="Xbox one s avec 7 games ">      
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">Xbox one s avec 7 games </div>
-
 
 <div id="prix">
 7,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -7587,39 +6090,24 @@ Prestations de services
 <span class="StylH2">
 Jeux vidéo et Consoles 
 	<br />
-	Nouadhibou 
+	Nouadhibou
 
 </span>
 <br />
 <span class="datestyle">10-02-2025 09:18</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358124&adtre=ملح"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -7628,18 +6116,14 @@ Jeux vidéo et Consoles
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">ملح</div>
-
 
 <div id="prix">
 650,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -7649,39 +6133,24 @@ Jeux vidéo et Consoles
 <span class="StylH2">
 Maison - Villa 
 	<br />
-	Arafat 
+	Arafat
 
 </span>
 <br />
 <span class="datestyle">09-02-2025 19:49</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358119&adtre=مطعم جاهز و متكامل للبيع"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -7690,18 +6159,14 @@ Maison - Villa
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">مطعم جاهز و متكامل للبيع</div>
-
 
 <div id="prix">
 700,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -7711,39 +6176,24 @@ Maison - Villa
 <span class="StylH2">
 Restaurants 
 	<br />
-	Nouakchott 
+	Nouakchott
 
 </span>
 <br />
 <span class="datestyle">09-02-2025 17:55</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358115&adtre=عندن تراب اكبير احذى الجامعه لبنانيه "> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -7752,18 +6202,14 @@ Restaurants
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">عندن تراب اكبير احذى الجامعه لبنانيه </div>
-
 
 <div id="prix">
 42,000,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -7773,39 +6219,24 @@ Restaurants
 <span class="StylH2">
 Terrain 
 	<br />
-	Tevragh-Zeina 
+	Tevragh-Zeina
 
 </span>
 <br />
 <span class="datestyle">09-02-2025 17:01</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358113&adtre=عروض جديدة"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -7814,19 +6245,15 @@ Terrain
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">عروض جديدة</div>
 
-
 <div id="prix">
 
 prix indéterminé
- 
-</div>
 
+</div>
 
 <div id="vendue_loue">
 
@@ -7836,39 +6263,24 @@ prix indéterminé
 <span class="StylH2">
 Maison - Villa 
 	<br />
-	Tevragh-Zeina 
+	Tevragh-Zeina
 
 </span>
 <br />
 <span class="datestyle">09-02-2025 16:21</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=357865&adtre=Vente d un camion Mercedes 207"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -7877,18 +6289,14 @@ Maison - Villa
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">Vente d un camion Mercedes 207</div>
-
 
 <div id="prix">
 280,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -7898,39 +6306,24 @@ Maison - Villa
 <span class="StylH2">
 Bus, camion, caravanne 
 	<br />
-	Nouakchott 
+	Nouakchott
 
 </span>
 <br />
 <span class="datestyle">09-02-2025 14:07</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=358070&adtre=سمع للبيع في تفرغ زينه  أجديد ما فاة اقرب مسجد ولدددو"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -7939,18 +6332,14 @@ Bus, camion, caravanne
   
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">سمع للبيع في تفرغ زينه  أجديد ما فاة اقرب مسجد ولدددو</div>
-
 
 <div id="prix">
 6,500,000 MRU
  
 </div>
-
 
 <div id="vendue_loue">
 
@@ -7960,39 +6349,24 @@ Bus, camion, caravanne
 <span class="StylH2">
 Maison - Villa 
 	<br />
-	Tevragh-Zeina 
+	Tevragh-Zeina
 
 </span>
 <br />
 <span class="datestyle">08-02-2025 15:41</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
   	<a href="/annonces.cfm?pdtid=352025&adtre=هايلكس موديل 2024 جديدة صفر كلومتر"> 
   
     <div id="rptregion" class="rptregion">
   
-        
-
-
 
 
 <div id="photo">
@@ -8000,54 +6374,38 @@ Maison - Villa
  	  	<img src="/produitsedr/produit_smph/352025_psp.jpg" title="هايلكس موديل 2024 جديدة صفر كلومتر" border="0"/ alt="هايلكس موديل 2024 جديدة صفر كلومتر">      
 </div>
 
-
-
 <div id="annonce">
 
 <div id="titre">هايلكس موديل 2024 جديدة صفر كلومتر</div>
-
 
 <div id="prix">
 1,910,000 MRU
  
 </div>
 
-
 <div id="vendue_loue">
 
     Vendue تم البيع
-  
+
 </div>
 
 <div id="autre_infos">
 <span class="StylH2">
 Voitures 
 	<br />
-	Nouakchott 
+	Nouakchott
 
 </span>
 <br />
 <span class="datestyle">06-02-2025 16:40</span>
 <br />
 
-
-
-
-
 </div>
 
 </div>
-
-
-
 
 </div>
 </a>
-
-
-
-
- 
 
     <div id="paginorder1">
       <table width="100%" border="0">
@@ -8055,6 +6413,7 @@ Voitures
           <td nowrap="nowrap">          </td>
           <td height="22" nowrap="nowrap" class="Style15 Style18">Page</td>
           <td nowrap="nowrap"><form name="form3" id="form3" action="&#x2f;index.cfm" method="post" onsubmit="return _CF_checkform3(this)"> <input name="pgdemande1" type="text" value="1" id="pgdemande1"  onkeypress="return isNumberKeyc(event)"  size="2"  /><input name="Submit" id="Submit"  type="submit" value="Aller" class="allercacher"  /></form>
+
 </td>
           <td nowrap="nowrap">
               <div id="ttpn1"><span class="Style19">de</span> <span class="Style18">1936</span></div>
@@ -8069,22 +6428,19 @@ Voitures
   
 </div>
 
-
-
-
 </div>
 <div id="seppppar">
 
   <div id="bar_cont">
 
-  <a href="/Index.cfm">الرئيسية</a> &nbsp; | &nbsp;
-  <a href="/qui-sommes-nous.cfm">من نحن</a>  &nbsp;| &nbsp;
-  <a href="/contact.cfm">للاتصال بنا</a>&nbsp;| &nbsp;
-  
+<a href="/Index.cfm">الرئيسية</a> &nbsp; | &nbsp;
+<a href="/qui-sommes-nous.cfm">من نحن</a> &nbsp;| &nbsp;
+<a href="/contact.cfm">للاتصال بنا</a>&nbsp;| &nbsp;
+
   <a href="https://www.voursa.com/feedrss_voursa.xml">
   <img src="/RSS.gif" alt="rss-icon" width="20" height="20" / style="vertical-align:bottom"></a>
 
-  <a href="https://www.voursa.com/feedrss_voursa.xml">RSS</a>
+<a href="https://www.voursa.com/feedrss_voursa.xml">RSS</a>
 
   </div>
 
@@ -8094,8 +6450,5 @@ Voitures
 
 </div>
 
-
-
 </body>
 </html>
-

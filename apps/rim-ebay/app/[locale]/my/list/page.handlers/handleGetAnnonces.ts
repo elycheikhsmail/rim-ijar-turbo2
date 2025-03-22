@@ -1,14 +1,14 @@
-import prisma from '../../../../../lib/prisma'; 
+import prisma from "../../../../../lib/prisma";
 
 export async function handleGetAnnonces(
   userId: string,
   locale: string,
-  filters: Record<string, string | number | boolean | undefined> = {}
+  filters: Record<string, string | number | boolean | undefined> = {},
 ) {
   try {
     const annonces = await prisma.annonce.findMany({
-      where: { 
-        userId: userId
+      where: {
+        userId: userId,
       },
       select: {
         id: true,
@@ -29,7 +29,6 @@ export async function handleGetAnnonces(
       },
     });
 
-
     return {
       pageAnnonceData: {
         annonces: annonces,
@@ -38,10 +37,10 @@ export async function handleGetAnnonces(
       errorMessage: null,
     };
   } catch (error) {
-    console.error('Error fetching annonces:', error);
+    console.error("Error fetching annonces:", error);
     return {
       pageAnnonceData: null,
-      errorMessage: 'Error fetching annonces',
+      errorMessage: "Error fetching annonces",
     };
   }
 }

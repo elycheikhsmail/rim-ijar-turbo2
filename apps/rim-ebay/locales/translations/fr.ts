@@ -8,14 +8,15 @@ export default {
     signup: "S'inscrire",
     rimIjar: "Rim Ijar",
     labo: "Labo",
-    Avances:"Avances",
-    Recherche:"Recherche",
-    Annoce:"Tous les anonnces"
+    Avances: "Avances",
+    Recherche: "Recherche",
+    Annoce: "Tous les anonnces",
   },
   addAnnonce: {
     welcome: "Bienvenue",
     addNew: "Ajouter une annonce",
-    mockedData: "Les données ne sont pas encore stockées dans la base de données mocked.",
+    mockedData:
+      "Les données ne sont pas encore stockées dans la base de données mocked.",
     annonceType: "Type d'annonce",
     selectType: "Sélectionnez un type",
     location: "Location",
@@ -32,7 +33,7 @@ export default {
     categories: {
       immobilier: "Immobilier",
       véhicule: "Automobile",
-      Emploi: "Emploi"
+      Emploi: "Emploi",
     },
     subCategories: {
       Maison: "Maison",
@@ -40,10 +41,9 @@ export default {
       Voiture: "Voiture",
       Moto: "Moto",
       CDI: "CDI",
-      CDD: "CDD"
-    }
-    ,
-    search:"Recherche..."
+      CDD: "CDD",
+    },
+    search: "Recherche...",
   },
   pagination: {
     next: "Suivant",
@@ -60,22 +60,22 @@ export default {
     noAccount: "Vous n'avez pas de compte?",
     createAccount: "Créer un compte",
     invalidCredentials: "Identifiants invalides",
-    emailLabel:"email",
-    passwordLabel:"password",
-    confirmPasswordLabel:"confirm mot de pass",
-    submitButton:"connexion",
-    passwordsNotMatch:"",
-    passwordMinLength:"",
-    passwordRequired:"",
-     emailInvalid:"",
-     emailRequired:"",
-     success:"",
-     unexpectedError:"",
-    error:"",
-    sendingData:"",
-    validationInProgress:"",
-    validationFailed:"",
-    passwordShort:""
+    emailLabel: "email",
+    passwordLabel: "password",
+    confirmPasswordLabel: "confirm mot de pass",
+    submitButton: "connexion",
+    passwordsNotMatch: "",
+    passwordMinLength: "",
+    passwordRequired: "",
+    emailInvalid: "",
+    emailRequired: "",
+    success: "",
+    unexpectedError: "",
+    error: "",
+    sendingData: "",
+    validationInProgress: "",
+    validationFailed: "",
+    passwordShort: "",
   },
   register: {
     title: "Créer un compte",
@@ -89,16 +89,16 @@ export default {
     loginHere: "Se connecter ici",
     passwordMismatch: "Les mots de passe ne correspondent pas",
     accountCreated: "Compte créé avec succès",
-    emailLabel:"email",
-    passwordLabel:"password",
-    confirmPasswordLabel:"confirm mot de pass",
-    submitButton:"register",
-    passwordsNotMatch:"",
-    passwordMinLength:"",
-    passwordRequired:"",
-     emailInvalid:"",
-     emailRequired:"",
-     success:""
+    emailLabel: "email",
+    passwordLabel: "password",
+    confirmPasswordLabel: "confirm mot de pass",
+    submitButton: "register",
+    passwordsNotMatch: "",
+    passwordMinLength: "",
+    passwordRequired: "",
+    emailInvalid: "",
+    emailRequired: "",
+    success: "",
   },
   footer: {
     aboutUs: "À propos de nous",
@@ -109,7 +109,7 @@ export default {
   },
   errors: {
     required: "Ce champ est requis",
-    requiredFields:"Ce champ est requis",
+    requiredFields: "Ce champ est requis",
     invalidEmail: "Adresse e-mail invalide",
     minLength: "Ce champ doit contenir au moins {min} caractères",
     maxLength: "Ce champ ne peut pas dépasser {max} caractères",
@@ -120,7 +120,7 @@ export default {
     invalidData: "Données invalides",
     serverError: "Erreur serveur",
     networkError: "Erreur de connexion",
-    unexpectedError: "Une erreur inattendue s'est produite"
+    unexpectedError: "Une erreur inattendue s'est produite",
   },
   successMessages: {
     listingAdded: "L'annonce a été ajoutée avec succès",
@@ -128,7 +128,7 @@ export default {
     passwordChanged: "Mot de passe modifié avec succès",
     annonceCreated: "Annonce créée avec succès",
     dataFetched: "Données récupérées avec succès",
-    dataSaved: "Données enregistrées avec succès"
+    dataSaved: "Données enregistrées avec succès",
   },
   validation: {
     emailRequired: "L'e-mail est obligatoire",
@@ -141,15 +141,15 @@ export default {
     creating: "Création de l'annonce en cours...",
     success: "Annonce créée avec succès !",
     error: "Erreur lors de la création de l'annonce",
-    successdelete:"L`utilisateur delete avec succees",
-    errordelete:"Error lors de deleting l`utilisateur",
-    updating:"updating"
+    successdelete: "L`utilisateur delete avec succees",
+    errordelete: "Error lors de deleting l`utilisateur",
+    updating: "updating",
   },
-  editAnnonce:{
-    "edit":"edit"
+  editAnnonce: {
+    edit: "edit",
   },
-  prix:"Prix",
-  Annonces:"Mes Annonces",
-  Contact:"contact",
-  annonce:"Mon annonce"
+  prix: "Prix",
+  Annonces: "Mes Annonces",
+  Contact: "contact",
+  annonce: "Mon annonce",
 } as const;

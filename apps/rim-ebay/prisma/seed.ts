@@ -25,8 +25,8 @@ async function main() {
     typesAnnoncesData.map((type, index) =>
       prisma.optionsModel.create({
         data: { ...type, priority: index + 1, depth: 1, tag: "typeAnnonce" },
-      })
-    )
+      }),
+    ),
   );
 
   console.log("✅ Types d'annonces insérés.");
@@ -41,7 +41,9 @@ async function main() {
 
   const categories = await Promise.all(
     categoriesData.map(async (category, index) => {
-      const parentType = typeAnnonces.find((t) => t.name === category.parentType);
+      const parentType = typeAnnonces.find(
+        (t) => t.name === category.parentType,
+      );
       return prisma.optionsModel.create({
         data: {
           name: category.name,
@@ -52,7 +54,7 @@ async function main() {
           tag: "category",
         },
       });
-    })
+    }),
   );
 
   console.log("✅ Catégories insérées.");
@@ -71,7 +73,9 @@ async function main() {
 
   const subCategories = await Promise.all(
     subCategoriesData.map(async (subCategory, index) => {
-      const parentCategory = categories.find((c) => c.name === subCategory.parentCategory);
+      const parentCategory = categories.find(
+        (c) => c.name === subCategory.parentCategory,
+      );
       return prisma.optionsModel.create({
         data: {
           name: subCategory.name,
@@ -82,7 +86,7 @@ async function main() {
           tag: "subcategory",
         },
       });
-    })
+    }),
   );
 
   console.log("✅ Sous-catégories insérées.");
@@ -90,7 +94,12 @@ async function main() {
   // 👤 Utilisateurs
   const hashedPassword = await bcrypt.hash("password123", 10);
   const users = await Promise.all(
-    ["ali@example.com", "fatima@example.com", "omar@example.com", "khadija@example.com"].map((email) =>
+    [
+      "ali@example.com",
+      "fatima@example.com",
+      "omar@example.com",
+      "khadija@example.com",
+    ].map((email) =>
       prisma.user.create({
         data: {
           email,
@@ -99,8 +108,8 @@ async function main() {
           lastLogin: new Date(),
           isActive: true,
         },
-      })
-    )
+      }),
+    ),
   );
 
   console.log("✅ Utilisateurs insérés.");
@@ -124,31 +133,43 @@ async function main() {
 
   for (let i = 0; i < 50; i++) {
     // 🔹 Sélectionner un typeAnnonce aléatoire
-    const randomType = typeAnnonces[Math.floor(Math.random() * typeAnnonces.length)];
+    const randomType =
+      typeAnnonces[Math.floor(Math.random() * typeAnnonces.length)];
     if (!randomType) continue; // Skip if no valid type is found
 
     // 🔹 Sélectionner une catégorie liée au typeAnnonce choisi
-    const filteredCategories = categories.filter((c) => c.parentID === randomType.id);
+    const filteredCategories = categories.filter(
+      (c) => c.parentID === randomType.id,
+    );
     if (filteredCategories.length === 0) continue; // Éviter les erreurs si pas de catégorie liée
-    const randomCategory = filteredCategories[Math.floor(Math.random() * filteredCategories.length)];
+    const randomCategory =
+      filteredCategories[Math.floor(Math.random() * filteredCategories.length)];
     if (!randomCategory) continue; // Skip if no valid category is found
 
     // 🔹 Sélectionner une sous-catégorie liée à la catégorie choisie
-    const filteredSubCategories = subCategories.filter((s) => s.parentID === randomCategory.id);
-    const randomSubCategory = filteredSubCategories.length > 0
-      ? filteredSubCategories[Math.floor(Math.random() * filteredSubCategories.length)]
-      : null;
+    const filteredSubCategories = subCategories.filter(
+      (s) => s.parentID === randomCategory.id,
+    );
+    const randomSubCategory =
+      filteredSubCategories.length > 0
+        ? filteredSubCategories[
+            Math.floor(Math.random() * filteredSubCategories.length)
+          ]
+        : null;
 
     // 🔹 Sélectionner un utilisateur aléatoire
     const randomUser = users[Math.floor(Math.random() * users.length)];
     if (!randomUser) continue; // Skip if no valid user is found
-    const randomTitle = titles[Math.floor(Math.random() * titles.length)] || "Annonce sans titre";
-    const randomDescription = descriptions[Math.floor(Math.random() * descriptions.length)] || "Pas de description";
+    const randomTitle =
+      titles[Math.floor(Math.random() * titles.length)] || "Annonce sans titre";
+    const randomDescription =
+      descriptions[Math.floor(Math.random() * descriptions.length)] ||
+      "Pas de description";
     const randomPrice = Math.floor(Math.random() * 50000) + 500; // Prix entre 500 et 50000
 
     await prisma.annonce.create({
       data: {
-        typeAnnonceId: randomType.id ,
+        typeAnnonceId: randomType.id,
         categorieId: randomCategory.id,
         subcategorieId: randomSubCategory ? randomSubCategory.id : "",
         lieuId: randomCategory.id, // Utilisation de la catégorie comme lieu pour l'exemple
@@ -165,9 +186,9 @@ async function main() {
 
         // ✅ Ajouter les objets complets en JSON
         typeAnnonce: randomType,
-        categorie:randomCategory ,
-        subcategorie: randomSubCategory 
-      }
+        categorie: randomCategory,
+        subcategorie: randomSubCategory,
+      },
     });
   }
 

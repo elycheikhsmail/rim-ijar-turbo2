@@ -9,5 +9,3 @@ Le site a pour mission de faciliter la mise en relation entre vendeurs, acheteur
 4. **Recherche de biens à acheter** : Offrir un outil simple pour trouver des biens immobiliers (maisons, terrains, etc.) à l'achat.
 5. **Recherche de biens à louer** : Simplifier la recherche de véhicules ou de logements à louer en Mauritanie.
 6. **Découverte de services supplémentaires** : Proposer diverses options et services additionnels, disponibles directement sur la plateforme.
-
- 

@@ -1,7 +1,7 @@
 "use sever";
 import MyAnnonceDetailsUI from "./ui";
 import BackButton from "@repo/ui/Navigation";
-import { cookies } from "next/headers"; 
+import { cookies } from "next/headers";
 
 export default async function AnnonceDetail({
   params,
@@ -15,12 +15,7 @@ export default async function AnnonceDetail({
       <div>
         <BackButton />
       </div>
-      <MyAnnonceDetailsUI
-        lang={params.locale}
-        annonceId={userIdConverted}
-      />
-
+      <MyAnnonceDetailsUI lang={params.locale} annonceId={userIdConverted} />
     </div>
-
   );
 }

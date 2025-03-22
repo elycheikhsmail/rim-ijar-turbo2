@@ -1,8 +1,7 @@
-import { OptionsModel } from "./prisma-client";  
+import { OptionsModel } from "./prisma-client";
 
- 
 // Interface pour la table Users
-export  interface User {
+export interface User {
   id: string; // Identifiant unique
   email: string; // Adresse email
   password: string; // Mot de passe
@@ -31,11 +30,11 @@ export interface TypeAnnonce {
 }
 
 export interface SubCategory {
-  id:number ,
-  name :string ,
-  nameAr:string,
-  priority?:number,
-  createdAt:Date
+  id: number;
+  name: string;
+  nameAr: string;
+  priority?: number;
+  createdAt: Date;
 }
 
 // Interface pour la table Categories

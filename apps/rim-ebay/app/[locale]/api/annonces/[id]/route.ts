@@ -1,11 +1,13 @@
 // app/api/annonces/[id]/route.ts
 
 import prisma from "../../../../../lib/prisma";
-import { NextResponse } from 'next/server';
-
+import { NextResponse } from "next/server";
 
 // 1. Récupérer une annonce par ID (GET)
-export async function GET(request: Request, { params }: { params: { id: string } }): Promise<NextResponse> {
+export async function GET(
+  request: Request,
+  { params }: { params: { id: string } },
+): Promise<NextResponse> {
   try {
     const annonceId = params.id;
 
@@ -14,31 +16,36 @@ export async function GET(request: Request, { params }: { params: { id: string }
     });
 
     if (!annonce) {
-      return NextResponse.json({ error: 'Annonce not found' }, { status: 404 });
+      return NextResponse.json({ error: "Annonce not found" }, { status: 404 });
     }
 
     return NextResponse.json(annonce, { status: 200 });
   } catch (error) {
     console.error("Error getting annonce:", error);
-    return NextResponse.json({ error: 'Error getting annonce' }, { status: 500 });
+    return NextResponse.json(
+      { error: "Error getting annonce" },
+      { status: 500 },
+    );
   }
 }
 
 // 2. Mettre à jour une annonce (PUT)
-export async function PUT(request: Request, { params }: { params: { id: string } }): Promise<NextResponse> {
+export async function PUT(
+  request: Request,
+  { params }: { params: { id: string } },
+): Promise<NextResponse> {
   try {
-    const annonceId = String(params.id) 
+    const annonceId = String(params.id);
     //parseInt(params.id, 10); // Convertir l'ID en nombre entier
     const data: any = await request.json(); // Récupérer les données de mise à jour
 
     const typeAnnonce = await prisma.optionsModel.findFirst({
-      where: { id: data.typeAnnonceId ,depth:1}
-    })
-   
+      where: { id: data.typeAnnonceId, depth: 1 },
+    });
+
     const categorie = await prisma.optionsModel.findFirst({
-      where: { id: data.categorie ,depth:2},
-      
-    }) 
+      where: { id: data.categorie, depth: 2 },
+    });
     const updatedAnnonce = await prisma.annonce.update({
       where: { id: annonceId },
       data: {
@@ -56,36 +63,40 @@ export async function PUT(request: Request, { params }: { params: { id: string }
         status: data.status,
         updatedAt: new Date(),
         typeAnnonce,
-        categorie
-
+        categorie,
       },
     });
-    
 
     return NextResponse.json(updatedAnnonce, { status: 200 });
-  } catch (error) { 
-    return NextResponse.json({ error: 'Error updating annonce' }, { status: 500 });
+  } catch (error) {
+    return NextResponse.json(
+      { error: "Error updating annonce" },
+      { status: 500 },
+    );
   }
 }
 
 // 3. Supprimer une annonce (DELETE)
-export async function DELETE(request: Request,
-  { params }: { params: { id: string } }): Promise<NextResponse> {
+export async function DELETE(
+  request: Request,
+  { params }: { params: { id: string } },
+): Promise<NextResponse> {
   try {
-    const annonceId = params.id
+    const annonceId = params.id;
 
     const updatedAnnonce = await prisma.annonce.update({
       where: { id: annonceId },
       data: {
         status: "deleted",
-
       },
     });
 
     return NextResponse.json(updatedAnnonce, { status: 200 });
-
   } catch (error) {
-    console.log("error delete:: ", error)
-    return NextResponse.json({ error: 'Error deleting annonce' }, { status: 500 });
+    console.log("error delete:: ", error);
+    return NextResponse.json(
+      { error: "Error deleting annonce" },
+      { status: 500 },
+    );
   }
 }

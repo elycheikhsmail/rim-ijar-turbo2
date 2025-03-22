@@ -41,15 +41,15 @@ export default async function Page({
   return (
     <div className="py-28 px-14">
       <div className="flex justify-between">
-
-          
-          <div className="text-2xl mt-1 font-bold text-gray-800 uppercase mb-6">LIST DES ANONNCES </div>
-            <Input/>
-            <button className="flex items-center px-7 w-20 h-10 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600">
-                  <FaPlus className="mr-2" />
-            </button>
-           </div>
-          <AnnonceAdmin annonces={annonces} />
+        <div className="text-2xl mt-1 font-bold text-gray-800 uppercase mb-6">
+          LIST DES ANONNCES{" "}
+        </div>
+        <Input />
+        <button className="flex items-center px-7 w-20 h-10 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600">
+          <FaPlus className="mr-2" />
+        </button>
+      </div>
+      <AnnonceAdmin annonces={annonces} />
     </div>
   );
 }

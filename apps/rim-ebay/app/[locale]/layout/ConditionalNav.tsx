@@ -14,13 +14,17 @@ export default function ConditionalNav({
   const pathname = usePathname();
 
   // Vérifiez si on est dans l'espace admin
-  const isAdmin = pathname.startsWith( `/${lang}/admin`);
+  const isAdmin = pathname.startsWith(`/${lang}/admin`);
 
   if (isAdmin) return null;
 
   return (
     <>
-      {isAuthenticated ? <NavAuthUI lang={lang} /> : <NavNonAuthUI lang={lang} />}
+      {isAuthenticated ? (
+        <NavAuthUI lang={lang} />
+      ) : (
+        <NavNonAuthUI lang={lang} />
+      )}
     </>
   );
 }
