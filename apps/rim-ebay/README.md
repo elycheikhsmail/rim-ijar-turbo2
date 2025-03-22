@@ -1,74 +1,67 @@
-# rim-ebay
-# prequis pour utiliser ce projet 
-- node version v22.13.0
-- docker (ou docker)
-- docker compose (ou docker compose)
+```markdown
+# Rim-eBay
 
-- utiliser bun 1.2.0 (ou plus recent) pour gerer les deps
-- les workflow dans .github/workflows/deploy-nextjs-postgress.yml peut servir sur comment installer et utiliser ce projet en local ou dans le cloud
-- 
-# prepare env variable
-create .env file then copy past .env.exemple in it
+Projet Next.js avec base de données MongoDB pour une marketplace inspirée d'eBay.
 
-# use docker to create postgres database for dev
+## Prérequis
+- Node.js v22.13.0
+- Docker + Docker Compose
+- pnpm 
+- MongoDB (via Docker)
 
-```shell
-docker container stop  mongodb-dev && \
-docker container rm -f mongodb-dev && \
-docker volume rm mongodb-data && \
-docker run -d \
-  --name mongodb-dev \
-  --hostname localhost \
-  -p 27017:27017 \
-  -v mongodb-data:/data/db \
-  mongo:latest \
-  --replSet rs0 --noauth 
-  
-docker exec -it mongodb-dev mongosh 
-rs.initiate(
-  {
-    _id: 'rs0',
-    members: [
-      {
-        _id: 0,
-        host: 'localhost:27017',
-        priority: 1
-      }
-    ]
-  }
-);
+## Configuration initiale
 
-rs.status();
+### 1. Variables d'environnement
+```bash
+cp .env.example .env
+# Modifier les valeurs dans .env selon votre configuration
+```
+
+### 2. Démarrage de MongoDB avec Docker
+```bash
+# Activer Docker au démarrage (Ubuntu)
+sudo systemctl enable docker
+# Lancer le conteneur MongoDB
+docker compose -f docker-compose.mongo.yml up -d
+
+# Vérifier le conteneur
+docker ps -a | grep mongodb-dev
+
+# Initialiser le replica set (première fois seulement)
+docker exec -it mongodb-dev mongosh
+rs.initiate({ _id: 'rs0', members: [{ _id: 0, host: 'localhost:27017' }] })
+```
+
+### 3. Configuration de la base de données
+```bash
+pnpm install 
+pnpm approve-builds 
+npx prisma db push  # Créer les tables
+```
+
+## Scripts utiles
+
+### Développement
+```bash
+bun run dev  # Serveur Next.js avec hot-reloading
+```
+
+### Mise en cache
+```bash
+bun run cache  # Génère des fichiers JSON de cache pour les catégories/annonces
+```
+
+## Débogage
+Configuration VS Code prête dans `.vscode/launch.json` :
+- Breakpoints natifs
+- Inspection des variables
+- Debug console intégré
+
+## Déploiement
+Voir le workflow GitHub `.github/workflows/deploy-nextjs-postgress.yml` pour :
+- Configuration cloud
+- Intégration continue
+- Déploiement automatisé
 
  
-
-```
-# create database tables and seed it
-```shell
-bun install
-bun run build
-npx prisma db push 
-bun run seed
-
-```
-
  
-# scripts
-- dev
-```shell
-bun run dev
-```
-for running nextjs dev server 
-
-- cache
-
-```shell
-bun run cache
-```
-for caching annonces options (annonces types, categories, subcategories,.. ) from database into json files in data folder
-
-# debug (without console.log)
-
-we configure debug for Vscode in .vscode/launch.json
-# test 
-okkkkkk
