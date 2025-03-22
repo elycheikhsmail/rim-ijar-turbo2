@@ -1,5 +1,5 @@
 # rim-ebay
-# prequis pour utiliser ce projet
+# prequis pour utiliser ce projet 
 - node version v22.13.0
 - docker (ou docker)
 - docker compose (ou docker compose)
@@ -70,3 +70,4 @@ for caching annonces options (annonces types, categories, subcategories,.. ) fro
 # debug (without console.log)
 
 we configure debug for Vscode in .vscode/launch.json
+# test
