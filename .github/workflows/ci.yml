@@ -21,7 +21,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '22'
-          cache: 'pnpm'
+      - name: Setup pnpm
+        uses: pnpm/action-setup-pnpm@v2
+        with:
+            version: "pnpm@10.6.3" # ou la version souhaitée
+        
 
       # Étape 3 : Installation des dépendances avec pnpm
       - name: Install dependencies with pnpm
