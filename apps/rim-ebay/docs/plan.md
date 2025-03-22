@@ -1,6 +1,5 @@
 Based on my analysis, I can now present a comprehensive plan to fix the TypeScript issues after migrating from PostgreSQL to MongoDB. Here's the plan:
 
-
 I've identified several type inconsistencies that need to be addressed after the migration from PostgreSQL to MongoDB. Here's the detailed plan to fix these issues:
 
 Update Interface Types in app/types.ts:

@@ -1,6 +1,7 @@
 D'accord, je comprends. Vous avez décidé de changer de stratégie et d'utiliser une approche différente pour gérer les données mockées dans votre application Next.js avec TypeScript. Vous avez défini des règles claires pour structurer votre code et gérer les données. Voici un résumé de vos nouvelles règles :
 
 1. Vous avez un dossier `page.handlers` qui contient plusieurs fichiers pour chaque gestionnaire de page :
+
    - `x.interface.ts` : Ce fichier définit l'interface pour les données.
    - `x.mocked.ts` : Ce fichier contient le code pour gérer les données mockées.
    - `x.real.ts` : Ce fichier contient le code pour gérer les données réelles.
@@ -8,6 +9,7 @@ D'accord, je comprends. Vous avez décidé de changer de stratégie et d'utilise
    - `data.json` : Ce fichier contient les données mockées qui simulent les données de la base de données.
 
 2. Vous avez deux types de composants dans votre application :
+
    - `page.tsx` : Ces composants gèrent les opérations côté serveur.
    - `ui.tsx` : Ces composants gèrent les opérations côté client, lorsque c'est possible.
 

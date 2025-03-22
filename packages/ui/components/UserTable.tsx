@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useState, useEffect } from "react";
 
@@ -26,8 +26,10 @@ const UserTable = ({ users }: UserTableProps) => {
   const toggleEtat = (id: number) => {
     setUserList((prevUsers) =>
       prevUsers.map((user) =>
-        user.id === id ? { ...user, etat: user.etat === "Actif" ? "Inactif" : "Actif" } : user
-      )
+        user.id === id
+          ? { ...user, etat: user.etat === "Actif" ? "Inactif" : "Actif" }
+          : user,
+      ),
     );
   };
 
@@ -45,20 +47,36 @@ const UserTable = ({ users }: UserTableProps) => {
       <table className="min-w-full table-auto">
         <thead>
           <tr className="border-b">
-            <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Username</th>
-            <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Telephone</th>
-            <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Etat</th>
-            <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Dernière Connexion</th>
-            <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Actions</th>
+            <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">
+              Username
+            </th>
+            <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">
+              Telephone
+            </th>
+            <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">
+              Etat
+            </th>
+            <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">
+              Dernière Connexion
+            </th>
+            <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">
+              Actions
+            </th>
           </tr>
         </thead>
         <tbody>
           {userList.map((user) => (
             <tr key={user.id} className="border-b hover:bg-gray-50">
-              <td className="px-6 py-3 text-sm text-gray-700">{user.username}</td>
-              <td className="px-6 py-3 text-sm text-gray-700">{user.telephone}</td>
+              <td className="px-6 py-3 text-sm text-gray-700">
+                {user.username}
+              </td>
+              <td className="px-6 py-3 text-sm text-gray-700">
+                {user.telephone}
+              </td>
               <td className="px-6 py-3 text-sm text-gray-700">{user.etat}</td>
-              <td className="px-6 py-3 text-sm text-gray-700">{user.derniereConnexion}</td>
+              <td className="px-6 py-3 text-sm text-gray-700">
+                {user.derniereConnexion}
+              </td>
               <td className="px-6 py-3 text-sm text-gray-700">
                 <button
                   onClick={() => toggleEtat(user.id)}

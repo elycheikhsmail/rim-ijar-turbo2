@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface EditFormDisplayProps {
   editTitle: string;
@@ -55,7 +55,7 @@ const EditFormDisplay: React.FC<EditFormDisplayProps> = ({
   setPrice,
   handleSubmit,
   onClose,
-  lang
+  lang,
 }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
@@ -70,9 +70,9 @@ const EditFormDisplay: React.FC<EditFormDisplayProps> = ({
               onChange={(e) => setSelectedTypeId(String(e.target.value))}
               className="border rounded w-full p-2"
             >
-              {typeAnnonces.map(type => (
+              {typeAnnonces.map((type) => (
                 <option key={type.id} value={type.id}>
-                  {lang === 'ar' ? type.nameAr : type.name}
+                  {lang === "ar" ? type.nameAr : type.name}
                 </option>
               ))}
             </select>
@@ -82,13 +82,13 @@ const EditFormDisplay: React.FC<EditFormDisplayProps> = ({
           <div className="mb-4">
             <label className="block mb-1">{categoryLabel}</label>
             <select
-              value={selectedCategoryId || ''}
+              value={selectedCategoryId || ""}
               onChange={(e) => setSelectedCategoryId(String(e.target.value))}
               disabled={!selectedTypeId}
               className="border rounded w-full p-2"
             >
               <option value="">{selectCategoryLabel}</option>
-              {categories.map(category => (
+              {categories.map((category) => (
                 <option key={category.id} value={category.id}>
                   {category.name}
                 </option>
@@ -100,13 +100,13 @@ const EditFormDisplay: React.FC<EditFormDisplayProps> = ({
           <div className="mb-4">
             <label className="block mb-1">{subCategoryLabel}</label>
             <select
-              value={selectedSubCategoryId || ''}
+              value={selectedSubCategoryId || ""}
               onChange={(e) => setSelectedSubCategoryId(String(e.target.value))}
               disabled={!selectedCategoryId}
               className="border rounded w-full p-2"
             >
               <option value="">{selectSubCategoryLabel}</option>
-              {filteredSubCategories.map(subCategory => (
+              {filteredSubCategories.map((subCategory) => (
                 <option key={subCategory.id} value={subCategory.id}>
                   {subCategory.name}
                 </option>
@@ -139,8 +139,19 @@ const EditFormDisplay: React.FC<EditFormDisplayProps> = ({
           </div>
 
           <div className="flex justify-end">
-            <button type="button" onClick={onClose} className="mr-2 bg-gray-300 p-2 rounded">{cancelLabel}</button>
-            <button type="submit" className="bg-blue-500 p-2 rounded text-white">{updateLabel}</button>
+            <button
+              type="button"
+              onClick={onClose}
+              className="mr-2 bg-gray-300 p-2 rounded"
+            >
+              {cancelLabel}
+            </button>
+            <button
+              type="submit"
+              className="bg-blue-500 p-2 rounded text-white"
+            >
+              {updateLabel}
+            </button>
           </div>
         </form>
       </div>

@@ -1,16 +1,16 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
-import toast from 'react-hot-toast';
+import axios from "axios";
+import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import { Category, SubCategory } from  "@repo/mytypes/types";
+import { Category, SubCategory } from "@repo/mytypes/types";
 //"@repo/mytypes/types";
-import EditFormDisplay from './EditFormDisplay';
+import EditFormDisplay from "./EditFormDisplay";
 
 export interface EditFormProps {
   lang: string;
   annonceId: string;
-  userid:string
+  userid: string;
   initialData: {
     typeAnnonceId: string;
     categorieId: string;
@@ -36,12 +36,12 @@ export interface EditFormProps {
   labelCancel?: string;
 }
 
-const EditForm: React.FC<EditFormProps> = ({ 
-  lang, 
+const EditForm: React.FC<EditFormProps> = ({
+  lang,
   userid,
-  annonceId, 
-  initialData, 
-  onUpdate, 
+  annonceId,
+  initialData,
+  onUpdate,
   onClose,
   errorsFetchTypeAnnonces = "Failed to fetch type annonces",
   errorsFetchCategories = "Failed to fetch categories",
@@ -61,10 +61,18 @@ const EditForm: React.FC<EditFormProps> = ({
   //const t = useI18n();
   const [typeAnnonces, setTypeAnnonces] = useState<any[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
-  const [filteredSubCategories, setFilteredSubCategories] = useState<SubCategory[]>([]);
-  const [selectedTypeId, setSelectedTypeId] = useState<string>(initialData.typeAnnonceId);
-  const [selectedCategoryId, setSelectedCategoryId] = useState<string>(initialData.categorieId);
-  const [selectedSubCategoryId, setSelectedSubCategoryId] = useState<string>(initialData.subcategorieId);
+  const [filteredSubCategories, setFilteredSubCategories] = useState<
+    SubCategory[]
+  >([]);
+  const [selectedTypeId, setSelectedTypeId] = useState<string>(
+    initialData.typeAnnonceId,
+  );
+  const [selectedCategoryId, setSelectedCategoryId] = useState<string>(
+    initialData.categorieId,
+  );
+  const [selectedSubCategoryId, setSelectedSubCategoryId] = useState<string>(
+    initialData.subcategorieId,
+  );
   const [description, setDescription] = useState(initialData.description);
   const [price, setPrice] = useState(initialData.price.toString());
   const router = useRouter();
@@ -86,7 +94,9 @@ const EditForm: React.FC<EditFormProps> = ({
     const fetchCategories = async () => {
       if (selectedTypeId) {
         try {
-          const response = await axios.get(`/${lang}/api/categories?typeAnnonceId=${selectedTypeId}`);
+          const response = await axios.get(
+            `/${lang}/api/categories?typeAnnonceId=${selectedTypeId}`,
+          );
           setCategories(response.data);
         } catch (error) {
           toast.error(errorsFetchCategories);
@@ -103,7 +113,9 @@ const EditForm: React.FC<EditFormProps> = ({
     const fetchSubCategories = async () => {
       if (selectedCategoryId) {
         try {
-          const response = await axios.get(`/${lang}/api/subCategories?CategoryId=${selectedCategoryId}`);
+          const response = await axios.get(
+            `/${lang}/api/subCategories?CategoryId=${selectedCategoryId}`,
+          );
           setFilteredSubCategories(response.data);
         } catch (error) {
           toast.error(errorsFetchSubCategories);
@@ -118,16 +130,16 @@ const EditForm: React.FC<EditFormProps> = ({
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     const loadingToast = toast.loading(notificationsUpdating);
-    
+
     try {
       const annonceData = {
         typeAnnonceId: selectedTypeId,
         categorieId: selectedCategoryId,
         subcategorieId: selectedSubCategoryId,
         lieuId: 1,
-        userId:userid,
+        userId: userid,
         description,
         price: Number(price),
         title: "Titre",
@@ -135,36 +147,40 @@ const EditForm: React.FC<EditFormProps> = ({
         haveImage: false,
         firstImagePath: "",
         images: [],
-        status: "active"
+        status: "active",
       };
 
-      const response = await axios.put(`/${lang}/api/annonces/${annonceId}`, annonceData, {
-        headers: {
-          'Content-Type': 'application/json',
+      const response = await axios.put(
+        `/${lang}/api/annonces/${annonceId}`,
+        annonceData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
         },
-      });
+      );
 
       if (response.status !== 200) {
-        throw new Error('Erreur lors de la mise à jour de l\'annonce');
+        throw new Error("Erreur lors de la mise à jour de l'annonce");
       }
 
       toast.success(notificationsSuccess, {
         id: loadingToast,
       });
-     // router.push(`/my/details/${annonceId}?a=b`);
-      router.refresh()
+      // router.push(`/my/details/${annonceId}?a=b`);
+      router.refresh();
       onClose();
-      onUpdate()
+      onUpdate();
     } catch (error) {
       toast.error(notificationsError, {
         id: loadingToast,
       });
-      console.error('Erreur:', error);
+      console.error("Erreur:", error);
     }
   };
 
   return (
-    <EditFormDisplay 
+    <EditFormDisplay
       typeAnnonces={typeAnnonces}
       categories={categories}
       filteredSubCategories={filteredSubCategories}
@@ -181,13 +197,9 @@ const EditForm: React.FC<EditFormProps> = ({
       handleSubmit={handleSubmit}
       onClose={onClose}
       lang={lang}
-      editTitle={
-        lang === "fr"
-          ? "Modifier l'annonce"
-          : "Edit the ad"
-      }
+      editTitle={lang === "fr" ? "Modifier l'annonce" : "Edit the ad"}
       cancelLabel={labelCancel}
-      updateLabel={labelUpdate} 
+      updateLabel={labelUpdate}
       annonceTypeLabel={labelTypeAnnonce}
       categoryLabel={labelCategory}
       selectCategoryLabel={labelCategory}
@@ -195,7 +207,6 @@ const EditForm: React.FC<EditFormProps> = ({
       selectSubCategoryLabel={labelSubCategory}
       descriptionLabel={labelDescription}
       priceLabel={labelPrice}
- 
     />
   );
 };

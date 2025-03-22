@@ -21,14 +21,12 @@ async function main() {
     },
   );
 
-  const categories = await prisma.optionsModel.findMany(
-    {
-      where: {
-        tag: "category",
-        depth: 2,
-      },
+  const categories = await prisma.optionsModel.findMany({
+    where: {
+      tag: "category",
+      depth: 2,
     },
-  );
+  });
   fs.writeFile("./data/category.json", JSON.stringify(categories), (err) => {
     if (err) {
       console.error("Erreur lors de l'écriture dans le fichier:", err);
@@ -37,14 +35,12 @@ async function main() {
     }
   });
 
-  const subcategories = await prisma.optionsModel.findMany(
-    {
-      where: {
-        tag: "subcategory",
-        depth: 3,
-      },
+  const subcategories = await prisma.optionsModel.findMany({
+    where: {
+      tag: "subcategory",
+      depth: 3,
     },
-  );
+  });
   fs.writeFile(
     "./data/subCategory.json",
     JSON.stringify(subcategories),

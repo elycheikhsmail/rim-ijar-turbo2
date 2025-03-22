@@ -1,15 +1,12 @@
-actualiser le code suivant : 
-```ts
-import { NextResponse } from 'next/server'; 
- 
-export async function POST(request: Request) {
-  
-   
-}
+actualiser le code suivant :
 
+```ts
+import { NextResponse } from "next/server";
+
+export async function POST(request: Request) {}
 ```
 
- Voici une version modifiée du texte pour décrire le processus de connexion (login) :
+Voici une version modifiée du texte pour décrire le processus de connexion (login) :
 
 ### Traitement de la demande de connexion (mockée) - Phase de conception
 
@@ -36,5 +33,5 @@ export async function POST(request: Request) {
    - **200 - OK** : Pour les demandes réussies, avec la génération de tokens pour un utilisateur authentifié.
 
 ### jwt :
+
 on utilse jsonwebtoken pour generer jwt
- 

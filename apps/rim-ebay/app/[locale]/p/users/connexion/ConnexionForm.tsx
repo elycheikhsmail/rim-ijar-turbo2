@@ -2,17 +2,17 @@
 
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
-import { useI18n } from "../../../../../locales/client"; 
-import axios from 'axios';
+import { useI18n } from "../../../../../locales/client";
+import axios from "axios";
 import { toast, Toaster } from "react-hot-toast";
 import { cookies } from "next/headers";
 
-export default function ConnexionForm({ lang = "ar" }) { 
-  const router = useRouter(); 
+export default function ConnexionForm({ lang = "ar" }) {
+  const router = useRouter();
   const t = useI18n();
-  
-  const defaultEmail = 'user1@example.com';
-  const defaultPassword = 'password123';
+
+  const defaultEmail = "user1@example.com";
+  const defaultPassword = "password123";
 
   const [email, setEmail] = useState(defaultEmail);
   const [password, setPassword] = useState(defaultPassword);
@@ -69,7 +69,7 @@ export default function ConnexionForm({ lang = "ar" }) {
           },
         });
         router.push(`/${lang}/my/list`);
-        router.refresh()
+        router.refresh();
       }
     } catch (error: any) {
       if (error.response?.status === 401) {
@@ -120,7 +120,9 @@ export default function ConnexionForm({ lang = "ar" }) {
               className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               required
             />
-            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+            )}
           </div>
           <div>
             <label
@@ -137,15 +139,16 @@ export default function ConnexionForm({ lang = "ar" }) {
               className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               required
             />
-            {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password}</p>}
+            {errors.password && (
+              <p className="text-red-500 text-sm mt-1">{errors.password}</p>
+            )}
           </div>
           <div>
             <button
               id="submit"
               type="submit"
               className={`w-full font-bold py-2 px-4 rounded-md transition-colors duration-300 
-                ${isLoading ? "bg-gray-400 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-700 text-white"}`
-              }
+                ${isLoading ? "bg-gray-400 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-700 text-white"}`}
               disabled={isLoading} // Disable button while loading
             >
               {isLoading ? (
@@ -154,10 +157,17 @@ export default function ConnexionForm({ lang = "ar" }) {
                 t("connexion.submitButton")
               )}
             </button>
-            {submitStatus && <p className="mt-4 text-center text-sm">{submitStatus}</p>}
+            {submitStatus && (
+              <p className="mt-4 text-center text-sm">{submitStatus}</p>
+            )}
           </div>
         </form>
-        <div onClick={handleNavigate} className="cursor-pointer text-gray-400 font-medium">creer un account</div>
+        <div
+          onClick={handleNavigate}
+          className="cursor-pointer text-gray-400 font-medium"
+        >
+          creer un account
+        </div>
       </div>
 
       {/* CSS for the loader */}
@@ -173,8 +183,12 @@ export default function ConnexionForm({ lang = "ar" }) {
         }
 
         @keyframes spin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
         }
       `}</style>
     </main>

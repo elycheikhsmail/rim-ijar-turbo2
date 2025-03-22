@@ -2,8 +2,8 @@ import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcrypt";
 import * as fs from "fs/promises";
 import * as path from "path";
-import { fileURLToPath } from 'url';
-import { URL } from 'url';
+import { fileURLToPath } from "url";
+import { URL } from "url";
 
 const prisma = new PrismaClient();
 
@@ -12,23 +12,32 @@ const __dirname = path.dirname(__filename);
 
 // Define the base directory for your optionsModel data
 const BASE_DATA_DIR = path.join(__dirname, "seed_data");
-const ANNONCE_DATA_PATH = path.join(__dirname, "seed_data", "annonces", "data.json");
+const ANNONCE_DATA_PATH = path.join(
+  __dirname,
+  "seed_data",
+  "annonces",
+  "data.json",
+);
 
-async function processOptionsModelFile(filePath: string, parentId: string | null, depth: number) {
-  console.log("  start seed options        ")
-  console.log("=============================================")
-  console.log("  filePath", filePath)
-  console.log("  parentId", parentId)
-  console.log("  depth", depth)
+async function processOptionsModelFile(
+  filePath: string,
+  parentId: string | null,
+  depth: number,
+) {
+  console.log("  start seed options        ");
+  console.log("=============================================");
+  console.log("  filePath", filePath);
+  console.log("  parentId", parentId);
+  console.log("  depth", depth);
   try {
     await fs.access(filePath);
     const rawData = await fs.readFile(filePath, "utf-8");
-    const optionsModels = JSON.parse(rawData) as { 
-      name: string; 
-      nameAr: string; 
-      priority: number; 
-      tag: string; 
-      parentName?: string 
+    const optionsModels = JSON.parse(rawData) as {
+      name: string;
+      nameAr: string;
+      priority: number;
+      tag: string;
+      parentName?: string;
     }[];
 
     for (const optionsModel of optionsModels) {
@@ -58,14 +67,18 @@ async function processOptionsModelFile(filePath: string, parentId: string | null
     }
   } catch (error) {
     // No optionsModels.json file present or error processing it
-    if ((error as { code?: string }).code !== 'ENOENT') {
+    if ((error as { code?: string }).code !== "ENOENT") {
       console.error("Error processing options model file:", filePath, error);
     }
   }
 }
 
 // Recursive function to seed optionsModels from the directory structure
-async function seedOptionsModels(dirPath: string, parentId: string | null = null, depth: number = 0) {
+async function seedOptionsModels(
+  dirPath: string,
+  parentId: string | null = null,
+  depth: number = 0,
+) {
   try {
     const items = await fs.readdir(dirPath);
 
@@ -83,12 +96,16 @@ async function seedOptionsModels(dirPath: string, parentId: string | null = null
         const parentOptionsModel = await prisma.optionsModel.findFirst({
           where: {
             parentID: parentId,
-            name: item,  // assuming directory name matches the optionsModel name
+            name: item, // assuming directory name matches the optionsModel name
           },
         });
 
         // Recursively process subdirectories with the correct parent ID
-        await seedOptionsModels(itemPath, parentOptionsModel?.id || parentId, depth+1);
+        await seedOptionsModels(
+          itemPath,
+          parentOptionsModel?.id || parentId,
+          depth + 1,
+        );
       }
     }
   } catch (error) {
@@ -101,11 +118,11 @@ async function main() {
   await prisma.annonce.deleteMany({});
   await prisma.user.deleteMany({});
   await prisma.optionsModel.deleteMany({});
-   // Seed optionsModels from the directory structure
-   await seedOptionsModels(BASE_DATA_DIR);
-   console.log("  end seed options        ")
-   console.log("=============================================")
-   
+  // Seed optionsModels from the directory structure
+  await seedOptionsModels(BASE_DATA_DIR);
+  console.log("  end seed options        ");
+  console.log("=============================================");
+
   // Seed Users
   const hashedPassword = await bcrypt.hash("password123", 10); // Hash the password
   const user1 = await prisma.user.create({
@@ -128,20 +145,25 @@ async function main() {
     },
   });
 
- 
   try {
     const rawAnnonceData = await fs.readFile(ANNONCE_DATA_PATH, "utf-8");
     const annonceData = JSON.parse(rawAnnonceData) as any[];
 
     for (const annonce of annonceData) {
       // Dynamically retrieve the corresponding optionsModels based on annonce data
-      const typeAnnonce = await prisma.optionsModel.findFirst({ where: { name: annonce.typeAnnonceName } });
+      const typeAnnonce = await prisma.optionsModel.findFirst({
+        where: { name: annonce.typeAnnonceName },
+      });
       console.log("typeAnnonce", typeAnnonce);
-      const categorie = await prisma.optionsModel.findFirst({ where: { name: annonce.categorieName } });
+      const categorie = await prisma.optionsModel.findFirst({
+        where: { name: annonce.categorieName },
+      });
       console.log("categorie", categorie);
-      const subcategorie = await prisma.optionsModel.findFirst({ where: { name: annonce.subcategorieName } });
+      const subcategorie = await prisma.optionsModel.findFirst({
+        where: { name: annonce.subcategorieName },
+      });
       console.log("subcategorie", subcategorie);
-      
+
       if (!typeAnnonce || !categorie || !subcategorie) {
         console.error("OptionsModels not found for annonce:", annonce);
         continue;

@@ -1,22 +1,27 @@
 "use client";
- 
-import { Annonce } from "@repo/mytypes/types"; 
+
+import { Annonce } from "@repo/mytypes/types";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useParams, usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import toast from 'react-hot-toast';
+import toast from "react-hot-toast";
 import { useI18n } from "../../../../../locales/client";
 import { useRouter } from "next/navigation";
 import EditForm from "@repo/ui/EditForm/EditForm";
 import { LottieAnimation } from "@repo/ui/LottieAnimation";
 import MyAnnonceDetailsView from "./MyAnnonceDetailsView";
 
- 
-export default function MyAnnonceDetailsCompo({ lang = "ar", annonceId }:
-  { lang?: string, annonceId: string}) {
+export default function MyAnnonceDetailsCompo({
+  lang = "ar",
+  annonceId,
+}: {
+  lang?: string;
+  annonceId: string;
+}) {
   const hostServerForImages = "https://picsum.photos";
-  const getImageUrl = (imagePath: string) => `${hostServerForImages}/${imagePath}`;
+  const getImageUrl = (imagePath: string) =>
+    `${hostServerForImages}/${imagePath}`;
 
   //const anonnceById = annonce?.filter(annonce=> annonce.id=annonceId)
   const params = useParams();
@@ -35,7 +40,7 @@ export default function MyAnnonceDetailsCompo({ lang = "ar", annonceId }:
     categorieId: annonces?.categorie?.id ?? "",
     subcategorieId: String(annonces?.subcategorie?.id) ?? "",
     description: annonces?.description ?? "",
-    price: annonces?.price ?? 0
+    price: annonces?.price ?? 0,
   }); // État pour les données initiales
 
   const pathname = usePathname();
@@ -53,30 +58,27 @@ export default function MyAnnonceDetailsCompo({ lang = "ar", annonceId }:
     }
   };
   useEffect(() => {
-      fetchAnnonce(); // Call the fetch function
-  }, [annonceId, pathname,  id, lang]);
+    fetchAnnonce(); // Call the fetch function
+  }, [annonceId, pathname, id, lang]);
 
   const handleDelte = async () => {
-
     const loadingToast = toast.loading(t("notifications.creating"));
     try {
-      const res = await axios.delete(`/fr/api/annonces/${id}`)
+      const res = await axios.delete(`/fr/api/annonces/${id}`);
       if (res.status === 200) {
         toast.success(t("notifications.successdelete"), {
           id: loadingToast,
         });
-        router.push('/my/list');
-        router.refresh()
+        router.push("/my/list");
+        router.refresh();
       }
     } catch (error) {
-
       toast.error(t("notifications.errordelete"), {
         id: loadingToast,
       });
-      console.error('Erreur:', error);
-
+      console.error("Erreur:", error);
     }
-  }
+  };
 
   const handleUpdate = () => {
     fetchAnnonce(); // Recharge l'annonce après modification
@@ -93,9 +95,8 @@ export default function MyAnnonceDetailsCompo({ lang = "ar", annonceId }:
         price: annonces.price,
       });
     }
-    setEditModalOpen(true); 
+    setEditModalOpen(true);
   };
-
 
   return (
     <>
@@ -105,7 +106,7 @@ export default function MyAnnonceDetailsCompo({ lang = "ar", annonceId }:
         <MyAnnonceDetailsView
           lang={lang}
           annonce={annonces}
-          i18nAnnonce={t('annonce')}
+          i18nAnnonce={t("annonce")}
           i18nContact={t("Contact")}
           i18nPrix={t("prix")}
           getImageUrl={getImageUrl}
@@ -122,7 +123,7 @@ export default function MyAnnonceDetailsCompo({ lang = "ar", annonceId }:
           annonceId={String(id)}
           initialData={initialData}
           onClose={() => setEditModalOpen(false)}
-          onUpdate={handleUpdate} 
+          onUpdate={handleUpdate}
         />
       )}
     </>

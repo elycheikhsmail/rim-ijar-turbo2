@@ -1,11 +1,11 @@
-import AddAnnonceUI from "./AddAnnonceUI";  
+import AddAnnonceUI from "./AddAnnonceUI";
 import { cookies } from "next/headers";
 
 export default function AddAnnonce({ params }: { params: { locale: string } }) {
-  const userid = cookies().get("user")
-  const userIdConverted = String(userid?.value) 
+  const userid = cookies().get("user");
+  const userIdConverted = String(userid?.value);
   //? parseInt(userid.value) : 0;
-  console.log("userid : " , userIdConverted)
+  console.log("userid : ", userIdConverted);
   return (
     <>
       <AddAnnonceUI lang={params.locale} userid={userIdConverted} />

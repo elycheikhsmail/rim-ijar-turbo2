@@ -1,6 +1,5 @@
-
-import type { Metadata } from "next"; 
-import Locale from 'intl-locale-textinfo-polyfill'
+import type { Metadata } from "next";
+import Locale from "intl-locale-textinfo-polyfill";
 import "./globals.css";
 import ConditionalNav from "./layout/ConditionalNav";
 import { Providers } from "./layout/providers";
@@ -16,22 +15,21 @@ export default function RootLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-    params:{
-      locale:string;
-      segment: string;
-    }
+  params: {
+    locale: string;
+    segment: string;
+  };
 }>) {
- 
- // const { direction: dir } = new Locale(params.locale).textInfo;
-   let dir = 'ltr'; // Default direction
-   try {
-     if (params.locale) {
-       const locale = new Locale(params.locale);
-       dir = locale.textInfo.direction;
-     }
-   } catch (error) {
-     console.error('Invalid locale provided:', params.locale, error);
-   }
+  // const { direction: dir } = new Locale(params.locale).textInfo;
+  let dir = "ltr"; // Default direction
+  try {
+    if (params.locale) {
+      const locale = new Locale(params.locale);
+      dir = locale.textInfo.direction;
+    }
+  } catch (error) {
+    console.error("Invalid locale provided:", params.locale, error);
+  }
   const hasSession = cookies().has("jwt");
 
   return (
@@ -40,7 +38,7 @@ export default function RootLayout({
         className={`bg-gradient-to-br  from-gray-50 to-gray-100 min-h-screen`}
       >
         <Providers locale={params.locale}>
-        <ConditionalNav lang={params.locale} isAuthenticated={hasSession} />
+          <ConditionalNav lang={params.locale} isAuthenticated={hasSession} />
           {children}
         </Providers>
       </body>

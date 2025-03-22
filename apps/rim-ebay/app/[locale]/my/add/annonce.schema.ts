@@ -1,7 +1,6 @@
- 
-import { z } from "zod"; 
+import { z } from "zod";
 
-const annonceSchema = z.object({ 
+const annonceSchema = z.object({
   categorie_id: z.number(),
   //.string().transform((v) => parseInt(v)),
   sub_categorie_id: z.number(),
@@ -13,6 +12,6 @@ const annonceSchema = z.object({
   //z.string().transform((v) => parseInt(v))
 });
 
-export type AnnonceSchema = z.infer< typeof annonceSchema >
- 
-export default annonceSchema
+export type AnnonceSchema = z.infer<typeof annonceSchema>;
+
+export default annonceSchema;

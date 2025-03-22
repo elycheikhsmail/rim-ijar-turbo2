@@ -1,38 +1,37 @@
 // middleware.ts
-import { createI18nMiddleware } from 'next-international/middleware'
-import { NextResponse } from 'next/server'
-import type { NextRequest } from 'next/server'
+import { createI18nMiddleware } from "next-international/middleware";
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 import { cookies } from "next/headers";
 
 const I18nMiddleware = createI18nMiddleware({
-  locales: ['ar', 'fr'],
-  defaultLocale: 'ar'
-})
+  locales: ["ar", "fr"],
+  defaultLocale: "ar",
+});
 
 export function middleware(request: NextRequest) {
- 
-  const url = request.nextUrl.clone()
-  const path = url.pathname
- // Exclure favicon.ico
- if (path === "/favicon.ico") {
-  return NextResponse.next();
-}
-  
-  const hasSession = cookies().has("jwt"); 
+  const url = request.nextUrl.clone();
+  const path = url.pathname;
+  // Exclure favicon.ico
+  if (path === "/favicon.ico") {
+    return NextResponse.next();
+  }
+
+  const hasSession = cookies().has("jwt");
   // Vérifier si le chemin commence par /my ou /admin
-  if (path.startsWith('/fr/my') || path.startsWith('/fr/admin')) {
-    const hasSession = cookies().has("jwt"); 
-    
+  if (path.startsWith("/fr/my") || path.startsWith("/fr/admin")) {
+    const hasSession = cookies().has("jwt");
+
     if (!hasSession) {
       // Rediriger vers la page de connexion
-      url.pathname = `/p/users/connexion`
-      return NextResponse.redirect(url)
+      url.pathname = `/p/users/connexion`;
+      return NextResponse.redirect(url);
     }
   }
 
-  return I18nMiddleware(request)
+  return I18nMiddleware(request);
 }
 
 export const config = {
-  matcher: ['/((?!api|static|.*\\..*|_next|favicon.ico|robots.txt).*)']
-}
+  matcher: ["/((?!api|static|.*\\..*|_next|favicon.ico|robots.txt).*)"],
+};
