@@ -2,6 +2,7 @@
   "name": "rim-ijar-turbo",
   "private": true,
   "scripts": {
+    "prepare": "husky",
     "build": "turbo run build",
     "generate": "turbo run generate",
     "build:only": "turbo run build:only",
@@ -14,10 +15,11 @@
     "react": "^18.2.0"
   },
   "devDependencies": {
+    "@types/react": "^18.0.26",
+    "husky": "^9.1.7",
     "prettier": "^3.5.3",
     "turbo": "^2.4.4",
-    "typescript": "5.8.2",
-    "@types/react": "^18.0.26"
+    "typescript": "5.8.2"
   },
   "packageManager": "pnpm@10.6.3",
   "engines": {
