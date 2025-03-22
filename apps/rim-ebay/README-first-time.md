@@ -6,7 +6,6 @@ Projet Next.js avec base de données MongoDB pour une marketplace inspirée d'eB
 ## Prérequis
 - Node.js v22.13.0
 - Docker + Docker Compose
-- Bun 1.2.0+ (gestion des dépendances)
 - pnpm 
 - MongoDB (via Docker)
 
