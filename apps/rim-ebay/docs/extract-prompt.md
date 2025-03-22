@@ -1454,7 +1454,6 @@ function mob_navclose() {
 
 <div id="separateur"></div>
 
-
 </div>
 
   <div id="separateur1"></div>
@@ -1556,7 +1555,6 @@ document.write('<select name="categorie" id="categorie" class="requireddropdownl
 
         <dl>
             <dt id="dt_ar">
-
 
 <div class="ordinateurz" id="ordinateur">
 
@@ -2319,7 +2317,6 @@ document.write('<select name="modele" id="modele" class="requireddropdownlist1_2
 </div>
 
 </div>            
-            
 
 
 <div id="separationf"></div>
@@ -2334,6 +2331,7 @@ document.write('<select name="modele" id="modele" class="requireddropdownlist1_2
 السعر من: <input name="prix_min" type="text" maxlength="11"  autocomplete="off"  onkeypress="return isNumberKey(event)"  size="28"  class="requiredinput_price"  id="prix_min"  onkeyup="formatprix()"  onfocusout="prixcontrole()"  />
 
 إلى: <input name="prix_max" type="text" maxlength="11"  autocomplete="off"  onkeypress="return isNumberKey(event)"  size="28"  class="requiredinput_price"  id="prix_max"  onkeyup="formatprix()"  onfocusout="prixcontrole()"  />
+
 </dd>
 
   </dl>
@@ -2431,7 +2429,6 @@ document.write('<select name="modele" id="modele" class="requireddropdownlist1_2
     </dd>
   </dl>
 
-
 <dl>
   <dt id="dt_ar">    <div id="ajouter">
       <input name="submit" type="submit" value=" بحــث " style="font-size:22px"  id="submit"  />
@@ -2513,7 +2510,6 @@ document.write('<select name="categorie_fr" id="categorie_fr" class="requireddro
 
         <dl>
             <dt id="dt_fr">
-
 
 <div class="ordinateurz" id="ordinateur_fr">
 
@@ -3273,7 +3269,6 @@ Kilométrage (km)
 </div>
 
 </div>            
-            
 
 
 <div id="separationf"></div>
@@ -3288,6 +3283,7 @@ Kilométrage (km)
 Prix (MRU) de: <input name="prix_min" type="text" maxlength="11"  autocomplete="off"  onkeypress="return isNumberKey(event)"  size="28"  class="requiredinput_price_fr"  id="prix_min"  onkeyup="formatprix_fr()"  onfocusout="prixcontrole()"  />
 
 à: <input name="prix_max" type="text" maxlength="11"  autocomplete="off"  onkeypress="return isNumberKey(event)"  size="28"  class="requiredinput_price_fr"  id="prix_max"  onkeyup="formatprix_fr()"  onfocusout="prixcontrole()"  />
+
 </dd>
 
   </dl>
@@ -3385,7 +3381,6 @@ Prix (MRU) de: <input name="prix_min" type="text" maxlength="11"  autocomplete="
     </dd>
   </dl>
 
-
 <dl>
   <dt id="dt_fr">    <div id="ajouter">
       <input name="submit" type="submit" value=" Rechercher " style="font-size:18px"  id="submit"  />
@@ -3428,7 +3423,6 @@ Prix (MRU) de: <input name="prix_min" type="text" maxlength="11"  autocomplete="
     
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -3472,7 +3466,6 @@ Nouakchott
     
     
     <div id="rptregion" class="rptregion_locat" style="background-color: #424B59">
-  
 
 
 <div id="photo">
@@ -3516,7 +3509,6 @@ Tevragh-Zeina
     
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -3559,7 +3551,6 @@ Nouakchott
     
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -3602,7 +3593,6 @@ Nouakchott
   	<a href="/annonces.cfm?pdtid=358327&adtre=فرصة حقيقية"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -3645,7 +3635,6 @@ Terrain
   	<a href="/annonces.cfm?pdtid=358333&adtre=منزل للبيع شانتيه حذه شركة الوطنيه "> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -3688,7 +3677,6 @@ Maison - Villa
   	<a href="/annonces.cfm?pdtid=358308&adtre=PlayStation 4"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -3731,7 +3719,6 @@ Jeux vidéo et Consoles
   	<a href="/annonces.cfm?pdtid=358315&adtre=عمارة اكبيرثلاثة طوابق فيه 8 شقق وطابق أرضي تفرغ زينة "> 
     
     <div id="rptregion" class="rptregion_locat" style="background-color: #424B59">
-  
 
 
 <div id="photo">
@@ -3776,7 +3763,6 @@ Jeux vidéo et Consoles
   	<a href="/annonces.cfm?pdtid=358311&adtre=260م# فيها بتيك ف الجامعه لاول للببع "> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -3819,7 +3805,6 @@ Terrain
   	<a href="/annonces.cfm?pdtid=358303&adtre=دار فعرفات بالقرب من حمام الياسمين للبيع "> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -3862,7 +3847,6 @@ Terrain
   	<a href="/annonces.cfm?pdtid=358298&adtre=5 شقق عند كرفور عين الطلح "> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -3905,7 +3889,6 @@ Appartement
   	<a href="/annonces.cfm?pdtid=358294&adtre=فرصة 600م٢ عل گدروه للبيع "> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -3948,7 +3931,6 @@ Commerces et Locaux industriels
   	<a href="/annonces.cfm?pdtid=348645&adtre=Machen à café WEGA"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -3990,7 +3972,6 @@ Electroménager et Vaisselles
   	<a href="/annonces.cfm?pdtid=351702&adtre=Tvz"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -4032,7 +4013,6 @@ Ordinateurs portables
   	<a href="/annonces.cfm?pdtid=357631&adtre=MACBOOK AIR M3 13 POUCES((13inch)2024"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -4074,7 +4054,6 @@ Ordinateurs portables
   	<a href="/annonces.cfm?pdtid=344335&adtre=Chevrolet équinox LT 2018 arrivage "> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -4116,7 +4095,6 @@ Voitures
   	<a href="/annonces.cfm?pdtid=358292&adtre=نيمرو من سكتير1 كتاب الضبط حذا طب القلب وزين"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -4159,7 +4137,6 @@ Terrain
   	<a href="/annonces.cfm?pdtid=358289&adtre=دار ما فات اندخلت بالقرب من اوفي الكيل للبيع "> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -4202,7 +4179,6 @@ Maison - Villa
   	<a href="/annonces.cfm?pdtid=358287&adtre=نص نيمرو فالكرن من سكتير 4 مبيوع ب 36"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -4245,7 +4221,6 @@ Terrain
   	<a href="/annonces.cfm?pdtid=358282&adtre=تنويش "> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -4288,7 +4263,6 @@ Terrain
   	<a href="/annonces.cfm?pdtid=358281&adtre=ديبلكس اجديد  5   غرف وجسلة وكراج ب300   الف"> 
     
     <div id="rptregion" class="rptregion_locat" style="background-color: #424B59">
-  
 
 
 <div id="photo">
@@ -4333,7 +4307,6 @@ Terrain
   	<a href="/annonces.cfm?pdtid=358270&adtre=نيمرو من شرم الشيخ "> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -4376,7 +4349,6 @@ Terrain
   	<a href="/annonces.cfm?pdtid=358258&adtre=200م من ام اسويت اعل شارع اكبير فرصة "> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -4419,7 +4391,6 @@ Terrain
   	<a href="/annonces.cfm?pdtid=358260&adtre=نيمرو من سكتير  4 مساحة 600 مبيوع ب45مليون"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -4462,7 +4433,6 @@ Terrain
   	<a href="/annonces.cfm?pdtid=358259&adtre=نيمرو فكرن من سوكوجيم ام فرصة اعل شارعين "> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -4505,7 +4475,6 @@ Terrain
   	<a href="/annonces.cfm?pdtid=357740&adtre=باص للبيع و بحالة ممتازة"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -4548,7 +4517,6 @@ Voitures
   	<a href="/annonces.cfm?pdtid=348545&adtre=Moulin à café"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -4590,7 +4558,6 @@ Electroménager et Vaisselles
   	<a href="/annonces.cfm?pdtid=358250&adtre=شانتيه وافيه مغطيه كامل اف ملح سكتير 5 "> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -4633,7 +4600,6 @@ Bâtiment
   	<a href="/annonces.cfm?pdtid=358247&adtre=ديبلكس 5غرف وجلسة وكراج يسع سيارتين ب200الف"> 
     
     <div id="rptregion" class="rptregion_locat" style="background-color: #424B59">
-  
 
 
 <div id="photo">
@@ -4678,7 +4644,6 @@ Bâtiment
   	<a href="/annonces.cfm?pdtid=358246&adtre=عرض جديد"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -4722,7 +4687,6 @@ Terrain
   	<a href="/annonces.cfm?pdtid=358245&adtre=ابرتماه 4غرف وكراج ب120الف"> 
     
     <div id="rptregion" class="rptregion_locat" style="background-color: #424B59">
-  
 
 
 <div id="photo">
@@ -4767,7 +4731,6 @@ Terrain
   	<a href="/annonces.cfm?pdtid=358244&adtre=سمعه ف ملح سكتير 4 للبيع "> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -4810,7 +4773,6 @@ Commerces et Locaux industriels
   	<a href="/annonces.cfm?pdtid=358236&adtre=سكتير5فنور"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -4853,7 +4815,6 @@ Terrain
   	<a href="/annonces.cfm?pdtid=358235&adtre=عمارة للبيع في ملح سكتير 4"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -4896,7 +4857,6 @@ Bâtiment
   	<a href="/annonces.cfm?pdtid=358226&adtre=عرض جديد"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -4940,7 +4900,6 @@ Maison - Villa
   	<a href="/annonces.cfm?pdtid=354212&adtre=RAV4 diesel"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -4982,7 +4941,6 @@ Voitures
   	<a href="/annonces.cfm?pdtid=350738&adtre=Prado 2009 "> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -5027,7 +4985,6 @@ Voitures
   	<a href="/annonces.cfm?pdtid=352199&adtre=Range rover évoque 2018 jdide mavat ora9met"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -5069,7 +5026,6 @@ Voitures
   	<a href="/annonces.cfm?pdtid=358222&adtre=نيمروات للبيع فنواذيب"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -5113,7 +5069,6 @@ Terrain
   	<a href="/annonces.cfm?pdtid=354885&adtre=فرصة فرصة حقيقية راف4فتحة ملفه جديد مانييل فول ابسيوه"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -5155,7 +5110,6 @@ Voitures
   	<a href="/annonces.cfm?pdtid=358214&adtre=الدار فوكه ستديوهن فملح سكتير 4 "> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -5198,7 +5152,6 @@ Maison - Villa
   	<a href="/annonces.cfm?pdtid=358206&adtre=نيمرو فسكتير 4"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -5241,7 +5194,6 @@ Terrain
   	<a href="/annonces.cfm?pdtid=358205&adtre=نيمرو من سكتير 4"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -5284,7 +5236,6 @@ Terrain
   	<a href="/annonces.cfm?pdtid=358195&adtre=دار احذ كارفور السدراي منقوش ومكروي فلكرن مبيوع فرص "> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -5327,7 +5278,6 @@ Maison - Villa
   	<a href="/annonces.cfm?pdtid=352181&adtre=Hp 19 بوصة "> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -5369,7 +5319,6 @@ Ordinateurs portables
   	<a href="/annonces.cfm?pdtid=355369&adtre=استابيليزاتير 5000 مزال اجديد"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -5411,7 +5360,6 @@ Electroménager et Vaisselles
   	<a href="/annonces.cfm?pdtid=358185&adtre=نيمروين للبيع عين الطلح شارع تجاري"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -5454,7 +5402,6 @@ Commerces et Locaux industriels
   	<a href="/annonces.cfm?pdtid=356332&adtre=Bus Mercedes Sprinter 2001"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -5498,7 +5445,6 @@ Voitures
   	<a href="/annonces.cfm?pdtid=334426&adtre=Acura RDX Sport full option"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -5542,7 +5488,6 @@ Voitures
   	<a href="/annonces.cfm?pdtid=358178&adtre=ديبلكس 7غرف وكراج مدخل سيارتين في سانتر امتير ب250الف"> 
     
     <div id="rptregion" class="rptregion_locat" style="background-color: #424B59">
-  
 
 
 <div id="photo">
@@ -5587,7 +5532,6 @@ Voitures
   	<a href="/annonces.cfm?pdtid=358173&adtre=عرض جديد"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -5631,7 +5575,6 @@ Duplexe
   	<a href="/annonces.cfm?pdtid=358165&adtre=أبرتماهات فاتحين أعل كدروه الصكوك دخلهم الشهري 420 "> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -5674,7 +5617,6 @@ Bâtiment
   	<a href="/annonces.cfm?pdtid=358150&adtre=فرصة TOYOTA Drogba Gris"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -5717,7 +5659,6 @@ Voitures
   	<a href="/annonces.cfm?pdtid=308494&adtre=Raf 4 2014"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -5761,7 +5702,6 @@ Voitures
   	<a href="/annonces.cfm?pdtid=346389&adtre=TOYOTA COROLLA 2010"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -5805,7 +5745,6 @@ Voitures
   	<a href="/annonces.cfm?pdtid=358162&adtre=قطعة أرض"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -5849,7 +5788,6 @@ Terrain
   	<a href="/annonces.cfm?pdtid=358146&adtre=الصحراوي سمعة للبيع"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -5892,7 +5830,6 @@ Maison - Villa
   	<a href="/annonces.cfm?pdtid=352195&adtre=RAV4 D4D 2008 جديده ميهي مرقمه"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -5936,7 +5873,6 @@ Voitures
   	<a href="/annonces.cfm?pdtid=358135&adtre=فرصة نيمرو فى الترحيل Secteur 20-extM"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -5979,7 +5915,6 @@ Terrain
   	<a href="/annonces.cfm?pdtid=356310&adtre=مكاتب للبيع حالة جيدة "> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -6022,7 +5957,6 @@ Autres
   	<a href="/annonces.cfm?pdtid=341759&adtre=BECOTECH sarl"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -6065,7 +5999,6 @@ Prestations de services
   	<a href="/annonces.cfm?pdtid=355947&adtre=Xbox one s avec 7 games "> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -6107,7 +6040,6 @@ Jeux vidéo et Consoles
   	<a href="/annonces.cfm?pdtid=358124&adtre=ملح"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -6150,7 +6082,6 @@ Maison - Villa
   	<a href="/annonces.cfm?pdtid=358119&adtre=مطعم جاهز و متكامل للبيع"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -6193,7 +6124,6 @@ Restaurants
   	<a href="/annonces.cfm?pdtid=358115&adtre=عندن تراب اكبير احذى الجامعه لبنانيه "> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -6236,7 +6166,6 @@ Terrain
   	<a href="/annonces.cfm?pdtid=358113&adtre=عروض جديدة"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -6280,7 +6209,6 @@ Maison - Villa
   	<a href="/annonces.cfm?pdtid=357865&adtre=Vente d un camion Mercedes 207"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -6323,7 +6251,6 @@ Bus, camion, caravanne
   	<a href="/annonces.cfm?pdtid=358070&adtre=سمع للبيع في تفرغ زينه  أجديد ما فاة اقرب مسجد ولدددو"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">
@@ -6366,7 +6293,6 @@ Maison - Villa
   	<a href="/annonces.cfm?pdtid=352025&adtre=هايلكس موديل 2024 جديدة صفر كلومتر"> 
   
     <div id="rptregion" class="rptregion">
-  
 
 
 <div id="photo">

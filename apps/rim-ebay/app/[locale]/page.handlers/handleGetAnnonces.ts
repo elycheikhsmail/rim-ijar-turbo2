@@ -16,9 +16,7 @@ interface Filters {
 
 export type { Filters };
 
-const handleGetAnnonces: (
-  filters?: Filters,
-) => Promise<{
+const handleGetAnnonces: (filters?: Filters) => Promise<{
   pageAnnonceData: IPageAnnonce | null;
   errorMessage: string;
 }> = async (filters: Filters = {}) => {
