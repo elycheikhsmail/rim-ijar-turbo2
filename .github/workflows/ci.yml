@@ -23,8 +23,8 @@ jobs:
           node-version: '22'
       - name: Install pnpm globally
         run: npm install -g pnpm@10.6.3
-        
- 
+      - name : Install turbo
+        run : pnpm install turbo --global
       # Étape 3 : Installation des dépendances avec pnpm
       - name: Install dependencies with pnpm
         run: pnpm install
