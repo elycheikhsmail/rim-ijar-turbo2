@@ -21,8 +21,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '22'
-      - name: Install pnpm globally
-        run: npm install -g pnpm@10.6.3
+    
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 10
+          run_install: false
       - name : Install turbo
         run : pnpm install turbo --global
       # Étape 3 : Installation des dépendances avec pnpm
