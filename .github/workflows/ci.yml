@@ -31,7 +31,7 @@ jobs:
 
       # Étape 4 : Vérification des types TypeScript
       - name: TypeScript type check
-        run: pnpm check-types
+        run : turbo telemetry disable && pnpm check-types
 
       # Étape 5 : Compilation du projet avec turbo
       - name: Build project with turbo
