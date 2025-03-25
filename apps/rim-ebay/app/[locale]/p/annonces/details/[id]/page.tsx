@@ -1,5 +1,4 @@
-// import AnnonceDetailCompo from "./ui";
-//import { handleGetOneAnnonce } from "./page.handlers/handleGetOneAnnonce";
+"use server";
 import BackButton from "@repo/ui/Navigation";
 import AnnonceDetailCompo from "@repo/ui/All_AnnonceDetaille/AnnonceDetailUI";
 import { Annonce } from "@repo/mytypes/types";
