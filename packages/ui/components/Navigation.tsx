@@ -13,6 +13,7 @@ export default function BackButton(): JSX.Element {
 
   return (
     <button
+      data-cy="back-button"
       onClick={handleBack}
       className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-800 text-white text-2xl shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-110 active:scale-95"
     >
