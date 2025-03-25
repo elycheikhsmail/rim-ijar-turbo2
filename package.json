@@ -5,7 +5,7 @@
     "prepare": "husky",
     "build": "turbo run build",
     "generate": "turbo run generate",
-    "build:only": "turbo run build:only",
+    "build:only": "turbo run build:only", 
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",

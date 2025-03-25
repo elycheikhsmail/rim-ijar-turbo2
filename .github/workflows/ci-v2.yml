@@ -1,0 +1,70 @@
+name: CI v2 Pipeline
+
+on:
+    workflow_dispatch:
+ 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Étape 1 : Récupérer le code du dépôt
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Étape 2 : Configurer Node.js et installer pnpm
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+    
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.6.3
+          run_install: false
+
+      - name: Install turbo globally
+        run: pnpm install turbo --global
+
+      # Étape 3 : Installation des dépendances
+      - name: Install dependencies with pnpm
+        run: pnpm install
+
+      - name: Generate Prisma client
+        run: pnpm generate
+
+      # Étape 4 : Vérification des types TypeScript
+      - name: TypeScript type check
+        run: turbo telemetry disable && pnpm check-types
+
+      # Étape 5 : Compilation du projet avec turbo
+      - name: Build project with turbo
+        run: turbo build
+
+      # Étape 6 : Démarrer MongoDB via Docker Compose
+      - name: Start MongoDB container
+        run: |
+          docker-compose -f apps/rim-ebay/docker-compose.mongo.yml up -d
+
+      # Étape 7 : Lancer le serveur en arrière-plan
+      - name: Start application server
+        working-directory: apps/rim-ebay
+        run: |
+          # Lancer le serveur en arrière-plan
+          pnpm run start &
+
+      # Étape 8 : Attendre que le serveur soit prêt (boucle de vérification)
+      - name: Wait for server to be ready
+        run: |
+          for i in {1..12}; do
+            status=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:3000/ar || echo "000")
+            if [ "$status" = "200" ]; then
+              echo "Server is up and returned HTTP 200!"
+              exit 0
+            fi
+            echo "Waiting for server... (attempt $i)"
+            sleep 5
+          done
+          echo "Server did not start in time or did not return HTTP 200"
+          exit 1
