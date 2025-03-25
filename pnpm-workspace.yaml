@@ -6,6 +6,7 @@ onlyBuiltDependencies:
   - '@prisma/engines'
   - bcrypt
   - core-js-pure
+  - cypress
   - esbuild
   - prisma
   - sharp
