@@ -25,9 +25,8 @@ export default function PaginationUI(props: {
     router.push(`?page=${nextPage}`);
   };
 
-  return (
-    <>
-      <div className="mt-8 flex gap-2 justify-center">
+  return ( 
+      <div  className="mt-8 flex gap-2 justify-center">
         <button
           onClick={() => handleClickPrevPage()}
           disabled={props.currentPage === 1}
@@ -45,8 +44,7 @@ export default function PaginationUI(props: {
         >
           Suivant
         </button>
-      </div>
-    </>
+      </div> 
   );
 }
 
@@ -82,7 +80,7 @@ function AnnonceItemUI({
   };
   return (
     <>
-      <article className="bg-white shadow-md rounded-lg overflow-hidden cursor-pointer hover:shadow-lg transition-shadow h-full flex flex-col">
+      <article data-cy="annonce-item" className="bg-white shadow-md rounded-lg overflow-hidden cursor-pointer hover:shadow-lg transition-shadow h-full flex flex-col">
         <div className="relative h-48 w-full">
           {annonce.haveImage && getImage()}
           {!annonce.haveImage && (

@@ -63,13 +63,7 @@ export default async function Home({
   return (
     <main className="min-h-screen">
       <div className="p-8">
-        <Suspense
-          fallback={
-            <div className="flex justify-center items-center">
-              <LottieAnimation />
-            </div>
-          }
-        >
+         
           {annonces ? (
             <MyListAnnoncesUI
               totalPages={totalPages}
@@ -82,7 +76,7 @@ export default async function Home({
               <LottieAnimation />
             </div>
           )}
-        </Suspense>
+        
       </div>
     </main>
   );

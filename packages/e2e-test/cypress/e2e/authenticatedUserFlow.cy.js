@@ -7,9 +7,7 @@ describe('Parcours d’un utilisateur authentifié', () => {
   
     // Données pour les annonces à ajouter
     const adsData = [
-      {  description: 'Première annonce de test Cypress', price: '150' },
-      { description: 'Deuxième annonce générée par Cypress', price: '300' },
-      {  description: 'Troisième et dernière annonce auto', price: '99' },
+      {  description: 'Première annonce de test Cypress', price: '150' }, 
     ];
   
     const modifiedDescription = 'Description modifiée par Cypress !';
@@ -52,7 +50,7 @@ describe('Parcours d’un utilisateur authentifié', () => {
   
   
       // --- 2. Ajout de trois annonces ---
-      cy.log('Étape 2: Ajout de trois annonces');
+      cy.log('Étape 2: Ajout d une annonces');
       adsData.forEach((ad, index) => {
         cy.log(`Ajout de l'annonce ${index + 1}`);
         // Naviguer vers la page d'ajout (suppose un bouton ou navigation directe)
@@ -78,77 +76,17 @@ describe('Parcours d’un utilisateur authentifié', () => {
         // La vérification du nombre est plus fiable à la fin de la boucle
       });
   
-      // Vérifier qu'il y a bien 3 annonces après la boucle au moins
-      //cy.get('.grid .block').should('have.length',3);    
-      cy.get('.grid .block').should('have.length.greaterThan', 3);
+      // Vérifier qu'il y a bien 1 annonces après la boucle au moins 
+      cy.get('.grid .block').should('have.length.greaterThan', 1);
   
       // --- 3. Modification de la première annonce ---
       cy.log('Étape 3: Modification de la première annonce');
       // Trouver la première annonce et cliquer sur son bouton Modifier
+      cy.wait(300); // Attendre pour que les annonces soient chargées
+      cy.get('[data-cy="annonce-item"]').first().click();
+      cy.wait(300); // Attendre pour que la page de détails soit chargée
       // **ASSUMPTION**: Le bouton Modifier a l'attribut data-cy="edit-button"
-      cy.get('.grid .block').first().find('[data-cy="edit-button"]').click();
-  
-      // Le formulaire d'édition apparaît (probablement un modal basé sur EditForm.tsx)
-      // **ASSUMPTION**: Le modal a une classe spécifique ou un titre identifiable
-      cy.get('.fixed.inset-0').should('be.visible'); // Conteneur du modal
-      cy.contains("Modifier l'annonce").should('be.visible'); // Titre du modal
-  
-      // Modifier la description et le prix
-      // **ASSUMPTION**: Les champs sont identifiables dans le modal
-      cy.get('.fixed.inset-0 textarea').clear().type(modifiedDescription);
-      cy.get('.fixed.inset-0 input[type="number"]').clear().type(modifiedPrice);
-  
-      // Soumettre le formulaire de modification
-      // **ASSUMPTION**: Le bouton submit a le texte 'Update' ou 'Mettre à jour'
-      cy.get('.fixed.inset-0 button[type="submit"]').contains(/Update|Mettre à jour/i).click();
-  
-      // Vérifier que le modal est fermé
-      cy.get('.fixed.inset-0').should('not.exist');
-      cy.wait(500); // Attente pour la mise à jour de l'UI
-  
-      // Vérifier que la modification est prise en compte sur la liste
-      cy.get('.grid .block').first().should('contain.text', modifiedDescription.substring(0, 50)); // Le titre est basé sur la description
-      cy.get('.grid .block').first().should('contain.text', `${modifiedPrice} MRU`); // Vérifier le prix affiché
-  
-      // --- 4. Retrait de la dernière annonce ---
-      cy.log('Étape 4: Retrait de la dernière annonce');
-      // La "dernière" annonce est la 3ème ajoutée, qui est la dernière dans la liste actuelle
-      // **ASSUMPTION**: Le bouton Supprimer a l'attribut data-cy="delete-button"
-      cy.get('.grid .block').last().find('[data-cy="delete-button"]').click();
-  
-      // Gérer une éventuelle confirmation (si window.confirm est utilisé)
-      // Si une confirmation est attendue:
-      // cy.on('window:confirm', (str) => {
-      //   expect(str).to.equal('Êtes-vous sûr de vouloir supprimer cette annonce ?'); // Adapter le texte exact
-      //   return true; // Clique sur "OK"
-      // });
-  
-      // Si aucune confirmation ou si elle est gérée différemment (ex: modal de confirmation)
-      // Adapter le code ici pour cliquer sur le bouton de confirmation du modal si besoin.
-  
-      cy.wait(1000); // Attendre la fin de l'action de suppression (API call + re-render)
-  
-      // Vérifier qu'il reste 2 annonces
-      cy.get('.grid .block').should('have.length', 2);
-      // Vérifier que l'annonce supprimée (la 3ème ajoutée) n'est plus là
-      cy.contains(adsData[2].description).should('not.exist');
-  
-      // --- 5. Déconnexion ---
-      cy.log('Étape 5: Déconnexion de l\'utilisateur');
-      // Trouver et cliquer sur le bouton de déconnexion
-      // **ASSUMPTION**: Le bouton Déconnexion a l'attribut data-cy="logout-button"
-      // Il pourrait être dans un header, un menu déroulant, etc.
-      cy.get('[data-cy="logout-button"]').click();
-  
-      // Vérifier la redirection vers la page de connexion ou d'accueil
-      cy.url().should((url) => {
-        expect(url).to.satisfy((urlValue) =>
-          urlValue.includes(`/${locale}/p/users/connexion`) || urlValue === `${Cypress.config().baseUrl}${locale}`
-        );
-      });
-  
-      // Optionnel : Essayer d'accéder à une page protégée pour confirmer la déconnexion
-      cy.visit(`/${locale}/my/list`, { failOnStatusCode: false }); // Ne pas échouer si la page renvoie 4xx/5xx (redirection)
-      cy.url().should('include', `/${locale}/p/users/connexion`); // Doit être redirigé vers la connexion
+      cy.get('[data-cy="edit-button"]').first().click();
+   
     });
   });

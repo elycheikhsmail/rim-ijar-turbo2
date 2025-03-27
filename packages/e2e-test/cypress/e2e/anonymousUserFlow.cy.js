@@ -15,8 +15,9 @@ describe('Parcours d’un utilisateur anonyme', () => {
       // Il est important que le composant AnnonceItemUI ou son parent Link ait une classe ou un attribut identifiable.
       // D'après le code de ListAnnoncesUI.tsx, chaque annonce est enveloppée dans un Link.
       // Nous allons cibler le premier élément avec la classe 'block' qui est un enfant de la div avec la classe 'grid'.
-      cy.get('.grid .block').first().click();
-  
+      //cy.get('.grid .block').first().click();
+      //data-cy="annonce-item"
+      cy.get('[data-cy="annonce-item"]').first().click();
       // Vérifier que nous sommes sur la page de détails de l'annonce
       cy.url().should('include', '/p/annonces/details/');
       //cy.contains('Annonce non trouvée').should('not.exist'); // S'assurer qu'il n'y a pas d'erreur de "non trouvée"

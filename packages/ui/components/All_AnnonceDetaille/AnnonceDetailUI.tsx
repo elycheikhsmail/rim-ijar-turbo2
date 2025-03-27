@@ -51,7 +51,8 @@ export default function AnnonceDetailUI({
   const formattedTime = `${createdAt.getHours()}h : ${createdAt.getMinutes()} min`;
 
   return (
-    <article className="flex flex-col gap-4 bg-white shadow-lg  rounded-xl p-4 max-w-lg mx-auto my-6 sm:max-w-2xl sm:p-6 md:my-8">
+    <article className="flex flex-col gap-4 bg-white shadow-lg  rounded-xl p-4 max-w-lg mx-auto my-6 sm:max-w-2xl sm:p-6 md:my-8" data-cy="annonce-detail">
+     
       <h2 className="text-2xl font-bold mb-4 text-blue-600 text-center">
         Details de l`annoce
       </h2>

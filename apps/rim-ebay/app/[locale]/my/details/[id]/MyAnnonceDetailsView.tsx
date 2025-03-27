@@ -1,4 +1,4 @@
-"use client";
+//"use client";
 //import React from "react";
 import Image from "next/image";
 import { Carousel } from "react-responsive-carousel";
@@ -141,6 +141,7 @@ const MyAnnonceDetailsView: React.FC<MyAnnonceDetailsViewProps> = ({
             {lang === "ar" ? "سحب" : "Retirer"}
           </button>
           <button
+           data-cy="edit-button"
             onClick={handleEdit}
             className="bg-green-500 w-full sm:w-44 h-10 rounded-lg hover:bg-green-600 text-white font-bold"
           >
