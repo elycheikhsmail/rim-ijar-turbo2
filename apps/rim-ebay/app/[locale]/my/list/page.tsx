@@ -63,20 +63,18 @@ export default async function Home({
   return (
     <main className="min-h-screen">
       <div className="p-8">
-         
-          {annonces ? (
-            <MyListAnnoncesUI
-              totalPages={totalPages}
-              currentPage={currentPage}
-              annonces={annonces}
-              lang={params.locale}
-            />
-          ) : (
-            <div className="flex justify-center items-center">
-              <LottieAnimation />
-            </div>
-          )}
-        
+        {annonces ? (
+          <MyListAnnoncesUI
+            totalPages={totalPages}
+            currentPage={currentPage}
+            annonces={annonces}
+            lang={params.locale}
+          />
+        ) : (
+          <div className="flex justify-center items-center">
+            <LottieAnimation />
+          </div>
+        )}
       </div>
     </main>
   );

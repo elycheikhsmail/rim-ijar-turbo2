@@ -25,26 +25,26 @@ export default function PaginationUI(props: {
     router.push(`?page=${nextPage}`);
   };
 
-  return ( 
-      <div  className="mt-8 flex gap-2 justify-center">
-        <button
-          onClick={() => handleClickPrevPage()}
-          disabled={props.currentPage === 1}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2 disabled:opacity-50"
-        >
-          Précédent
-        </button>
-        <span className="py-2 px-4">
-          Page {props.currentPage} sur {props.totalPages}
-        </span>
-        <button
-          onClick={() => handleClickToNextPage()}
-          disabled={props.currentPage === props.totalPages}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-2 disabled:opacity-50"
-        >
-          Suivant
-        </button>
-      </div> 
+  return (
+    <div className="mt-8 flex gap-2 justify-center">
+      <button
+        onClick={() => handleClickPrevPage()}
+        disabled={props.currentPage === 1}
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2 disabled:opacity-50"
+      >
+        Précédent
+      </button>
+      <span className="py-2 px-4">
+        Page {props.currentPage} sur {props.totalPages}
+      </span>
+      <button
+        onClick={() => handleClickToNextPage()}
+        disabled={props.currentPage === props.totalPages}
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-2 disabled:opacity-50"
+      >
+        Suivant
+      </button>
+    </div>
   );
 }
 
@@ -80,7 +80,10 @@ function AnnonceItemUI({
   };
   return (
     <>
-      <article data-cy="annonce-item" className="bg-white shadow-md rounded-lg overflow-hidden cursor-pointer hover:shadow-lg transition-shadow h-full flex flex-col">
+      <article
+        data-cy="annonce-item"
+        className="bg-white shadow-md rounded-lg overflow-hidden cursor-pointer hover:shadow-lg transition-shadow h-full flex flex-col"
+      >
         <div className="relative h-48 w-full">
           {annonce.haveImage && getImage()}
           {!annonce.haveImage && (

@@ -141,7 +141,7 @@ const MyAnnonceDetailsView: React.FC<MyAnnonceDetailsViewProps> = ({
             {lang === "ar" ? "سحب" : "Retirer"}
           </button>
           <button
-           data-cy="edit-button"
+            data-cy="edit-button"
             onClick={handleEdit}
             className="bg-green-500 w-full sm:w-44 h-10 rounded-lg hover:bg-green-600 text-white font-bold"
           >
