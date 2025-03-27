@@ -1,5 +1,5 @@
 {
-  "name": "e2e-test",
+  "name": "@repo/e2e-test",
   "version": "0.1.0",
   "private": true,
   "scripts": {
