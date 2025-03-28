@@ -1,0 +1,23 @@
+// packages/e2e-test/tsconfig.json
+{
+    "compilerOptions": {
+      "target": "esnext", // Cible la version JS la plus récente supportée par Node/Cypress
+      "module": "commonjs", // Module system pour Node.js (utilisé par Cypress en arrière-plan)
+      "lib": ["esnext", "dom"], // Inclut les types pour ESNext et le DOM (pour les tests navigateur)
+      "strict": true, // Active toutes les vérifications strictes de type (recommandé)
+      "esModuleInterop": true, // Permet une meilleure interopérabilité avec les modules CommonJS
+      "skipLibCheck": true, // Ignore la vérification des types des fichiers de déclaration (.d.ts)
+      "forceConsistentCasingInFileNames": true, // Assure la cohérence de la casse des noms de fichiers
+      "resolveJsonModule": true, // Permet d'importer des fichiers JSON
+      "isolatedModules": true, // Assure que chaque fichier peut être transpilé séparément
+      "noEmit": true, // Important pour Cypress : n'émet pas de JS, Cypress s'en charge via son préprocesseur
+      "types": ["cypress", "node"] // Spécifie les types globaux à inclure
+    },
+    "include": [
+      "**/*.ts" // Inclut tous les fichiers .ts dans le projet
+      // Ajoutez d'autres patterns si nécessaire, par ex. "cypress/**/*.js" si vous avez des fichiers mixtes
+    ],
+    "exclude": [
+      "node_modules" // Exclut le dossier node_modules
+    ]
+  }
