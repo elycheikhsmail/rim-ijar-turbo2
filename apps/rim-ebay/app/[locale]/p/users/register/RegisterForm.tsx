@@ -166,6 +166,7 @@ export default function RegisterForm({ lang = "ar" }) {
 
           <div>
             <button
+              id="submit"
               type="submit"
               className={`w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-md 
                 ${

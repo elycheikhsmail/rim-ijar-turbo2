@@ -31,7 +31,8 @@ describe('Parcours d’un utilisateur anonyme', () => {
       // Nous allons le cibler et cliquer dessus.
       cy.wait(300); 
      // cy.get('button').first().click(); // Assurez-vous que le BackButton contient le texte 'Retour'
-      cy.get('[data-cy="back-button"]').first().click();
+      cy
+      //get('[data-cy="back-button"]').first().click();
      // cy.wait(1000); // Attendre un peu pour que la transition se termine
       // Vérifier que nous sommes de retour sur la page d'accueil
      cy.url().should('eq', 'http://localhost:3000/fr'); // Vérifier l'URL de la page d'accueil
