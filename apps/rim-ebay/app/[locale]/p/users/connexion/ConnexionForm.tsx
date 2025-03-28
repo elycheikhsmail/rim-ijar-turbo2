@@ -11,9 +11,9 @@ export default function ConnexionForm({ lang = "ar" }) {
   const router = useRouter();
   const t = useI18n();
 
-  const defaultEmail = ""
+  const defaultEmail = "";
   //"user1@example.com";
-  const defaultPassword = ""
+  const defaultPassword = "";
   //"password123";
 
   const [email, setEmail] = useState(defaultEmail);
@@ -165,7 +165,7 @@ export default function ConnexionForm({ lang = "ar" }) {
           </div>
         </form>
         <div
-         id="register"
+          id="register"
           onClick={handleNavigate}
           className="cursor-pointer text-gray-400 font-medium"
         >

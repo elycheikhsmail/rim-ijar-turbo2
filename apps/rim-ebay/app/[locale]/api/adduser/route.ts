@@ -13,8 +13,8 @@ export async function POST(request: NextRequest) {
       );
     }
     const userIndb = await prisma.user.findUnique({
-      where: { email }
-    })
+      where: { email },
+    });
     if (userIndb) {
       return NextResponse.json(
         { error: "Email already exists" },
