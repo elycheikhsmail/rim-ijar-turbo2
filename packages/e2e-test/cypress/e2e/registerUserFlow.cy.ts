@@ -1,5 +1,5 @@
 
-const userEmail = 'ali2@example.com'; // Depuis ConnexionForm.tsx
+const userEmail = 'ali3@example.com'; // Depuis ConnexionForm.tsx
 const userPassword = 'password123'; // Depuis ConnexionForm.tsx
 describe("inscription d'un utilisateur", () => {
     it('devrait s inscrire', () => {
