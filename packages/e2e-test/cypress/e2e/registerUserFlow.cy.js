@@ -20,13 +20,15 @@ describe("inscription d'un utilisateur", () => {
       cy.get('#confirmPassword').type(userPassword);
       cy.get('#submit').first().click();
       cy.wait(100); 
-      cy.url().should('include', 'fr/my/list');
+      cy.url().should('include', '/fr/p/users/connexion'); 
+      cy.wait(200); 
       // se connecter
       cy.get('#email').should('be.visible').type(userEmail);
       cy.wait(200);   
       cy.get('#password').type(userPassword); 
       cy.wait(200);   
       cy.get('#submit').first().click();
+      cy.url().should('include', 'fr/my/list');
 
     })
   })
