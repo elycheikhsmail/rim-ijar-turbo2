@@ -208,6 +208,8 @@ export const NavNonAuthUI = ({ lang = "ar" }) => {
         {/* Links for Desktop */}
         <div className="hidden sm:flex gap-4">
           <Link
+            id="connexion"
+            data-cy="connexion"
             href={`/${lang}/p/users/connexion`}
             className="flex items-center hover:bg-green-500 px-3 py-2 text-black bg-white rounded-xl transition duration-300"
           >
@@ -236,6 +238,8 @@ export const NavNonAuthUI = ({ lang = "ar" }) => {
       {isOpen && (
         <div className="sm:hidden mt-4 flex flex-col gap-2">
           <Link
+            id="connexion"
+            data-cy="connexion"
             href={`/${lang}/p/users/connexion`}
             className="flex items-center justify-center hover:bg-green-500 px-3 py-2 text-black bg-white rounded-xl transition duration-300"
           >
