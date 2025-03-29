@@ -12,6 +12,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # Étape 6 : Démarrer MongoDB via Docker Compose
+      - name: Start MongoDB container
+        run: |
+          docker compose -f apps/rim-ebay/docker-compose.mongo.yml up -d
+
       # Étape 2 : Configurer Node.js et installer pnpm
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -41,11 +46,6 @@ jobs:
       # Étape 5 : Compilation du projet avec turbo
       - name: Build project with turbo
         run: turbo build
-
-      # Étape 6 : Démarrer MongoDB via Docker Compose
-      - name: Start MongoDB container
-        run: |
-          docker compose -f apps/rim-ebay/docker-compose.mongo.yml up -d
 
       # Étape 7 : Lancer le serveur en arrière-plan
       - name: Start application server
