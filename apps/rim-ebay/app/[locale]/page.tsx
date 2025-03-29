@@ -26,7 +26,7 @@ export default async function Home({
   const { pageAnnonceData, errorMessage } =
     await handleGetAnnonces(searchParams);
 
-    console.log("pageAnnonceData :::: ", pageAnnonceData);
+  console.log("pageAnnonceData :::: ", pageAnnonceData);
 
   return (
     <main className="min-h-screen overflow-hidden">

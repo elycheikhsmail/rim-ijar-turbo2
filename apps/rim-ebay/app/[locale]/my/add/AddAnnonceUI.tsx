@@ -82,7 +82,6 @@ export default function AddAnnonceUI({
           const response = await axios.get(
             `/${lang}/api/subCategories?CategoryId=${encodeURIComponent(selectedCategoryId)}`,
           );
-          
 
           setFilteredSubCategories(response.data);
         } catch (error) {

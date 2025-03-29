@@ -11,16 +11,15 @@ export const config = {
   },
 };
 
-
 async function connectMongo() {
   const client = new MongoClient(uri);
   await client.connect();
   return {
     db: client.db(dbName),
-    bucket: new GridFSBucket(client.db(dbName), { 
-      bucketName: "uploads" // Définit explicitement le nom du bucket
+    bucket: new GridFSBucket(client.db(dbName), {
+      bucketName: "uploads", // Définit explicitement le nom du bucket
     }),
-    client // Retourne le client MongoDB
+    client, // Retourne le client MongoDB
   };
 }
 
@@ -37,7 +36,7 @@ export async function POST(req: NextRequest) {
     if (!annonceId || !file) {
       return NextResponse.json(
         { error: "Paramètres manquants" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -50,18 +49,15 @@ export async function POST(req: NextRequest) {
 
     const uploadStream = bucket.openUploadStream(file.name, {
       contentType: file.type,
-      metadata: { annonceId }
+      metadata: { annonceId },
     });
 
     await new Promise((resolve, reject) => {
-      nodeStream
-        .pipe(uploadStream)
-        .on("finish", resolve)
-        .on("error", reject);
+      nodeStream.pipe(uploadStream).on("finish", resolve).on("error", reject);
     });
 
     const uploadedFile = await db.collection("uploads.files").findOne({
-      _id: uploadStream.id
+      _id: uploadStream.id,
     });
 
     if (!uploadedFile) {
@@ -70,14 +66,13 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      fileId: uploadStream.id.toString()
+      fileId: uploadStream.id.toString(),
     });
-
   } catch (error) {
     console.error("ERREUR COMPLÈTE:", error);
     return NextResponse.json(
-      { error: "Échec technique (consultez les logs serveur)" }, 
-      { status: 500 }
+      { error: "Échec technique (consultez les logs serveur)" },
+      { status: 500 },
     );
   } finally {
     if (client) {
