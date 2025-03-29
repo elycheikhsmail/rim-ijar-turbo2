@@ -7,6 +7,7 @@ pnpm prisma db seed
 ```sh
 pnpm run build && pnpm run start
 ```
+
 then
 
 ```sh
@@ -20,6 +21,7 @@ pnpm run test
 ```sh
 pnpm run build && pnpm run start
 ```
+
 then
 
 ```sh
