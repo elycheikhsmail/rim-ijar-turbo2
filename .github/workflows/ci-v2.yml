@@ -15,9 +15,11 @@ jobs:
       - name: Set up environment variables
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
-          NEXT_PUBLIC_API_URL : ${{ secrets.NEXT_PUBLIC_API_URL }}
+          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
           JWT_SECRET: ${{ secrets.JWT_SECRET }}
-        run:
+        run: |
+          echo "Environment variables set up successfully"
+      
       # Étape 2 : Configurer Node.js et installer pnpm
       - name: Setup Node.js
         uses: actions/setup-node@v3
