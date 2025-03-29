@@ -8,7 +8,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx", 
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "test": "prisma db seed && cypress run"
+    "test": "cypress run"
   },
   "prisma": {  
     "seed": "tsx prisma/seed.ts"  
