@@ -72,4 +72,5 @@ jobs:
         working-directory: packages/e2e-test
         run: |
           # Lancer les tests
+          export DATABASE_URL=mongodb://localhost:27017/rim-ebay?replicaSet=rs0 
           pnpm run test
