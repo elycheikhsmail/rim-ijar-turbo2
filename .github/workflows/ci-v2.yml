@@ -12,10 +12,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Étape 6 : Démarrer MongoDB via Docker Compose
-      - name: Start MongoDB container
-        run: |
-          docker compose -f apps/rim-ebay/docker-compose.mongo.yml up -d
+      - name: Set up environment variables
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> $GITHUB_ENV
 
       # Étape 2 : Configurer Node.js et installer pnpm
       - name: Setup Node.js
