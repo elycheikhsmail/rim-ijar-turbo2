@@ -1,2 +1,4 @@
+#!/usr/bin/env sh
+echo "Attempting to run pnpm commands..." # Ajout pour débogage
 pnpm check-types 
 pnpm format

@@ -2,6 +2,7 @@
   "name": "rim-ijar-turbo",
   "private": true,
   "scripts": { 
+    "prepare": "husky || true",
     "build": "turbo run build",
     "generate": "turbo run generate",
     "build:only": "turbo run build:only", 
