@@ -74,4 +74,4 @@ jobs:
         run: |
           # Lancer les tests
           export DATABASE_URL=mongodb://localhost:27017/rim-ebay?replicaSet=rs0 
-          pnpm run test
+          pnpm prisma db seed && pnpm run test
