@@ -15,8 +15,9 @@ jobs:
       - name: Set up environment variables
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        run: echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> $GITHUB_ENV
-
+          NEXT_PUBLIC_API_URL : ${{ secrets.NEXT_PUBLIC_API_URL }}
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
+        run:
       # Étape 2 : Configurer Node.js et installer pnpm
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -72,6 +73,6 @@ jobs:
       - name: Run tests
         working-directory: packages/e2e-test
         run: |
-          # Lancer les tests
-          export DATABASE_URL=mongodb://localhost:27017/rim-ebay?replicaSet=rs0 
-          pnpm prisma db seed && pnpm run test
+          # Lancer les tests 
+          pnpm prisma db seed 
+          pnpm run test
