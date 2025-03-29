@@ -18,6 +18,9 @@ jobs:
           NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
           JWT_SECRET: ${{ secrets.JWT_SECRET }}
         run: |
+          echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> $GITHUB_ENV
+          echo "NEXT_PUBLIC_API_URL=${{ secrets.NEXT_PUBLIC_API_URL}}" >> $GITHUB_ENV
+          echo "JWT_SECRET=${{ secrets.JWT_SECRET}}" >> $GITHUB_ENV
           echo "Environment variables set up successfully"
       
       # Étape 2 : Configurer Node.js et installer pnpm
