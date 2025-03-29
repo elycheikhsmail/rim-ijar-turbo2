@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": { 
+    "generate": "prisma generate",
     "check-types": "tsc --noEmit",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx", 
     "cypress:open": "cypress open",
