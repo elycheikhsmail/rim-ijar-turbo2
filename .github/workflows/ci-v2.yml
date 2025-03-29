@@ -68,3 +68,8 @@ jobs:
           done
           echo "Server did not start in time or did not return HTTP 200"
           exit 1
+      - name: Run tests
+        working-directory: packages/e2e-test
+        run: |
+          # Lancer les tests
+          pnpm run test
