@@ -7,11 +7,11 @@
     "generate": "prisma generate",
     "build:only": "next build",
     "build": "next build",
-    "start": "next start", 
-    "dev": "next dev", 
+    "start": "next start",
+    "dev": "next dev",
     "check-types": "tsc --noEmit",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx", 
-    "seed": "node --loader ts-node/esm prisma/seed.ts", 
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "seed": "node --loader ts-node/esm prisma/seed.ts",
     "seed:ely": "node --loader ts-node/esm prisma/seed-ely.ts",
     "cache": "node --loader ts-node/esm  scripts/cache-annonce-options.ts"
   },
@@ -20,7 +20,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@next/bundle-analyzer": "^14.2.14",
-    "@prisma/client": "^6.4.1",  
+    "@prisma/client": "^6.4.1",
     "@testing-library/react": "^16.2.0",
     "@types/bcrypt": "^5.0.2",
     "@types/jsonwebtoken": "^9.0.7",
@@ -40,6 +40,7 @@
     "jsonwebtoken": "^9.0.2",
     "lottie-react": "^2.4.0",
     "mongodb": "^6.13.0",
+    "multer": "1.4.5-lts.2",
     "next": "^14.2.22",
     "next-international": "^1.2.4",
     "node-persist": "^4.0.3",
@@ -58,21 +59,20 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*", 
+    "@repo/eslint-config": "workspace:*",
+    "@repo/mytypes": "workspace:*",
     "@repo/ui": "workspace:*",
-    "@repo/mytypes": "workspace:*", 
-
+    "@types/multer": "^1.4.12",
     "@types/node": "^22.1.0",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18",
     "@types/react-lottie": "^1.2.10",
     "@types/react-router-dom": "^5.3.3",
-
     "eslint": "^9.18.0",
-    "eslint-config-next": "14.2.5", 
+    "eslint-config-next": "14.2.5",
     "next-router-mock": "^0.9.13",
     "postcss": "^8",
-    "prisma": "^6.4.1", 
+    "prisma": "^6.4.1",
     "tailwindcss": "^3.4.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
@@ -86,7 +86,7 @@
       "esbuild",
       "prisma"
     ],
-    "ignoredBuiltDependencies": [ 
+    "ignoredBuiltDependencies": [
       "sharp"
     ]
   }

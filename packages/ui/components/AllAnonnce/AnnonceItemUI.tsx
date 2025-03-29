@@ -9,7 +9,7 @@ export default function AnnonceItemUI(annonce: Annonce) {
     const imgUrl = `${hostServerForImages}/${annonce.firstImagePath}`;
     return (
       <Image
-        src={imgUrl}
+        src={annonce.firstImagePath}
         alt={annonce.description}
         fill
         unoptimized

@@ -34,6 +34,7 @@ export default function AddAnnonceUI({
   const [categories, setCategories] = useState<Category[]>([]);
   const DataInsideNavigation = useSearchParams();
 
+  console.log("categories ::", categories);
   useEffect(() => {
     const fetchTypeAnnonces = async () => {
       try {
@@ -55,15 +56,18 @@ export default function AddAnnonceUI({
     const fetchCategories = async () => {
       if (selectedTypeId !== undefined) {
         try {
+          console.log("selectedTypeId ::", selectedTypeId);
           const response = await axios.get(
             `/${lang}/api/categories?typeAnnonceId=${encodeURIComponent(selectedTypeId)}`,
           );
+          console.log("response ::", response.data);
           setCategories(response.data);
         } catch (error) {
           console.log("error ::", error);
           toast.error(t("errors.fetchCategories"));
         }
       } else {
+        console.log("selectedTypeId ::", selectedTypeId);
         setCategories([]);
       }
     };
@@ -78,6 +82,7 @@ export default function AddAnnonceUI({
           const response = await axios.get(
             `/${lang}/api/subCategories?CategoryId=${encodeURIComponent(selectedCategoryId)}`,
           );
+          
 
           setFilteredSubCategories(response.data);
         } catch (error) {
