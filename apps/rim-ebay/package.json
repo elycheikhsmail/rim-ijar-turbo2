@@ -9,6 +9,7 @@
     "build": "next build",
     "start": "next start", 
     "dev": "next dev", 
+    "dev:test": "NODE_ENV=test next dev",
     "check-types": "tsc --noEmit",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx", 
     "seed": "node --loader ts-node/esm prisma/seed.ts", 
