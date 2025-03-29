@@ -11,6 +11,10 @@ jobs:
       # Étape 1 : Récupérer le code du dépôt
       - name: Checkout repository
         uses: actions/checkout@v3
+        
+      - name: Start MongoDB container
+        run: |
+          docker compose -f apps/rim-ebay/docker-compose.mongo.yml up -d
 
       - name: Set up environment variables
         env:
@@ -58,6 +62,7 @@ jobs:
         working-directory: apps/rim-ebay
         run: |
           # Lancer le serveur en arrière-plan
+          pnpm run seed
           nohup pnpm run start &
           sleep 10
 
