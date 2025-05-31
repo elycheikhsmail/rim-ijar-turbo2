@@ -81,7 +81,7 @@ export async function POST(
     const accessToken = generateJWT(newUser.id, newUser.email);
     const refreshToken = generateJWT(newUser.id, newUser.email); // Peut être différent si une autre logique est ajoutée
     // Dans la partie où l'inscription réussit (Cas 3)
-    cookies().set("sessionId", accessToken, {
+    (await cookies()).set("sessionId", accessToken, {
       // cookies().set('accessToken', accessToken, {
       httpOnly: true, // Pour empêcher l'accès JavaScript
       secure: true, // Utiliser uniquement en HTTPS

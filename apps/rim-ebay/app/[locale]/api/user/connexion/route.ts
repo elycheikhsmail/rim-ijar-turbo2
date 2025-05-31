@@ -75,7 +75,7 @@ export async function POST(request: Request) {
       });
 
       // Définir le cookie
-      cookies().set({
+      (await cookies()).set({
         name: "jwt",
         value: token,
         httpOnly: true,
@@ -86,7 +86,7 @@ export async function POST(request: Request) {
 
       const userid = user.id.toString();
 
-      cookies().set({
+      (await cookies()).set({
         name: "user",
         value: userid,
       });

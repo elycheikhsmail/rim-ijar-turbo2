@@ -5,12 +5,12 @@ import SideNavigation from "@repo/ui/SideNavigation";
 
 const AdminLayout = ({
   children,
-  params,
+  // params,
 }: Readonly<{
   children: React.ReactNode;
-  params: {
-    locale: string;
-  };
+  // params: {
+  //   locale:string|undefined ;
+  // };
 }>) => {
   return (
     <div className="flex min-h-screen bg-gray-100">

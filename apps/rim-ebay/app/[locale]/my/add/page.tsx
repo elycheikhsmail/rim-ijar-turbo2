@@ -1,8 +1,11 @@
 import AddAnnonceUI from "./AddAnnonceUI";
 import { cookies } from "next/headers";
 
-export default function AddAnnonce({ params }: { params: { locale: string } }) {
-  const userid = cookies().get("user");
+export default async function AddAnnonce(props: {
+  params: Promise<{ locale: string }>;
+}) {
+  const params = await props.params;
+  const userid = (await cookies()).get("user");
   const userIdConverted = String(userid?.value);
   //? parseInt(userid.value) : 0;
   console.log("userid : ", userIdConverted);

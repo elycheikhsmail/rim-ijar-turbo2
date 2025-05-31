@@ -6,10 +6,11 @@ import { FaSearch, FaPlus } from "react-icons/fa";
 // Importez le composant pour afficher les utilisateurs
 
 interface UserPageProps {
-  params: { locale: string }; // Déclarez le paramètre de langue
+  params: Promise<{ locale: string }>; // Déclarez le paramètre de langue
 }
 
-const UserPage = async ({ params }: UserPageProps) => {
+const UserPage = async (props: UserPageProps) => {
+  const params = await props.params;
   const { locale } = params;
   try {
     // Faites la requête vers l'API côté serveur

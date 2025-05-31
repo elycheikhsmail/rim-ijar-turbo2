@@ -8,18 +8,17 @@ import { getI18n } from "../../locales/server";
 //run seed script
 // commencer a faire le tahce de recherche
 
-export default async function Home({
-  searchParams,
-}: {
-  searchParams?: {
+export default async function Home(props: {
+  searchParams?: Promise<{
     page?: string;
     typeAnnonceId?: string;
     categorieId?: string;
     subCategorieId?: string;
     price?: string;
     description?: string;
-  };
+  }>;
 }) {
+  const searchParams = await props.searchParams;
   const t = await getI18n();
   const currentPage = Number(searchParams?.page) || 1;
 

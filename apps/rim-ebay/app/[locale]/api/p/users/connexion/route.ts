@@ -50,7 +50,7 @@ export async function POST(request: Request) {
       expiresIn: "7d",
     });
     // Dans la partie où l'inscription réussit (Cas 3)
-    cookies().set("sessionId", accessToken, {
+    (await cookies()).set("sessionId", accessToken, {
       // cookies().set('accessToken', accessToken, {
       httpOnly: true, // Pour empêcher l'accès JavaScript
       secure: true, // Utiliser uniquement en HTTPS

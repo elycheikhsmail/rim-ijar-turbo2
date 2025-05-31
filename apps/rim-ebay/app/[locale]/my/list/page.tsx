@@ -6,17 +6,16 @@ import prisma from "../../../../lib/prisma";
 //import { Annonce } from "@/annonce.interface";
 import { Annonce } from "@repo/mytypes/types";
 
-export default async function Home({
-  params,
-  searchParams,
-}: {
-  params: { locale: string };
-  searchParams?: {
+export default async function Home(props: {
+  params: Promise<{ locale: string }>;
+  searchParams?: Promise<{
     page?: string;
-  };
+  }>;
 }) {
+  const searchParams = await props.searchParams;
+  const params = await props.params;
   const currentPage = Number(searchParams?.page) || 1;
-  const userid = cookies().get("user");
+  const userid = (await cookies()).get("user");
   const userIdConverted = String(userid?.value || "");
 
   const annoncesFromDB = await prisma.annonce.findMany({
