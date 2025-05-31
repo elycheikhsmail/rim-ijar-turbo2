@@ -1,3 +1,7 @@
+# how to use ?
+read the guide in 
+apps/rim-ebay/README.md
+
 # husky
 
 1.  pnpm add -D -w husky
