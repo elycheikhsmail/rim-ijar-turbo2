@@ -1,4 +1,4 @@
-````markdown
+ 
 # Rim-eBay
 
 Projet Next.js avec base de données MongoDB pour une marketplace inspirée d'eBay.
