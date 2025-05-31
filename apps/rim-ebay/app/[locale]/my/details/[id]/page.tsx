@@ -2,11 +2,9 @@ import MyAnnonceDetailsUI from "./ui";
 import BackButton from "@repo/ui/Navigation";
 import { cookies } from "next/headers";
 
-export default async function AnnonceDetail(
-  props: {
-    params: Promise<{ locale: string; annonceId: string; id: string }>;
-  }
-) {
+export default async function AnnonceDetail(props: {
+  params: Promise<{ locale: string; annonceId: string; id: string }>;
+}) {
   const params = await props.params;
   const userid = (await cookies()).get("user");
   const userIdConverted = String(userid?.value || "");

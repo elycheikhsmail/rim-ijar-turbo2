@@ -17,13 +17,11 @@ export default async function RootLayout(
       locale: string;
       segment: string;
     };
-  }>
+  }>,
 ) {
   const params = await props.params;
 
-  const {
-    children
-  } = props;
+  const { children } = props;
 
   // const { direction: dir } = new Locale(params.locale).textInfo;
   let dir = "ltr"; // Default direction

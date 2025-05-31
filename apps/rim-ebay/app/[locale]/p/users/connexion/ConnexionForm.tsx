@@ -4,7 +4,7 @@ import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useI18n } from "../../../../../locales/client";
 import axios from "axios";
-import { toast, Toaster } from "react-hot-toast"; 
+import { toast, Toaster } from "react-hot-toast";
 
 export default function ConnexionForm({ lang = "ar" }) {
   const router = useRouter();

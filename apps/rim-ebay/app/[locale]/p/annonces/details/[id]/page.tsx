@@ -5,11 +5,9 @@ import { Annonce } from "@repo/mytypes/types";
 import prisma from "../../../../../../lib/prisma";
 import { OptionsModel } from "@repo/mytypes/prisma-client";
 
-export default async function AnnonceDetail(
-  props: {
-    params: Promise<{ id: string }>;
-  }
-) {
+export default async function AnnonceDetail(props: {
+  params: Promise<{ id: string }>;
+}) {
   const params = await props.params;
   // Recherche de l'annonce en base de données
   const annonce = await prisma.annonce.findUnique({

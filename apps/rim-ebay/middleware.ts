@@ -17,10 +17,14 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  const hasSession = (cookies() as unknown as UnsafeUnwrappedCookies).has("jwt");
+  const hasSession = (cookies() as unknown as UnsafeUnwrappedCookies).has(
+    "jwt",
+  );
   // Vérifier si le chemin commence par /my ou /admin
   if (path.startsWith("/fr/my") || path.startsWith("/fr/admin")) {
-    const hasSession = (cookies() as unknown as UnsafeUnwrappedCookies).has("jwt");
+    const hasSession = (cookies() as unknown as UnsafeUnwrappedCookies).has(
+      "jwt",
+    );
 
     if (!hasSession) {
       // Rediriger vers la page de connexion
