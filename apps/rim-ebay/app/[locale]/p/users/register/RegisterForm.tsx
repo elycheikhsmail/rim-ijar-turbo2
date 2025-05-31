@@ -61,7 +61,7 @@ export default function RegisterForm({ lang = "ar" }) {
     try {
       setSubmitStatus(t("nav.labo"));
 
-      const response = await axios.post(`/${lang}/api/adduser`, {
+      const response = await axios.post(`/${lang}/api/user/adduser`, {
         email,
         password,
       });
