@@ -3,7 +3,7 @@ import AnnonceAdmin from "@repo/ui/AnonnceAdmin";
 import Input from "@repo/ui/InputAdmin";
 import { FaSearch, FaPlus } from "react-icons/fa";
 
-export default async function Page(
+export default async function Page() {
 //   {
 //   searchParams,
 // }: {
@@ -11,8 +11,6 @@ export default async function Page(
 //     page?: string;
 //   };
 // }
-
-) {
   // Simuler des données chargées depuis une API
   const annonces = [
     {

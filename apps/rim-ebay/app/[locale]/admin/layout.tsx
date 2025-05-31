@@ -5,7 +5,7 @@ import SideNavigation from "@repo/ui/SideNavigation";
 
 const AdminLayout = ({
   children,
- // params,
+  // params,
 }: Readonly<{
   children: React.ReactNode;
   // params: {
