@@ -1,6 +1,6 @@
 import { handleGetAnnonces } from "./page.handlers/handleGetAnnonces";
 import ListAnnoncesUI from "./ui/ListAnnoncesUI";
-import Input from "@repo/ui/Input";
+import Input from "@repo/ui/Input"; // form research
 import AnnoceTitle from "@repo/ui/AnnoceTitle";
 import { getI18n } from "../../locales/server";
 

@@ -1,9 +1,10 @@
 import { NextResponse } from "next/server";
-import prisma from "../../../../lib/prisma";
+//import prisma from "../../../../lib/prisma";
 import jwt from "jsonwebtoken";
 import { cookies } from "next/headers";
 import bcrypt from "bcrypt";
 import { v4 as uuidv4 } from "uuid";
+import prisma from "../../../../../lib/prisma";
 
 export async function POST(request: Request) {
   try {
