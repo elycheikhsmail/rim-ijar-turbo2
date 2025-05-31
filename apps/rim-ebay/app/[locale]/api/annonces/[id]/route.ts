@@ -4,10 +4,8 @@ import prisma from "../../../../../lib/prisma";
 import { NextResponse } from "next/server";
 
 // 1. Récupérer une annonce par ID (GET)
-export async function GET(
-  request: Request,
-  { params }: { params: { id: string } },
-): Promise<NextResponse> {
+export async function GET(request: Request, props: { params: Promise<{ id: string }> }): Promise<NextResponse> {
+  const params = await props.params;
   try {
     const annonceId = params.id;
 
@@ -30,10 +28,8 @@ export async function GET(
 }
 
 // 2. Mettre à jour une annonce (PUT)
-export async function PUT(
-  request: Request,
-  { params }: { params: { id: string } },
-): Promise<NextResponse> {
+export async function PUT(request: Request, props: { params: Promise<{ id: string }> }): Promise<NextResponse> {
+  const params = await props.params;
   try {
     const annonceId = String(params.id);
     //parseInt(params.id, 10); // Convertir l'ID en nombre entier
@@ -77,10 +73,8 @@ export async function PUT(
 }
 
 // 3. Supprimer une annonce (DELETE)
-export async function DELETE(
-  request: Request,
-  { params }: { params: { id: string } },
-): Promise<NextResponse> {
+export async function DELETE(request: Request, props: { params: Promise<{ id: string }> }): Promise<NextResponse> {
+  const params = await props.params;
   try {
     const annonceId = params.id;
 

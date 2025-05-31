@@ -17,13 +17,17 @@
     
     "axios": "^1.7.8",
     "lottie-react": "^2.4.0",
-    "next": "^14.2.22",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "next": "15.3.3",
+
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^5.3.0",
+    "react-leaflet": "^5.0.0",
+    "react-multi-carousel": "^2.8.5",
     "react-responsive-carousel": "^3.2.23",
-    "react-router-dom": "^7.1.3"
+    "react-router-dom": "^7.1.3",
+    "react-spinners": "^0.17.0"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
@@ -31,7 +35,7 @@
     "@repo/mytypes": "workspace:*",
     
     "@types/node": "^22.13.10",
-    "@types/react": "^18.3.18", 
+     "@types/react": "19.1.6",
     "typescript": "^5.7.3"
   }
 }

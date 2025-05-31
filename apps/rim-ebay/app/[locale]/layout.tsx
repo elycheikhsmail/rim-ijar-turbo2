@@ -10,16 +10,21 @@ export const metadata: Metadata = {
   description: "trouver des maisons,appartement, voiture, engine a louer",
 };
 
-export default function RootLayout({
-  children,
-  params,
-}: Readonly<{
-  children: React.ReactNode;
-  params: {
-    locale: string;
-    segment: string;
-  };
-}>) {
+export default async function RootLayout(
+  props: Readonly<{
+    children: React.ReactNode;
+    params: {
+      locale: string;
+      segment: string;
+    };
+  }>
+) {
+  const params = await props.params;
+
+  const {
+    children
+  } = props;
+
   // const { direction: dir } = new Locale(params.locale).textInfo;
   let dir = "ltr"; // Default direction
   try {
@@ -30,7 +35,7 @@ export default function RootLayout({
   } catch (error) {
     console.error("Invalid locale provided:", params.locale, error);
   }
-  const hasSession = cookies().has("jwt");
+  const hasSession = (await cookies()).has("jwt");
 
   return (
     <html lang={params.locale} dir={dir}>
