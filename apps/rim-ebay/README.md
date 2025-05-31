@@ -1,4 +1,3 @@
- 
 # Rim-eBay
 
 Projet Next.js avec base de données MongoDB pour une marketplace inspirée d'eBay.
@@ -18,6 +17,7 @@ Projet Next.js avec base de données MongoDB pour une marketplace inspirée d'eB
 cp .env.example .env
 # Modifier les valeurs dans .env selon votre configuration
 ```
+
 ````
 
 ### 2. Démarrage de MongoDB avec Docker
@@ -73,3 +73,4 @@ Voir le workflow GitHub `.github/workflows/deploy-nextjs-postgress.yml` pour :
 - Configuration cloud
 - Intégration continue
 - Déploiement automatisé
+````
