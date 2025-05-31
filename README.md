@@ -4,6 +4,7 @@ read the guide in
 apps/rim-ebay/README.md
 
 # mocked users for dev tests
+
 emails
 ali@example.com
 fatima@example.com
@@ -11,7 +12,8 @@ omar@example.com
 khadija@example.com
 
 password
-password123 
+password123
+
 # husky
 
 1.  pnpm add -D -w husky
