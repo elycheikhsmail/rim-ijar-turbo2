@@ -4,13 +4,13 @@ import Input from "@repo/ui/InputAdmin";
 import { FaSearch, FaPlus } from "react-icons/fa";
 
 export default async function Page() {
-//   {
-//   searchParams,
-// }: {
-//   searchParams?: {
-//     page?: string;
-//   };
-// }
+  //   {
+  //   searchParams,
+  // }: {
+  //   searchParams?: {
+  //     page?: string;
+  //   };
+  // }
   // Simuler des données chargées depuis une API
   const annonces = [
     {
