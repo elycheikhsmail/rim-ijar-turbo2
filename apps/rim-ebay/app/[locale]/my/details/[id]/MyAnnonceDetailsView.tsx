@@ -32,16 +32,17 @@ const MyAnnonceDetailsView: React.FC<MyAnnonceDetailsViewProps> = ({
   handleEdit,
   //setEditModalOpen,
 }) => {
-
-  const getImage = (imageInput: string | { imagePath: string }, imageDescription: string = "") => {
+  const getImage = (
+    imageInput: string | { imagePath: string },
+    imageDescription: string = "",
+  ) => {
     // Extract the image URL whether it's a string or an object
-    const imgUrl = typeof imageInput === 'string' 
-      ? imageInput 
-      : imageInput.imagePath;
-    
+    const imgUrl =
+      typeof imageInput === "string" ? imageInput : imageInput.imagePath;
+
     // Determine if we should use the URL directly or process it through getImageUrl
-    const finalUrl = imgUrl.startsWith('http') ? imgUrl : getImageUrl(imgUrl);
-     
+    const finalUrl = imgUrl.startsWith("http") ? imgUrl : getImageUrl(imgUrl);
+
     return (
       <div className="relative h-40 sm:h-60 w-full">
         <Image
@@ -55,8 +56,6 @@ const MyAnnonceDetailsView: React.FC<MyAnnonceDetailsViewProps> = ({
       </div>
     );
   };
-  
-
 
   const NoImage = () => (
     <div className="relative h-40 sm:h-60 w-full">
@@ -71,7 +70,7 @@ const MyAnnonceDetailsView: React.FC<MyAnnonceDetailsViewProps> = ({
     </div>
   );
 
-  console.log("annonce.imageAnnonce",annonce?.imageAnnonce)
+  console.log("annonce.imageAnnonce", annonce?.imageAnnonce);
   return (
     <article className="flex flex-col gap-4 bg-white shadow-lg rounded-xl p-4 w-full max-w-[90%] sm:max-w-[80%] md:max-w-[70%] lg:max-w-[60%] xl:max-w-[50%] mx-auto my-6">
       <h2 className="text-2xl font-bold mb-4 text-blue-600 text-center">
@@ -87,7 +86,7 @@ const MyAnnonceDetailsView: React.FC<MyAnnonceDetailsViewProps> = ({
           >
             {annonce?.imageAnnonce?.map((item, index) => (
               <div className="h-40 sm:h-60" key={index}>
-                 {getImage(item, `Image ${index + 1}`)}
+                {getImage(item, `Image ${index + 1}`)}
               </div>
             ))}
           </Carousel>

@@ -57,7 +57,6 @@ const EditFormDisplay: React.FC<EditFormDisplayProps> = ({
   onClose,
   lang,
 }) => {
-
   //console.log("isEditModalOpen au rendu :", isEditModalOpen);
 
   return (

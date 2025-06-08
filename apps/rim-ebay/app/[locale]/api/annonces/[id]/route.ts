@@ -19,7 +19,7 @@ export async function GET(
   let client;
   try {
     const annonceId = params.id;
-    
+
     // Vérifier que l'ID est un ObjectId valide
     if (!ObjectId.isValid(annonceId)) {
       return NextResponse.json({ error: "Invalid ID format" }, { status: 400 });
@@ -27,10 +27,10 @@ export async function GET(
 
     const { client: mongoClient, db } = await connectToMongo();
     client = mongoClient;
-    
+
     // Convertir l'ID string en ObjectId et rechercher l'annonce
-    const annonce = await db.collection("Annonce").findOne({ 
-      _id: new ObjectId(annonceId) 
+    const annonce = await db.collection("Annonce").findOne({
+      _id: new ObjectId(annonceId),
     });
 
     console.log("annonce api (MongoDB) ::::: ", annonce);

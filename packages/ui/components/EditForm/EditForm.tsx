@@ -58,7 +58,6 @@ const EditForm: React.FC<EditFormProps> = ({
   labelUpdate = "Update",
   labelCancel = "Cancel",
 }) => {
-
   console.log("✅ EditForm est monté !");
   //const t = useI18n();
   const [typeAnnonces, setTypeAnnonces] = useState<any[]>([]);
@@ -78,9 +77,6 @@ const EditForm: React.FC<EditFormProps> = ({
   const [description, setDescription] = useState(initialData.description);
   const [price, setPrice] = useState(initialData.price.toString());
   const router = useRouter();
-
-  
-
 
   useEffect(() => {
     const fetchTypeAnnonces = async () => {

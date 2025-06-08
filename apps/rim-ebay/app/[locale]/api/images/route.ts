@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
     if (typeof annonceId !== "string") {
       return NextResponse.json(
         { error: "L'ID de l'annonce est invalide" },
-        { status: 400 }
+        { status: 400 },
       );
     }
     const file = formData.get("file") as File;
@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
     if (!annonceId || !file) {
       return NextResponse.json(
         { error: "Paramètres manquants" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -74,7 +74,7 @@ export async function POST(req: NextRequest) {
       {
         $set: { haveImage: true },
         $push: { imageAnnonce: { $each: [imageUrl] } } as any,
-      }
+      },
     );
 
     return NextResponse.json({
@@ -86,7 +86,7 @@ export async function POST(req: NextRequest) {
     console.error("ERREUR COMPLÈTE:", error);
     return NextResponse.json(
       { error: "Échec technique (consultez les logs serveur)" },
-      { status: 500 }
+      { status: 500 },
     );
   } finally {
     if (client) {

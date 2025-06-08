@@ -9,7 +9,10 @@ export async function GET(request: Request) {
 
     if (!typeAnnonceId) {
       console.log("❌ Erreur: typeAnnonceId manquant !");
-      return NextResponse.json({ error: "typeAnnonceId est requis" }, { status: 400 });
+      return NextResponse.json(
+        { error: "typeAnnonceId est requis" },
+        { status: 400 },
+      );
     }
 
     console.log("🟢 Requête reçue avec typeAnnonceId:", typeAnnonceId);
@@ -44,12 +47,6 @@ export async function GET(request: Request) {
     );
   }
 }
-
-
-
-
-
-
 
 // POST - Créer une nouvelle catégorie
 export async function POST(request: Request) {

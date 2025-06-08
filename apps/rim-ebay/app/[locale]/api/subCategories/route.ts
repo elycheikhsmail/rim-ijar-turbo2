@@ -16,7 +16,7 @@ export async function GET(request: Request) {
     const subCategories = await prisma.optionsModel.findMany({
       where: {
         //categorieId : categoryId
-        parentID: {equals:categoryId},
+        parentID: { equals: categoryId },
       },
     });
 
