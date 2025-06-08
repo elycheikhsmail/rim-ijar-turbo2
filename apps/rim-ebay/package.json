@@ -1,8 +1,9 @@
 {
   "name": "rim-ebay",
-  "version": "0.1.0",
+  "version": "0.1.0", 
   "private": true,
   "type": "module",
+  
   "scripts": {
     "generate": "prisma generate",
     "build:only": "next build",
