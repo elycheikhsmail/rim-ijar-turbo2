@@ -53,8 +53,7 @@ model OptionsModel {
   depth     Int
   tag      String
   createdAt DateTime  @default(now()) 
- // parentID   String? @db.ObjectId
-  parentID   String? // @db.ObjectId
+ parentID   String? @db.ObjectId
 }
 
 

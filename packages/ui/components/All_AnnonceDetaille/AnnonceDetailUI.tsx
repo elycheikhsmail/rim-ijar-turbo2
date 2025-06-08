@@ -63,7 +63,7 @@ export default function AnnonceDetailUI({
             autoPlay
             showThumbs={false}
           >
-            {annonce?.images?.map((item, index) => (
+            {annonce?.imageAnnonce?.map((item, index) => (
               <div className="h-40 sm:h-60" key={index}>
                 {getImage(item.imagePath)}
               </div>

@@ -9,7 +9,7 @@ import { OptionsModel } from "@repo/mytypes/prisma-client";
 
 const MONGODB_URI =
   process.env.MONGODB_URI || "mongodb://localhost:27017/rim-ebay";
-const IMAGE_API_BASE_URL = "http://localhost:3001/ar/api/lieus";
+const IMAGE_API_BASE_URL = "http://localhost:3000/ar/api/lieus";
 
 interface Filters {
   typeAnnonceId?: string;

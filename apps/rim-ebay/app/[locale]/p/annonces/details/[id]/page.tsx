@@ -32,7 +32,7 @@ export default async function AnnonceDetail({
     firstImagePath: firstImagePath ? String(firstImagePath) : "",
     lieuStr: "", // These will be populated if needed
     lieuStrAr: "",
-    images: [],
+    imageAnnonce: [],
     typeAnnonce: { ...typeAnnonce },
     categorie: { ...categorie },
     subcategorie: { ...subcategorie },

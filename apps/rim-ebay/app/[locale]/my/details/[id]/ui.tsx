@@ -11,6 +11,8 @@ import { useRouter } from "next/navigation";
 import EditForm from "@repo/ui/EditForm/EditForm";
 import { LottieAnimation } from "@repo/ui/LottieAnimation";
 import MyAnnonceDetailsView from "./MyAnnonceDetailsView";
+import { FiUpload } from "react-icons/fi";
+import { useRef } from 'react'; // Ajout de useRef
 
 export default function MyAnnonceDetailsCompo({
   lang = "ar",
@@ -30,7 +32,7 @@ export default function MyAnnonceDetailsCompo({
   const t = useI18n();
   // console.log("le lang ::", t)
   const { id, locale } = params;
-  // console.log("id::", id)
+  console.log("id::", id)
   const [annonces, setAnnonce] = useState<Annonce | null>(null); // State to hold the fetched annonce
   const [loading, setLoading] = useState(true); // State to manage loading state
   const [error, setError] = useState<string | null>(null); // State to manage error messages
@@ -81,12 +83,15 @@ export default function MyAnnonceDetailsCompo({
   };
 
   const handleUpdate = () => {
+    console.log("Update");
     fetchAnnonce(); // Recharge l'annonce après modification
   };
 
   const handleEdit = () => {
-    // Remplir initialData avec les données de l'annonce actuelle
+   
+    console.log("Edit");
     if (annonces) {
+      console.log("Annonce:", initialData);
       setInitialData({
         typeAnnonceId: annonces?.typeAnnonce?.id ?? "",
         categorieId: annonces?.categorie?.id ?? "",
@@ -95,11 +100,82 @@ export default function MyAnnonceDetailsCompo({
         price: annonces.price,
       });
     }
+    
+    console.log("Initial Data:", );
     setEditModalOpen(true);
   };
+  
+
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleUploadClick = () => {
+    fileInputRef.current?.click();
+  };
+
+
+  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
+
+    const formData = new FormData();
+    if (typeof id === "string") {
+     console.log("string type id:", id);
+     formData.append('annonceId', id);
+    }
+   // formData.append('annonceId', annonceId);
+    formData.append('file', files[0]); // Note: 'file' au lieu de 'image' pour correspondre à votre API
+    
+    console.log("annonceId:", annonceId);
+
+    const loadingToast = toast.loading("notifications.uploading");
+
+    try {
+      const response = await fetch(`/${lang}/api/images`, {
+        method: 'POST',
+        body: formData,
+        // Les headers sont gérés automatiquement par FormData
+      });
+
+      if (!response.ok) {
+        throw new Error('Upload failed');
+      }
+
+      const result = await response.json();
+      
+      toast.success("notifications.uploadSuccess"), {
+        id: loadingToast,
+      };
+      fetchAnnonce(); // Rafraîchir les données
+    } catch (error) {
+      console.log("Erreur upload:", error);
+      toast.error("notifications.uploadError"), {
+        id: loadingToast,
+      };
+      console.error("Erreur upload:", error);
+    }
+  };
+
+  console.log("annonces::::::::", annonces);
 
   return (
     <>
+      <input
+            type="file"
+            ref={fileInputRef}
+            onChange={handleFileChange}
+            accept="image/*"
+            className="hidden"
+          />
+
+          {/* Bouton UPLOAD modifié */}
+          <button 
+            onClick={handleUploadClick}
+            className="flex items-center gap-2 bg-blue-800 hover:bg-blue-500 text-white font-medium py-2 px-4 rounded-lg transition-colors shadow-md ml-auto"
+          >
+            <FiUpload className="w-5 h-5" />
+            UPLOAD
+          </button>
+
       {loading ? (
         <LottieAnimation />
       ) : (

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { MongoClient, GridFSBucket } from "mongodb";
+import { MongoClient, GridFSBucket, ObjectId } from "mongodb";
 import { Readable } from "stream";
 
 const uri = process.env.MONGODB_URI || "mongodb://localhost:27017/rim-ebay";
@@ -17,9 +17,9 @@ async function connectMongo() {
   return {
     db: client.db(dbName),
     bucket: new GridFSBucket(client.db(dbName), {
-      bucketName: "uploads", // Définit explicitement le nom du bucket
+      bucketName: "uploads",
     }),
-    client, // Retourne le client MongoDB
+    client,
   };
 }
 
@@ -29,21 +29,24 @@ export async function POST(req: NextRequest) {
   try {
     const formData = await req.formData();
     const annonceId = formData.get("annonceId");
+    if (typeof annonceId !== "string") {
+      return NextResponse.json(
+        { error: "L'ID de l'annonce est invalide" },
+        { status: 400 }
+      );
+    }
     const file = formData.get("file") as File;
-    console.log("Annonce ID:", annonceId);
-    console.log("Nom du fichier:", file);
 
     if (!annonceId || !file) {
       return NextResponse.json(
         { error: "Paramètres manquants" },
-        { status: 400 },
+        { status: 400 }
       );
     }
 
     const buffer = Buffer.from(await file.arrayBuffer());
     const nodeStream = Readable.from(buffer);
 
-    // Correction ici ▼
     const { db, bucket, client: mongoClient } = await connectMongo();
     client = mongoClient;
 
@@ -64,15 +67,26 @@ export async function POST(req: NextRequest) {
       throw new Error("Échec de la vérification MongoDB");
     }
 
+    const imageUrl = `http://localhost:3000/fr/api/lieus/?imageId=${uploadStream.id.toString()}`;
+
+    await db.collection("Annonce").updateOne(
+      { _id: new ObjectId(annonceId) },
+      {
+        $set: { haveImage: true },
+        $push: { imageAnnonce: { $each: [imageUrl] } } as any,
+      }
+    );
+
     return NextResponse.json({
       success: true,
       fileId: uploadStream.id.toString(),
+      imageUrl,
     });
   } catch (error) {
     console.error("ERREUR COMPLÈTE:", error);
     return NextResponse.json(
       { error: "Échec technique (consultez les logs serveur)" },
-      { status: 500 },
+      { status: 500 }
     );
   } finally {
     if (client) {

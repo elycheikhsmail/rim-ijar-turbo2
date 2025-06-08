@@ -57,9 +57,12 @@ const EditFormDisplay: React.FC<EditFormDisplayProps> = ({
   onClose,
   lang,
 }) => {
+
+  //console.log("isEditModalOpen au rendu :", isEditModalOpen);
+
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="bg-white p-4 rounded-lg shadow-lg">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[1000]">
+      <div className="bg-white p-4 rounded-lg shadow-lg w-11/12 max-w-2xl">
         <h2 className="text-xl font-bold mb-4">{editTitle}</h2>
         <form onSubmit={handleSubmit}>
           {/* Type Annonce */}
