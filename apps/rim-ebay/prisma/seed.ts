@@ -1,4 +1,4 @@
-import 'dotenv/config';  
+import "dotenv/config";
 //require('dotenv').config();
 import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcrypt";
@@ -14,19 +14,16 @@ const prisma = new PrismaClient();
 console.log("🚀 Initialisation du seeding...");
 console.log("🔌 Connexion à la base de données...");
 console.log("chaine de connexion : ", process.env.DATABASE_URL);
-if(process.env.DATABASE_URL?.startsWith("https")){
-  console.log("you can't seed in production")
-  process.exit(1)
+if (process.env.DATABASE_URL?.startsWith("https")) {
+  console.log("you can't seed in production");
+  process.exit(1);
 }
 async function main() {
   console.log("🚀 Début du seeding...");
   // check if there some data : users+annonces
 
-
   // 🛑 if yes delete them by hand (in dev mode only, in local)
   // pour eviter d'effacer la base des donnees en production accidentellement
-
-
 
   // 👤 Utilisateurs
   const hashedPassword = await bcrypt.hash("password123", 10);
@@ -67,9 +64,9 @@ async function main() {
       firstImagePath: "",
 
       status: "1",
-    }
+    };
 
-    let typeAnnonce; 
+    let typeAnnonce;
     const response = await fetch(
       `${SiteBaseUrl}/${baseApi}/options/${data.typeAnnonceId}`,
     );
@@ -110,9 +107,7 @@ async function main() {
         categorie,
       },
     });
-
-  } catch (error) { }
-
+  } catch (error) {}
 }
 
 main()
