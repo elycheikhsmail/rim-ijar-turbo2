@@ -6,12 +6,12 @@ export async function GET(
   { params }: { params: Promise<{ id: string }> },
 ) {
   try {
-    const { id } = await params; 
+    const { id } = await params;
     if (!id) {
       return new NextResponse("Champs obligatoires manquants", { status: 400 });
     }
-   
-      const result = await turso.execute("SELECT * FROM options WHERE id = ?", [
+
+    const result = await turso.execute("SELECT * FROM options WHERE id = ?", [
       id,
     ]);
     const option = result.rows[0] || null;

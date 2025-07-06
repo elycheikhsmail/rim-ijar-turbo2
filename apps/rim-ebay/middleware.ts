@@ -16,13 +16,11 @@ export async function middleware(request: NextRequest) {
   if (path === "/favicon.ico") {
     return NextResponse.next();
   }
-  const cookieStore = await cookies()
-  const jwtStore = cookieStore.get('jwt') 
+  const cookieStore = await cookies();
+  const jwtStore = cookieStore.get("jwt");
   console.log("jwtStore", jwtStore?.value);
   // Vérifier si le chemin commence par /my ou /admin
-  if (path.startsWith("/fr/my") 
-    || path.startsWith("/fr/admin")
-  ) {
+  if (path.startsWith("/fr/my") || path.startsWith("/fr/admin")) {
     if (!jwtStore || !jwtStore.value) {
       // Rediriger vers la page de connexion
       url.pathname = `/p/users/connexion`;

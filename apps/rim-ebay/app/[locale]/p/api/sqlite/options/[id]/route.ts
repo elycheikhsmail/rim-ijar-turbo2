@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import Database from "better-sqlite3";
 
 // /fr/p/api/sqlite/options/1
-export async function GET( 
+export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> },
 ) {
@@ -22,7 +22,3 @@ export async function GET(
     return new NextResponse("Erreur serveur", { status: 500 });
   }
 }
-
- 
-
-

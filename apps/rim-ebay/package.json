@@ -11,7 +11,7 @@
     "dev": "next dev --turbopack",
     "dev:test": "NODE_ENV=test next dev",
     "check-types": "tsc --noEmit",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint": "eslint . --ext .ts,.tsx",
     "seed": "node --loader ts-node/esm prisma/seed.ts",
     "seed:ely": "node --loader ts-node/esm prisma/seed-ely.ts",
     "cache": "node --loader ts-node/esm  scripts/cache-annonce-options.ts"

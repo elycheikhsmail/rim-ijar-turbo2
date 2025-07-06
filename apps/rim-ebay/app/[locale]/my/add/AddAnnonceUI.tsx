@@ -5,12 +5,12 @@ import { useI18n } from "../../../../locales/client";
 import axios from "axios";
 import { Category, SubCategory, TypeAnnonce } from "@repo/mytypes/types";
 import toast, { Toaster } from "react-hot-toast";
-import { useSearchParams } from "next/navigation"; 
-const baseAnnonceApi = "/fr/api/annonces"
+import { useSearchParams } from "next/navigation";
+const baseAnnonceApi = "/fr/api/annonces";
 let baseApiOptions = "/fr/p/api/tursor/";
 if (process.env.NEXT_PUBLIC_OPTIONS_API_MODE === "sqlite") {
-  baseApiOptions  = "/fr/p/api/sqlite/";
-} 
+  baseApiOptions = "/fr/p/api/sqlite/";
+}
 export default function AddAnnonceUI({
   lang = "ar",
   userid,
@@ -63,9 +63,8 @@ export default function AddAnnonceUI({
       if (selectedTypeId !== undefined) {
         try {
           const response = await axios.get(
-            
             //`${baseApi}/categories?typeAnnonceId=${encodeURIComponent(selectedTypeId)}`,
-             `${baseApiOptions}/options?parentId=${encodeURIComponent(selectedTypeId)}`,
+            `${baseApiOptions}/options?parentId=${encodeURIComponent(selectedTypeId)}`,
           );
           setCategories(response.data);
         } catch (error) {
@@ -104,7 +103,7 @@ export default function AddAnnonceUI({
   }, [selectedCategoryId, lang, t]);
 
   const handleTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const typeId = String(e.target.value); 
+    const typeId = String(e.target.value);
     const selectedType = typeAnnonces.find(
       (type) => String(type.id) === String(typeId),
     );

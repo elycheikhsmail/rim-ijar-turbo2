@@ -7,13 +7,13 @@ export async function GET(request: NextRequest) {
     const parentId = searchParams.get("parentId");
     const path = searchParams.get("path");
     let rows;
-    if (parentId === null  ) {
+    if (parentId === null) {
       const result = await turso.execute(
         "SELECT * FROM options WHERE depth = 1",
       );
       rows = result.rows;
     }
-  
+
     if (parentId !== null) {
       const result = await turso.execute(
         "SELECT * FROM options WHERE parentID = ?",
@@ -26,5 +26,3 @@ export async function GET(request: NextRequest) {
     return new NextResponse("Erreur serveur", { status: 500 });
   }
 }
-
- 

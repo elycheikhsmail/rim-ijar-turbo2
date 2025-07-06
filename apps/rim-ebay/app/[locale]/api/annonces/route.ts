@@ -30,22 +30,26 @@ interface CreateAnnonceRequest {
 // 1. Créer une annonce (POST)
 export async function POST(request: Request): Promise<NextResponse> {
   try {
-    const data: CreateAnnonceRequest = await request.json()
+    const data: CreateAnnonceRequest = await request.json();
 
-    let typeAnnonce
+    let typeAnnonce;
     const url1 = `${SiteBaseUrl}/${baseApi}/options/${data.typeAnnonceId}`;
-    const response = await fetch(`${SiteBaseUrl}/${baseApi}/options/${data.typeAnnonceId}`)
+    const response = await fetch(
+      `${SiteBaseUrl}/${baseApi}/options/${data.typeAnnonceId}`,
+    );
     response.json().then((data) => {
       console.log("typeAnnonceData", data);
-      typeAnnonce = data
-    })
+      typeAnnonce = data;
+    });
 
-    let categorie
-    const response2 = await fetch(`${SiteBaseUrl}/${baseApi}/options/${data.categorieId}`)
+    let categorie;
+    const response2 = await fetch(
+      `${SiteBaseUrl}/${baseApi}/options/${data.categorieId}`,
+    );
     response2.json().then((data) => {
       console.log("categorieData", data);
-      categorie = data
-    })
+      categorie = data;
+    });
 
     // Créer une nouvelle annonce dans la base de données
     const newAnnonce = await prisma.annonce.create({
@@ -70,8 +74,6 @@ export async function POST(request: Request): Promise<NextResponse> {
         categorie,
       },
     });
-
-  
 
     return NextResponse.json(newAnnonce, { status: 201 });
   } catch (error) {

@@ -1,17 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
 import { turso } from "../tursoClient";
 
-export async function GETT(
+export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> },
 ) {
   try {
-    const { id } = await params; 
-    const body = await request.json(); 
-    if (!id ) {
+    const { id } = await params;
+    const body = await request.json();
+    if (!id) {
       return new NextResponse("Champs obligatoires manquants", { status: 400 });
     }
-   
+
     const result = await turso.execute("SELECT * FROM options WHERE id = ?", [
       id,
     ]);
