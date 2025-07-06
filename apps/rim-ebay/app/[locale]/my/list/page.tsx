@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import { MyListAnnoncesUI } from "./ui";
 import { LottieAnimation } from "@repo/ui/LottieAnimation";
 import { cookies } from "next/headers";
