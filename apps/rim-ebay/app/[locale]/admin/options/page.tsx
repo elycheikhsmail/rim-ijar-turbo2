@@ -1,10 +1,10 @@
-"use client"; 
+"use client";
 import { useEffect, useState } from "react";
-import { FaSyncAlt } from "react-icons/fa"; 
+import { FaSyncAlt } from "react-icons/fa";
 let baseApi = "/fr/admin/api/tursor/";
 if (process.env.NEXT_PUBLIC_OPTIONS_API_MODE === "sqlite") {
   baseApi = "/fr/admin/api/sqlite/";
-} 
+}
 console.log("Base API URL:", baseApi);
 export default function Home() {
   // États pour les données et sélections de chaque colonne
@@ -15,16 +15,34 @@ export default function Home() {
     "sous-categorie",
     "options",
     "sous-options",
-  ]
+  ];
   const [selected, setSelected] = useState([null, null, null, null, null]);
   // État pour la modale d'ajout
-  const [modal, setModal] = useState<{ open: boolean; parentID: number | null; parentDepth: number }>({ open: false, parentID: null, parentDepth: 0 });
+  const [modal, setModal] = useState<{
+    open: boolean;
+    parentID: number | null;
+    parentDepth: number;
+  }>({ open: false, parentID: null, parentDepth: 0 });
   // États du formulaire
-  const [form, setForm] = useState({ name: "", nameAr: "", priority: 1, tag: "" });
+  const [form, setForm] = useState({
+    name: "",
+    nameAr: "",
+    priority: 1,
+    tag: "",
+  });
   const [loading, setLoading] = useState(false);
   // État pour la modale d'édition
-  const [editModal, setEditModal] = useState<{ open: boolean; option: any | null; colIdx: number }>({ open: false, option: null, colIdx: 0 });
-  const [editForm, setEditForm] = useState({ name: "", nameAr: "", priority: 1, tag: "" });
+  const [editModal, setEditModal] = useState<{
+    open: boolean;
+    option: any | null;
+    colIdx: number;
+  }>({ open: false, option: null, colIdx: 0 });
+  const [editForm, setEditForm] = useState({
+    name: "",
+    nameAr: "",
+    priority: 1,
+    tag: "",
+  });
   const [editLoading, setEditLoading] = useState(false);
 
   // Chargement initial : options de depth = 1
@@ -166,7 +184,7 @@ export default function Home() {
           >
             <h2 className="text-lg font-semibold mb-4 text-center">
               {/* Niveau {colIdx + 1} */}
-               {columnsNames[colIdx]}
+              {columnsNames[colIdx]}
             </h2>
             <div className="flex-1 min-h-[200px] flex flex-col gap-2 items-stretch justify-start">
               {colData.length === 0 ? (
@@ -183,14 +201,20 @@ export default function Home() {
                       <button
                         className="text-blue-500 hover:text-blue-700 text-lg font-bold px-2"
                         title="Ajouter une sous-option"
-                        onClick={e => { e.stopPropagation(); handleAddClick(option.id, option.depth); }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleAddClick(option.id, option.depth);
+                        }}
                       >
                         +
                       </button>
                       <button
                         className="text-gray-500 hover:text-gray-700 text-lg px-2"
                         title="Actualiser cette option"
-                        onClick={e => { e.stopPropagation(); handleEditClick(option, colIdx); }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleEditClick(option, colIdx);
+                        }}
                       >
                         <FaSyncAlt />
                       </button>
@@ -215,27 +239,40 @@ export default function Home() {
       {modal.open && (
         <div className="fixed inset-0 bg-black/30 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg shadow-lg p-6 min-w-[320px] relative">
-            <button className="absolute top-2 right-2 text-gray-400 hover:text-gray-700 text-xl" onClick={() => setModal({ open: false, parentID: null, parentDepth: 0 })}>&times;</button>
+            <button
+              className="absolute top-2 right-2 text-gray-400 hover:text-gray-700 text-xl"
+              onClick={() =>
+                setModal({ open: false, parentID: null, parentDepth: 0 })
+              }
+            >
+              &times;
+            </button>
             <h3 className="text-lg font-semibold mb-4">Ajouter une option</h3>
             <form onSubmit={handleSubmit} className="flex flex-col gap-3">
               <input
                 className="border rounded px-2 py-1"
                 placeholder="Nom (obligatoire)"
                 value={form.name}
-                onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
+                onChange={(e) =>
+                  setForm((f) => ({ ...f, name: e.target.value }))
+                }
                 required
               />
               <input
                 className="border rounded px-2 py-1"
                 placeholder="Nom arabe"
                 value={form.nameAr}
-                onChange={e => setForm(f => ({ ...f, nameAr: e.target.value }))}
+                onChange={(e) =>
+                  setForm((f) => ({ ...f, nameAr: e.target.value }))
+                }
               />
               <input
                 className="border rounded px-2 py-1"
                 placeholder="Tag"
                 value={form.tag}
-                onChange={e => setForm(f => ({ ...f, tag: e.target.value }))}
+                onChange={(e) =>
+                  setForm((f) => ({ ...f, tag: e.target.value }))
+                }
               />
               <input
                 className="border rounded px-2 py-1"
@@ -243,7 +280,9 @@ export default function Home() {
                 min={1}
                 placeholder="Priorité (défaut 1)"
                 value={form.priority}
-                onChange={e => setForm(f => ({ ...f, priority: Number(e.target.value) }))}
+                onChange={(e) =>
+                  setForm((f) => ({ ...f, priority: Number(e.target.value) }))
+                }
               />
               <button
                 type="submit"
@@ -260,27 +299,40 @@ export default function Home() {
       {editModal.open && (
         <div className="fixed inset-0 bg-black/30 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg shadow-lg p-6 min-w-[320px] relative">
-            <button className="absolute top-2 right-2 text-gray-400 hover:text-gray-700 text-xl" onClick={() => setEditModal({ open: false, option: null, colIdx: 0 })}>&times;</button>
+            <button
+              className="absolute top-2 right-2 text-gray-400 hover:text-gray-700 text-xl"
+              onClick={() =>
+                setEditModal({ open: false, option: null, colIdx: 0 })
+              }
+            >
+              &times;
+            </button>
             <h3 className="text-lg font-semibold mb-4">Actualiser l'option</h3>
             <form onSubmit={handleEditSubmit} className="flex flex-col gap-3">
               <input
                 className="border rounded px-2 py-1"
                 placeholder="Nom (obligatoire)"
                 value={editForm.name}
-                onChange={e => setEditForm(f => ({ ...f, name: e.target.value }))}
+                onChange={(e) =>
+                  setEditForm((f) => ({ ...f, name: e.target.value }))
+                }
                 required
               />
               <input
                 className="border rounded px-2 py-1"
                 placeholder="Nom arabe"
                 value={editForm.nameAr}
-                onChange={e => setEditForm(f => ({ ...f, nameAr: e.target.value }))}
+                onChange={(e) =>
+                  setEditForm((f) => ({ ...f, nameAr: e.target.value }))
+                }
               />
               <input
                 className="border rounded px-2 py-1"
                 placeholder="Tag"
                 value={editForm.tag}
-                onChange={e => setEditForm(f => ({ ...f, tag: e.target.value }))}
+                onChange={(e) =>
+                  setEditForm((f) => ({ ...f, tag: e.target.value }))
+                }
               />
               <input
                 className="border rounded px-2 py-1"
@@ -288,7 +340,12 @@ export default function Home() {
                 min={1}
                 placeholder="Priorité (défaut 1)"
                 value={editForm.priority}
-                onChange={e => setEditForm(f => ({ ...f, priority: Number(e.target.value) }))}
+                onChange={(e) =>
+                  setEditForm((f) => ({
+                    ...f,
+                    priority: Number(e.target.value),
+                  }))
+                }
               />
               <button
                 type="submit"

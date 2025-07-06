@@ -2,7 +2,7 @@
 import { createI18nMiddleware } from "next-international/middleware";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { cookies} from "next/headers";
+import { cookies } from "next/headers";
 
 const I18nMiddleware = createI18nMiddleware({
   locales: ["ar", "fr"],
@@ -17,11 +17,9 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  const hasSession = (await cookies()).has("jwt" );
+  const hasSession = (await cookies()).has("jwt");
   // Vérifier si le chemin commence par /my ou /admin
-  if (path.startsWith("/fr/my") 
-   || path.startsWith("/fr/admin")
-  ) {
+  if (path.startsWith("/fr/my") || path.startsWith("/fr/admin")) {
     if (!hasSession) {
       // Rediriger vers la page de connexion
       url.pathname = `/p/users/connexion`;
