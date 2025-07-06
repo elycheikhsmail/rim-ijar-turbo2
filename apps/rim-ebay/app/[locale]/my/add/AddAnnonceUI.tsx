@@ -5,8 +5,12 @@ import { useI18n } from "../../../../locales/client";
 import axios from "axios";
 import { Category, SubCategory, TypeAnnonce } from "@repo/mytypes/types";
 import toast, { Toaster } from "react-hot-toast";
-import { useSearchParams } from "next/navigation";
-
+import { useSearchParams } from "next/navigation"; 
+const baseAnnonceApi = "/fr/api/annonces"
+let baseApiOptions = "/fr/p/api/tursor/";
+if (process.env.NEXT_PUBLIC_OPTIONS_API_MODE === "sqlite") {
+  baseApiOptions  = "/fr/p/api/sqlite/";
+} 
 export default function AddAnnonceUI({
   lang = "ar",
   userid,
@@ -33,15 +37,18 @@ export default function AddAnnonceUI({
   const [submitStatus, setSubmitStatus] = useState("");
   const [categories, setCategories] = useState<Category[]>([]);
   const DataInsideNavigation = useSearchParams();
+  const [currentDepth, setCurrentDepth] = useState(0);
 
   useEffect(() => {
     const fetchTypeAnnonces = async () => {
       try {
-        const res = await fetch(`/${lang}/api/typeAnnonce`);
+        //const res = await fetch(`${baseApi}/typeAnnonce`);
+        const res = await fetch(`${baseApiOptions}/options`);
         if (!res.ok) {
           throw new Error("Network response was not ok");
         }
         const data = await res.json();
+        console.log("data", data);
         setTypeAnnonces(data);
       } catch (error) {
         toast.error(t("errors.fetchTypeAnnonces"));
@@ -49,14 +56,16 @@ export default function AddAnnonceUI({
     };
 
     fetchTypeAnnonces();
-  }, [lang, t]);
+  }, [, lang, t]);
 
   useEffect(() => {
     const fetchCategories = async () => {
       if (selectedTypeId !== undefined) {
         try {
           const response = await axios.get(
-            `/${lang}/api/categories?typeAnnonceId=${encodeURIComponent(selectedTypeId)}`,
+            
+            //`${baseApi}/categories?typeAnnonceId=${encodeURIComponent(selectedTypeId)}`,
+             `${baseApiOptions}/options?parentId=${encodeURIComponent(selectedTypeId)}`,
           );
           setCategories(response.data);
         } catch (error) {
@@ -76,7 +85,9 @@ export default function AddAnnonceUI({
       if (selectedCategoryId !== undefined) {
         try {
           const response = await axios.get(
-            `/${lang}/api/subCategories?CategoryId=${encodeURIComponent(selectedCategoryId)}`,
+            //`${baseApi}/subCategories?CategoryId=${encodeURIComponent(selectedCategoryId)}`,
+            //${baseApiOptions}/options?parentId=
+            `${baseApiOptions}/options?parentId=${encodeURIComponent(selectedCategoryId)}`,
           );
 
           setFilteredSubCategories(response.data);
@@ -93,9 +104,9 @@ export default function AddAnnonceUI({
   }, [selectedCategoryId, lang, t]);
 
   const handleTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const typeId = String(e.target.value);
+    const typeId = String(e.target.value); 
     const selectedType = typeAnnonces.find(
-      (type) => type.id === String(typeId),
+      (type) => String(type.id) === String(typeId),
     );
     if (selectedType) {
       setSelectedType(selectedType.name);
@@ -170,7 +181,7 @@ export default function AddAnnonceUI({
         status: "active",
       };
 
-      const res = await fetch(`/${lang}/api/annonces`, {
+      const res = await fetch(`${baseAnnonceApi}`, {
         method: "POST",
         body: JSON.stringify(annonceData),
         headers: {
@@ -192,7 +203,7 @@ export default function AddAnnonceUI({
       });
 
       // Only navigate after successful creation
-      router.push(`/${lang}/my/list`);
+      router.push(`/fr/my/list`);
       router.refresh();
     } catch (error) {
       toast.error(t("notifications.error"), {

@@ -1,9 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
 import { FaSyncAlt } from "react-icons/fa";
-let baseApi = "/fr/admin/api/tursor/";
+let baseApi = "/fr/p/api/tursor/";
 if (process.env.NEXT_PUBLIC_OPTIONS_API_MODE === "sqlite") {
-  baseApi = "/fr/admin/api/sqlite/";
+  baseApi = "/fr/p/api/sqlite/";
 }
 console.log("Base API URL:", baseApi);
 export default function Home() {

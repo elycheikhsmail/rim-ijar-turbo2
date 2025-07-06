@@ -1,21 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
 import { turso } from "../tursoClient";
 
-export async function PUT(
+export async function GETT(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> },
 ) {
   try {
-    const { id } = await params;
-    const body = await request.json();
-    const { name, nameAr, priority = 1, tag, depth, parentID } = body;
-    if (!id || !name || !depth) {
+    const { id } = await params; 
+    const body = await request.json(); 
+    if (!id ) {
       return new NextResponse("Champs obligatoires manquants", { status: 400 });
     }
-    await turso.execute(
-      "UPDATE options SET name = ?, nameAr = ?, priority = ?, tag = ?, depth = ?, parentID = ? WHERE id = ?",
-      [name, nameAr, priority, tag, depth, parentID, id],
-    );
+   
     const result = await turso.execute("SELECT * FROM options WHERE id = ?", [
       id,
     ]);

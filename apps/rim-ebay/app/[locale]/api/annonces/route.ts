@@ -2,6 +2,13 @@
 
 import { NextResponse } from "next/server";
 import prisma from "../../../../lib/prisma";
+const SiteBaseUrl = process.env.SITE_BASE_URL || "";
+console.log("Site Base URL:", SiteBaseUrl);
+let baseApi = "fr/p/api/tursor";
+if (process.env.NEXT_PUBLIC_OPTIONS_API_MODE === "sqlite") {
+  baseApi = "fr/p/api/sqlite";
+}
+console.log("Base API URL:", baseApi);
 
 // Définition des types pour la requête
 interface CreateAnnonceRequest {
@@ -23,25 +30,23 @@ interface CreateAnnonceRequest {
 // 1. Créer une annonce (POST)
 export async function POST(request: Request): Promise<NextResponse> {
   try {
-    const data: CreateAnnonceRequest = await request.json();
+    const data: CreateAnnonceRequest = await request.json()
 
-    const typeAnnonce = await prisma.optionsModel.findUnique({
-      where: { id: data.typeAnnonceId, depth: 1 },
-      select: {
-        id: true,
-        name: true,
-        nameAr: true,
-      },
-    });
+    let typeAnnonce
+    const url1 = `${SiteBaseUrl}/${baseApi}/options/${data.typeAnnonceId}`;
+    const response = await fetch(`${SiteBaseUrl}/${baseApi}/options/${data.typeAnnonceId}`)
+    response.json().then((data) => {
+      console.log("typeAnnonceData", data);
+      typeAnnonce = data
+    })
 
-    const categorie = await prisma.optionsModel.findUnique({
-      where: { id: data.categorieId, depth: 2 },
-      select: {
-        id: true,
-        name: true,
-        nameAr: true,
-      },
-    });
+    let categorie
+    const response2 = await fetch(`${SiteBaseUrl}/${baseApi}/options/${data.categorieId}`)
+    response2.json().then((data) => {
+      console.log("categorieData", data);
+      categorie = data
+    })
+
     // Créer une nouvelle annonce dans la base de données
     const newAnnonce = await prisma.annonce.create({
       data: {
@@ -65,6 +70,8 @@ export async function POST(request: Request): Promise<NextResponse> {
         categorie,
       },
     });
+
+  
 
     return NextResponse.json(newAnnonce, { status: 201 });
   } catch (error) {
