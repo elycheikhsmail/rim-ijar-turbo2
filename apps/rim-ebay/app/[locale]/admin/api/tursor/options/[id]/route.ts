@@ -3,10 +3,10 @@ import { turso } from "../tursoClient";
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } },
+  { params }: { params: Promise<{ id: string }> },
 ) {
   try {
-    const id = Number(params.id);
+    const { id } = await params;
     const body = await request.json();
     const { name, nameAr, priority = 1, tag, depth, parentID } = body;
     if (!id || !name || !depth) {
