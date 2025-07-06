@@ -12,6 +12,7 @@
     "check-types": "turbo run check-types --cache=local:r"
   },
   "dependencies": {
+    "better-sqlite3": "^12.2.0",
     "react": "^18.2.0"
   },
   "devDependencies": {
