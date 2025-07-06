@@ -3,7 +3,6 @@ import Input from "@repo/ui/Input"; // form research
 import AnnoceTitle from "@repo/ui/AnnoceTitle";
 import { getI18n } from "../../locales/server";
 
-
 import { LottieAnimation } from "@repo/ui/LottieAnimation";
 import prisma from "../../lib/prisma";
 import { Annonce } from "@repo/mytypes/types";
@@ -58,16 +57,11 @@ export default async function Home(props: {
     <main className="min-h-screen">
       <div className="p-8">
         {annonces ? (
-
-
           <ListAnnoncesUI
             totalPages={totalPages}
             currentPage={currentPage}
             annonces={annonces}
           />
-
-
-
         ) : (
           <div className="flex justify-center items-center">
             <LottieAnimation />
@@ -77,5 +71,3 @@ export default async function Home(props: {
     </main>
   );
 }
-
-
