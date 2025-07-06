@@ -12,6 +12,7 @@
     "dev:test": "NODE_ENV=test next dev",
     "check-types": "tsc --noEmit",
     "lint": "eslint . --ext .ts,.tsx",
+    "show:env": "node --loader ts-node/esm scripts/show-env.ts",
     "seed": "node --loader ts-node/esm prisma/seed.ts",
     "seed:ely": "node --loader ts-node/esm prisma/seed-ely.ts",
     "cache": "node --loader ts-node/esm  scripts/cache-annonce-options.ts"
@@ -36,7 +37,7 @@
     "axios-mock-adapter": "^2.1.0",
     "bcrypt": "^5.1.1",
     "better-sqlite3": "^12.2.0",
-    "dotenv": "^16.4.5",
+    "dotenv": "^16.4.7",
     "intl-locale-textinfo-polyfill": "^2.1.1",
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.2",
