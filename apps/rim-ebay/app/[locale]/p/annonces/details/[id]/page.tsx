@@ -19,7 +19,6 @@ export default async function AnnonceDetail(props: {
   if (!annonce) {
     throw new Error(`Annonce avec l'ID ${params.id} non trouvée`);
   }
- 
 
   const { firstImagePath, ...annonceData } = annonce;
   const formattedAnnonce: Annonce = {
@@ -28,7 +27,7 @@ export default async function AnnonceDetail(props: {
     firstImagePath: firstImagePath ? String(firstImagePath) : "",
     lieuStr: "", // These will be populated if needed
     lieuStrAr: "",
-    images: [], 
+    images: [],
   };
 
   //const annonce = await handleGetOneAnnonce(params.id)

@@ -65,7 +65,7 @@ export async function PUT(
         haveImage: data.haveImage,
         firstImagePath: data.firstImagePath,
         status: data.status,
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
     });
 
