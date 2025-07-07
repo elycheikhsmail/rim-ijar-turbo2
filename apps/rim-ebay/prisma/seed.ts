@@ -67,13 +67,13 @@ async function main() {
     };
 
     let typeAnnonce;
-    (await fetch(
-      `${SiteBaseUrl}/${baseApi}/options/${data.typeAnnonceId}`,
-    )).json().then((data) => {
-      console.log("typeAnnonceData", data);
-      typeAnnonce = data;
-    });
- setTimeout(() => {
+    (await fetch(`${SiteBaseUrl}/${baseApi}/options/${data.typeAnnonceId}`))
+      .json()
+      .then((data) => {
+        console.log("typeAnnonceData", data);
+        typeAnnonce = data;
+      });
+    setTimeout(() => {
       console.log("Étape 3 (après 1 s)");
       // ici, votre code pour l’étape suivante
     }, 1000);
@@ -81,13 +81,12 @@ async function main() {
     console.log("typeAnnonce", typeAnnonce);
 
     let categorie;
-    (await fetch(
-      `${SiteBaseUrl}/${baseApi}/options/${data.categorieId}`,
-    )).json().then((data) => {
-      console.log("categorieData", data);
-      categorie = data;
-    });
-    ; // Attendre 1 seconde pour s'assurer que les données sont récupérées
+    (await fetch(`${SiteBaseUrl}/${baseApi}/options/${data.categorieId}`))
+      .json()
+      .then((data) => {
+        console.log("categorieData", data);
+        categorie = data;
+      }); // Attendre 1 seconde pour s'assurer que les données sont récupérées
     setTimeout(() => {
       console.log("Étape 3 (après 1 s)");
       // ici, votre code pour l’étape suivante
@@ -117,7 +116,7 @@ async function main() {
         categorie,
       },
     });
-  } catch (error) { }
+  } catch (error) {}
 }
 
 main()

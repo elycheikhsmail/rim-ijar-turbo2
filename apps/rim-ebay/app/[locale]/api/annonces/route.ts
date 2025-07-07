@@ -32,7 +32,7 @@ export async function POST(request: Request): Promise<NextResponse> {
   try {
     const data: CreateAnnonceRequest = await request.json();
 
-    let typeAnnonce; 
+    let typeAnnonce;
     const response = await fetch(
       `${SiteBaseUrl}/${baseApi}/options/${data.typeAnnonceId}`,
     );
