@@ -19,10 +19,7 @@ export default async function AnnonceDetail(props: {
   if (!annonce) {
     throw new Error(`Annonce avec l'ID ${params.id} non trouvée`);
   }
-
-  const typeAnnonce = annonce.typeAnnonce as unknown as OptionsModel;
-  const categorie = annonce.categorie as unknown as OptionsModel;
-  const subcategorie = annonce.subcategorie as unknown as OptionsModel;
+ 
 
   const { firstImagePath, ...annonceData } = annonce;
   const formattedAnnonce: Annonce = {
@@ -31,10 +28,7 @@ export default async function AnnonceDetail(props: {
     firstImagePath: firstImagePath ? String(firstImagePath) : "",
     lieuStr: "", // These will be populated if needed
     lieuStrAr: "",
-    images: [],
-    typeAnnonce: { ...typeAnnonce },
-    categorie: { ...categorie },
-    subcategorie: { ...subcategorie },
+    images: [], 
   };
 
   //const annonce = await handleGetOneAnnonce(params.id)
