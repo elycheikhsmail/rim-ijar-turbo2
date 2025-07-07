@@ -10,6 +10,7 @@ export default function RegisterForm({ lang = "ar" }) {
   console.log("lang", lang);
 
   const [email, setEmail] = useState("");
+  const [contact, setContact] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState({
@@ -63,6 +64,7 @@ export default function RegisterForm({ lang = "ar" }) {
 
       const response = await axios.post(`/${lang}/api/user/adduser`, {
         email,
+        contact,
         password,
       });
 
@@ -119,6 +121,28 @@ export default function RegisterForm({ lang = "ar" }) {
               <p className="mt-1 text-sm text-red-600">{errors.email}</p>
             )}
           </div>
+
+
+       <div>
+            <label
+              htmlFor="contact"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
+              telephone
+            </label>
+            <input
+              type="text"
+              id="contact"
+              value={contact}
+              onChange={(e) => setContact(e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              disabled={isLoading}
+              required
+            />
+            
+          </div>
+
+
 
           <div>
             <label
