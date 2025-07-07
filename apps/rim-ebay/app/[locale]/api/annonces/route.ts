@@ -32,7 +32,6 @@ export async function POST(request: Request): Promise<NextResponse> {
   try {
     const data: CreateAnnonceRequest = await request.json();
 
- 
     // Créer une nouvelle annonce dans la base de données
     const newAnnonce = await prisma.annonce.create({
       data: {
@@ -51,7 +50,6 @@ export async function POST(request: Request): Promise<NextResponse> {
         status: data.status,
         updatedAt: new Date(),
         createdAt: new Date(),
- 
       },
     });
 

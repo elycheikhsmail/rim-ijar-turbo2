@@ -88,10 +88,9 @@ const MyAnnonceDetailsView: React.FC<MyAnnonceDetailsViewProps> = ({
 
       <div className="p-4">
         <div className="flex justify-between items-center">
-          
           <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700">
-            {d.getDate()}-{d.getMonth() + 1}-{d.getFullYear()} | {d.getHours()}h : {d.getMinutes()}min  |
-            
+            {d.getDate()}-{d.getMonth() + 1}-{d.getFullYear()} | {d.getHours()}h
+            : {d.getMinutes()}min |
           </span>
         </div>
 

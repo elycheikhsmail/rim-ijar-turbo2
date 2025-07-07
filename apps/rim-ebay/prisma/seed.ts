@@ -66,8 +66,6 @@ async function main() {
       status: "1",
     };
 
-   
- 
     // Créer une nouvelle annonce dans la base de données
     await prisma.annonce.create({
       data: {
