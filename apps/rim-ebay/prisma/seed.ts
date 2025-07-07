@@ -52,8 +52,8 @@ async function main() {
   try {
     const data = {
       typeAnnonceId: "1",
-      subcategorieId: "1",
-      categorieId: "1",
+      categorieId: "2",
+      subcategorieId: "9",
       lieuId: "1",
       userId: "1",
       title: "data.title",
@@ -67,25 +67,35 @@ async function main() {
     };
 
     let typeAnnonce;
-    const response = await fetch(
+    (await fetch(
       `${SiteBaseUrl}/${baseApi}/options/${data.typeAnnonceId}`,
-    );
-    response.json().then((data) => {
+    )).json().then((data) => {
       console.log("typeAnnonceData", data);
       typeAnnonce = data;
     });
+ setTimeout(() => {
+      console.log("Étape 3 (après 1 s)");
+      // ici, votre code pour l’étape suivante
+    }, 1000);
+
+    console.log("typeAnnonce", typeAnnonce);
 
     let categorie;
-    const response2 = await fetch(
+    (await fetch(
       `${SiteBaseUrl}/${baseApi}/options/${data.categorieId}`,
-    );
-    response2.json().then((data) => {
+    )).json().then((data) => {
       console.log("categorieData", data);
       categorie = data;
     });
+    ; // Attendre 1 seconde pour s'assurer que les données sont récupérées
+    setTimeout(() => {
+      console.log("Étape 3 (après 1 s)");
+      // ici, votre code pour l’étape suivante
+    }, 1000);
 
+    console.log("categorie", categorie);
     // Créer une nouvelle annonce dans la base de données
-    const newAnnonce = await prisma.annonce.create({
+    await prisma.annonce.create({
       data: {
         typeAnnonceId: data.typeAnnonceId,
         subcategorieId: data.subcategorieId,
@@ -107,7 +117,7 @@ async function main() {
         categorie,
       },
     });
-  } catch (error) {}
+  } catch (error) { }
 }
 
 main()

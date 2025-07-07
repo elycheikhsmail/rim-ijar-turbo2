@@ -15,6 +15,7 @@ export async function GET(
     const db = new Database("database.db");
     const option = db.prepare("SELECT * FROM options WHERE id = ?").get(id);
     db.close();
+    console.log("option", option);
 
     return NextResponse.json(option, { status: 200 });
   } catch (error) {
