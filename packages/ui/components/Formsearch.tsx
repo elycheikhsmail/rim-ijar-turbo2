@@ -1,7 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
- 
-
 
 interface Filters {
   typeAnnonceId?: string;
@@ -32,7 +30,7 @@ export default function FormSearch({
   subCategoryLabel = "Sous-catégorie",
   priceLabel = "Prix",
   searchButtonLabel = "Rechercher",
-  modeOptionsApi, // ✅ Ajout de la prop pour le mode API  
+  modeOptionsApi = "sqlite", // ✅ Ajout de la prop pour le mode API
 }: FormSearchProps) {
   let baseApiOptions = "/fr/p/api/tursor/";
   if (modeOptionsApi === "sqlite") {
@@ -42,18 +40,15 @@ export default function FormSearch({
   const [categories, setCategories] = useState<any[]>([]); // ✅ Toujours un tableau
   const [subCategories, setSubCategories] = useState<any[]>([]);
 
-  const [selectedTypeId, setSelectedTypeId] = useState<string >("");
-  const [selectedCategoryId, setSelectedCategoryId] = useState<
-    string 
-  >("");
-  const [selectedSubCategoryId, setSelectedSubCategoryId] = useState<
-    string
-  >("");
+  const [selectedTypeId, setSelectedTypeId] = useState<string>("");
+  const [selectedCategoryId, setSelectedCategoryId] = useState<string>("");
+  const [selectedSubCategoryId, setSelectedSubCategoryId] =
+    useState<string>("");
   const [price, setPrice] = useState<number>();
 
   // 🔹 Charger les types d'annonces au chargement
   useEffect(() => {
-    fetch(`${baseApiOptions}/options`,)
+    fetch(`${baseApiOptions}/options`)
       .then((res) => res.json())
       .then((data) => setTypeAnnonces(data))
       .catch((error) => console.error("Error fetching typeAnnonces:", error));
@@ -91,14 +86,14 @@ export default function FormSearch({
     }
   }, [selectedCategoryId, lang]);
 
-  const handleTypeChange = (value: string  ) => {
+  const handleTypeChange = (value: string) => {
     console.log("Nouvelle valeur sélectionnée pour Type d'annonce:", value);
     setSelectedTypeId(value);
     setSelectedCategoryId(""); // Réinitialisation de la catégorie
     setSubCategories([]); // Réinitialisation des sous-catégories
   };
 
-  const handleCategoryChange = (value: string  ) => {
+  const handleCategoryChange = (value: string) => {
     console.log("Changement de catégorie:", value); // DEBUG
     setSelectedCategoryId(value);
   };

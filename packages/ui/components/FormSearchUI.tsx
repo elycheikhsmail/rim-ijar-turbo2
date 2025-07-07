@@ -16,11 +16,13 @@ interface Filters {
 interface InputProps {
   buttonLabel?: string;
   filterIcon?: any;
+  modeOptionsApi: "sqlite" | "tursor";
 }
 
 export function FormSearchUI({
   buttonLabel = "Recherche",
   filterIcon = faFilter,
+  modeOptionsApi = "sqlite", // Default to sqlite
 }: InputProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -82,7 +84,10 @@ export function FormSearchUI({
             >
               &#10005;
             </button>
-            <FormSearch onSubmit={handleSearchSubmit} />{" "}
+            <FormSearch
+              onSubmit={handleSearchSubmit}
+              modeOptionsApi={modeOptionsApi}
+            />{" "}
             {/* Pass the function to FormSearch */}
           </div>
         </div>

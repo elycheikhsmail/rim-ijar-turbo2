@@ -6,13 +6,13 @@ interface FormSearchViewProps {
   typeAnnonces: any[];
   categories: any[];
   subCategories: any[];
-  selectedTypeId: string ;
+  selectedTypeId: string;
   selectedCategoryId: string;
-  selectedSubCategoryId: string ;
+  selectedSubCategoryId: string;
   price: string;
-  onTypeChange: (value: string ) => void;
+  onTypeChange: (value: string) => void;
   onCategoryChange: (value: string) => void;
-  onSubCategoryChange: (value: string ) => void;
+  onSubCategoryChange: (value: string) => void;
   onPriceChange: (value: string) => void;
   onSearch: () => void;
   annonceTypeLabel: string;
