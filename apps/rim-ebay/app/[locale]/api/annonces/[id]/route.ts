@@ -87,10 +87,9 @@ export async function DELETE(
 ) {
   const { id } = await params;
   console.log("id", id);
-  try { 
-
+  try {
     const updatedAnnonce = await prisma.annonce.update({
-      where: { id},
+      where: { id },
       data: {
         status: "deleted",
       },
