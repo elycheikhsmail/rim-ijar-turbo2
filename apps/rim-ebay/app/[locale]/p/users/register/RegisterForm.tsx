@@ -122,8 +122,7 @@ export default function RegisterForm({ lang = "ar" }) {
             )}
           </div>
 
-
-       <div>
+          <div>
             <label
               htmlFor="contact"
               className="block text-sm font-medium text-gray-700 mb-1"
@@ -139,10 +138,7 @@ export default function RegisterForm({ lang = "ar" }) {
               disabled={isLoading}
               required
             />
-            
           </div>
-
-
 
           <div>
             <label
