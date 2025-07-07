@@ -34,6 +34,7 @@ export interface EditFormProps {
   labelPrice?: string;
   labelUpdate?: string;
   labelCancel?: string;
+  modeOptionsApi: "sqlite" | "tursor";
 }
 
 const EditForm: React.FC<EditFormProps> = ({
@@ -57,6 +58,7 @@ const EditForm: React.FC<EditFormProps> = ({
   labelPrice = "Price",
   labelUpdate = "Update",
   labelCancel = "Cancel",
+  modeOptionsApi= "sqlite" 
 }) => {
   //const t = useI18n();
   const [typeAnnonces, setTypeAnnonces] = useState<any[]>([]);
@@ -80,7 +82,7 @@ const EditForm: React.FC<EditFormProps> = ({
   useEffect(() => {
     const fetchTypeAnnonces = async () => {
       try {
-        const response = await axios.get(`/${lang}/api/typeAnnonce`);
+        const response = await axios.get(`/fr/p/api/sqlite/options`);
         setTypeAnnonces(response.data);
       } catch (error) {
         toast.error(errorsFetchTypeAnnonces);
@@ -95,7 +97,7 @@ const EditForm: React.FC<EditFormProps> = ({
       if (selectedTypeId) {
         try {
           const response = await axios.get(
-            `/${lang}/api/categories?typeAnnonceId=${selectedTypeId}`,
+            `/fr/p/api/sqlite/options?parentId=${selectedTypeId}`,
           );
           setCategories(response.data);
         } catch (error) {
@@ -114,7 +116,7 @@ const EditForm: React.FC<EditFormProps> = ({
       if (selectedCategoryId) {
         try {
           const response = await axios.get(
-            `/${lang}/api/subCategories?CategoryId=${selectedCategoryId}`,
+            `/fr/p/api/sqlite/options?parentId=${selectedCategoryId}`,
           );
           setFilteredSubCategories(response.data);
         } catch (error) {

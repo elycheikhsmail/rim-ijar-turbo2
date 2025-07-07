@@ -124,6 +124,7 @@ export default function MyAnnonceDetailsCompo({
           initialData={initialData}
           onClose={() => setEditModalOpen(false)}
           onUpdate={handleUpdate}
+          modeOptionsApi = "sqlite" 
         />
       )}
     </>

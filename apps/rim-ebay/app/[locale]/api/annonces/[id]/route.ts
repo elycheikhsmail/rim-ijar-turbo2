@@ -1,19 +1,21 @@
 // app/api/annonces/[id]/route.ts
 
 import prisma from "../../../../../lib/prisma";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 // 1. Récupérer une annonce par ID (GET)
+// export async function GET(
+//   request: Request,
 export async function GET(
-  request: Request,
-  props: { params: Promise<{ id: string }> },
-): Promise<NextResponse> {
-  const params = await props.params;
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> },
+) {
   try {
-    const annonceId = params.id;
+    const { id } = await params;
+    console.log("id", id);
 
     const annonce = await prisma.annonce.findUnique({
-      where: { id: annonceId },
+      where: { id },
     });
 
     if (!annonce) {
@@ -32,24 +34,24 @@ export async function GET(
 
 // 2. Mettre à jour une annonce (PUT)
 export async function PUT(
-  request: Request,
-  props: { params: Promise<{ id: string }> },
-): Promise<NextResponse> {
-  const params = await props.params;
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> },
+) {
+  const { id } = await params;
+  console.log("id", id);
   try {
-    const annonceId = String(params.id);
     //parseInt(params.id, 10); // Convertir l'ID en nombre entier
     const data: any = await request.json(); // Récupérer les données de mise à jour
 
     const typeAnnonce = await prisma.optionsModel.findFirst({
-      where: { id: data.typeAnnonceId, depth: 1 },
+      where: { id, depth: 1 },
     });
 
     const categorie = await prisma.optionsModel.findFirst({
       where: { id: data.categorie, depth: 2 },
     });
     const updatedAnnonce = await prisma.annonce.update({
-      where: { id: annonceId },
+      where: { id },
       data: {
         typeAnnonceId: data.typeAnnonceId,
         categorieId: data.categorieId,
@@ -80,15 +82,15 @@ export async function PUT(
 
 // 3. Supprimer une annonce (DELETE)
 export async function DELETE(
-  request: Request,
-  props: { params: Promise<{ id: string }> },
-): Promise<NextResponse> {
-  const params = await props.params;
-  try {
-    const annonceId = params.id;
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> },
+) {
+  const { id } = await params;
+  console.log("id", id);
+  try { 
 
     const updatedAnnonce = await prisma.annonce.update({
-      where: { id: annonceId },
+      where: { id},
       data: {
         status: "deleted",
       },
