@@ -1,5 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
+ 
+
 
 interface Filters {
   typeAnnonceId?: string;
@@ -19,6 +21,7 @@ interface FormSearchProps {
   subCategoryLabel?: string;
   priceLabel?: string;
   searchButtonLabel?: string;
+  modeOptionsApi: "sqlite" | "tursor";
 }
 
 export default function FormSearch({
@@ -29,25 +32,28 @@ export default function FormSearch({
   subCategoryLabel = "Sous-catégorie",
   priceLabel = "Prix",
   searchButtonLabel = "Rechercher",
+  modeOptionsApi, // ✅ Ajout de la prop pour le mode API  
 }: FormSearchProps) {
+  let baseApiOptions = "/fr/p/api/tursor/";
+  if (modeOptionsApi === "sqlite") {
+    baseApiOptions = "/fr/p/api/sqlite/";
+  }
   const [typeAnnonces, setTypeAnnonces] = useState<any[]>([]);
   const [categories, setCategories] = useState<any[]>([]); // ✅ Toujours un tableau
   const [subCategories, setSubCategories] = useState<any[]>([]);
 
-  const [selectedTypeId, setSelectedTypeId] = useState<string | undefined>(
-    undefined,
-  );
+  const [selectedTypeId, setSelectedTypeId] = useState<string >("");
   const [selectedCategoryId, setSelectedCategoryId] = useState<
-    string | undefined
-  >(undefined);
+    string 
+  >("");
   const [selectedSubCategoryId, setSelectedSubCategoryId] = useState<
-    string | undefined
-  >(undefined);
+    string
+  >("");
   const [price, setPrice] = useState<number>();
 
   // 🔹 Charger les types d'annonces au chargement
   useEffect(() => {
-    fetch(`/${lang}/api/typeAnnonce`)
+    fetch(`${baseApiOptions}/options`,)
       .then((res) => res.json())
       .then((data) => setTypeAnnonces(data))
       .catch((error) => console.error("Error fetching typeAnnonces:", error));
@@ -56,7 +62,7 @@ export default function FormSearch({
   useEffect(() => {
     if (selectedTypeId !== undefined) {
       console.log(`Fetching categories for typeAnnonceId: ${selectedTypeId}`);
-      fetch(`/${lang}/api/categories?typeAnnonceId=${selectedTypeId}`)
+      fetch(`${baseApiOptions}/options?parentId=${selectedTypeId}`)
         .then((res) => res.json())
         .then((data) => {
           setCategories(data);
@@ -74,7 +80,7 @@ export default function FormSearch({
       console.log(
         `Fetching subcategories for categoryId: ${selectedCategoryId}`,
       );
-      fetch(`/${lang}/api/subCategories?CategoryId=${selectedCategoryId}`)
+      fetch(`${baseApiOptions}/options?parentId=${selectedCategoryId}`)
         .then((res) => res.json())
         .then((data) => setSubCategories(data))
         .catch((error) =>
@@ -85,14 +91,14 @@ export default function FormSearch({
     }
   }, [selectedCategoryId, lang]);
 
-  const handleTypeChange = (value: string | undefined) => {
+  const handleTypeChange = (value: string  ) => {
     console.log("Nouvelle valeur sélectionnée pour Type d'annonce:", value);
     setSelectedTypeId(value);
-    setSelectedCategoryId(undefined); // Réinitialisation de la catégorie
+    setSelectedCategoryId(""); // Réinitialisation de la catégorie
     setSubCategories([]); // Réinitialisation des sous-catégories
   };
 
-  const handleCategoryChange = (value: string | undefined) => {
+  const handleCategoryChange = (value: string  ) => {
     console.log("Changement de catégorie:", value); // DEBUG
     setSelectedCategoryId(value);
   };

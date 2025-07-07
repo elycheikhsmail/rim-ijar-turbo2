@@ -18,7 +18,7 @@ interface InputProps {
   filterIcon?: any;
 }
 
-export default function Input({
+export function FormSearchUI({
   buttonLabel = "Recherche",
   filterIcon = faFilter,
 }: InputProps) {

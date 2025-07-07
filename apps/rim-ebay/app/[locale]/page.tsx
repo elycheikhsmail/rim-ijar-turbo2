@@ -1,11 +1,13 @@
-import ListAnnoncesUI from "./ui/ListAnnoncesUI";
-import Input from "@repo/ui/Input"; // form research
+import ListAnnoncesUI from "./ui/ListAnnoncesUI"; 
+import {FormSearchUI} from "@repo/ui/FormSearchUI"
 import AnnoceTitle from "@repo/ui/AnnoceTitle";
 import { getI18n } from "../../locales/server";
 
 import { LottieAnimation } from "@repo/ui/LottieAnimation";
 import prisma from "../../lib/prisma";
-import { Annonce } from "@repo/mytypes/types";
+import { Annonce } from "@repo/mytypes/types"; 
+let modeOptionsApi = process.env.NEXT_PUBLIC_OPTIONS_API_MODE || "tursor";
+ 
 
 export default async function Home(props: {
   params: Promise<{ locale: string }>;
@@ -13,6 +15,7 @@ export default async function Home(props: {
     page?: string;
   }>;
 }) {
+  const t = await getI18n();
   const searchParams = await props.searchParams;
   const currentPage = Number(searchParams?.page) || 1;
 
@@ -56,6 +59,12 @@ export default async function Home(props: {
   return (
     <main className="min-h-screen">
       <div className="p-8">
+           <div className="p-5 sm:mx-16 ">
+        <div className="flex justify-between  px-4 py-2">
+          <AnnoceTitle title={t("nav.Annoce")} />
+           
+          <FormSearchUI   />
+        </div>
         {annonces ? (
           <ListAnnoncesUI
             totalPages={totalPages}
@@ -67,6 +76,7 @@ export default async function Home(props: {
             <LottieAnimation />
           </div>
         )}
+      </div>
       </div>
     </main>
   );

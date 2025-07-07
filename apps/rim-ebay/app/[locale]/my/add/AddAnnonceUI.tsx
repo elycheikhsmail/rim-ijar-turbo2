@@ -56,7 +56,7 @@ export default function AddAnnonceUI({
     };
 
     fetchTypeAnnonces();
-  }, [, lang, t]);
+  }, [lang, t]);
 
   useEffect(() => {
     const fetchCategories = async () => {
