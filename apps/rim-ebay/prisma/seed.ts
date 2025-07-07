@@ -66,33 +66,8 @@ async function main() {
       status: "1",
     };
 
-    let typeAnnonce;
-    (await fetch(`${SiteBaseUrl}/${baseApi}/options/${data.typeAnnonceId}`))
-      .json()
-      .then((data) => {
-        console.log("typeAnnonceData", data);
-        typeAnnonce = data;
-      });
-    setTimeout(() => {
-      console.log("Étape 3 (après 1 s)");
-      // ici, votre code pour l’étape suivante
-    }, 1000);
-
-    console.log("typeAnnonce", typeAnnonce);
-
-    let categorie;
-    (await fetch(`${SiteBaseUrl}/${baseApi}/options/${data.categorieId}`))
-      .json()
-      .then((data) => {
-        console.log("categorieData", data);
-        categorie = data;
-      }); // Attendre 1 seconde pour s'assurer que les données sont récupérées
-    setTimeout(() => {
-      console.log("Étape 3 (après 1 s)");
-      // ici, votre code pour l’étape suivante
-    }, 1000);
-
-    console.log("categorie", categorie);
+   
+ 
     // Créer une nouvelle annonce dans la base de données
     await prisma.annonce.create({
       data: {
@@ -111,9 +86,6 @@ async function main() {
         status: data.status,
         updatedAt: new Date(),
         createdAt: new Date(),
-
-        typeAnnonce,
-        categorie,
       },
     });
   } catch (error) {}

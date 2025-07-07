@@ -32,24 +32,7 @@ export async function POST(request: Request): Promise<NextResponse> {
   try {
     const data: CreateAnnonceRequest = await request.json();
 
-    let typeAnnonce;
-    const response = await fetch(
-      `${SiteBaseUrl}/${baseApi}/options/${data.typeAnnonceId}`,
-    );
-    response.json().then((data) => {
-      console.log("typeAnnonceData", data);
-      typeAnnonce = data;
-    });
-
-    let categorie;
-    const response2 = await fetch(
-      `${SiteBaseUrl}/${baseApi}/options/${data.categorieId}`,
-    );
-    response2.json().then((data) => {
-      console.log("categorieData", data);
-      categorie = data;
-    });
-
+ 
     // Créer une nouvelle annonce dans la base de données
     const newAnnonce = await prisma.annonce.create({
       data: {
@@ -68,9 +51,7 @@ export async function POST(request: Request): Promise<NextResponse> {
         status: data.status,
         updatedAt: new Date(),
         createdAt: new Date(),
-
-        typeAnnonce,
-        categorie,
+ 
       },
     });
 

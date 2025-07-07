@@ -32,6 +32,7 @@ const MyAnnonceDetailsView: React.FC<MyAnnonceDetailsViewProps> = ({
   handleEdit,
   //setEditModalOpen,
 }) => {
+  const d = new Date(annonce?.createdAt || "");
   const getImage = (imagePath: string, imageDescription: string = "") => {
     const imgUrl = getImageUrl(imagePath);
     return (
@@ -87,17 +88,10 @@ const MyAnnonceDetailsView: React.FC<MyAnnonceDetailsViewProps> = ({
 
       <div className="p-4">
         <div className="flex justify-between items-center">
-          <span className="inline-block bg-green-800 rounded-md px-2 py-1 text-xs sm:text-sm font-semibold text-white">
-            {lang === "ar"
-              ? annonce?.typeAnnonce?.nameAr
-              : annonce?.typeAnnonce?.name}{" "}
-            /{" "}
-            {lang === "ar"
-              ? annonce?.categorie?.nameAr
-              : annonce?.categorie?.name}
-          </span>
+          
           <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700">
-            {"formattedDate"} | {"formattedTime"}
+            {d.getDate()}-{d.getMonth() + 1}-{d.getFullYear()} | {d.getHours()}h : {d.getMinutes()}min  |
+            
           </span>
         </div>
 

@@ -78,9 +78,9 @@ export default function AnnonceDetailUI({
       </div>
 
       <div className="p-2">
-        <span className="inline-block bg-green-800 rounded-md px-2 py-1 text-xs sm:text-sm font-semibold text-white">
+        {/* <span className="inline-block bg-green-800 rounded-md px-2 py-1 text-xs sm:text-sm font-semibold text-white">
           {annonce.typeAnnonceNameAr} / {annonce.categorieNameAr}
-        </span>
+        </span> */}
 
         <h1 className="text-xl sm:text-2xl font-bold my-2">{annonce.title}</h1>
 

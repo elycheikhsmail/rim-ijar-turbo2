@@ -42,9 +42,9 @@ export default function AnnonceItemUI(annonce: Annonce) {
       </div>
 
       <div className="p-4 sm:p-6 flex flex-col flex-grow">
-        <span className="inline-block bg-green-800 rounded-full px-5 w-fit py-1 text-xs sm:text-sm font-semibold text-white mt-1">
+        {/* <span className="inline-block bg-green-800 rounded-full px-5 w-fit py-1 text-xs sm:text-sm font-semibold text-white mt-1">
           {annonce.typeAnnonceName} / {annonce.categorieName}
-        </span>
+        </span> */}
         <h2 className="text-lg sm:text-xl mt-3 font-semibold mb-1">
           {annonce.title}
         </h2>
