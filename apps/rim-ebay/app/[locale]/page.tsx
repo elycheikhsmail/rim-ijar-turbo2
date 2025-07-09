@@ -23,13 +23,30 @@ export default async function Home(props: {
   params: Promise<{ locale: string }>;
   searchParams?: Promise<{
     page?: string;
+    typeAnnonceId?: string;
+    categorieId?: string;
+    subCategorieId?: string;
+    price?: string;
   }>;
 }) {
   const t = await getI18n();
   const searchParams = await props.searchParams;
   const currentPage = Number(searchParams?.page) || 1;
 
-  const annoncesFromDB = await prisma.annonce.findMany({});
+  // Extract filter params from searchParams
+  const typeAnnonceId = searchParams?.typeAnnonceId;
+  const categorieId = searchParams?.categorieId;
+  const subCategorieId = searchParams?.subCategorieId;
+  const price = searchParams?.price;
+
+  // Build the where clause for filtering
+  const where: any = {};
+  if (typeAnnonceId && typeAnnonceId !== "") where.typeAnnonceId = typeAnnonceId;
+  if (categorieId && categorieId !== "") where.categorieId = categorieId;
+  if (subCategorieId && subCategorieId !== "") where.subcategorieId = subCategorieId;
+  if (price && price !== "" && !isNaN(Number(price))) where.price = Number(price);
+
+  const annoncesFromDB = await prisma.annonce.findMany({ where });
 
   const annonces: Annonce[] = annoncesFromDB.map((annonce) => ({
     id: annonce.id,
@@ -67,13 +84,20 @@ export default async function Home(props: {
   const totalPages = Math.ceil(annonces.length / itemsPerPage); // Calculate total pages based on your logic
 
   return (
-    <main className="min-h-screen">
-      <div className="p-8">
-        <div className="p-5 sm:mx-16 ">
-          <div className="flex justify-between  px-4 py-2">
+    <main className="min-h-screen bg-gray-100">
+      {/* Mobile Filter Button/Modal */}
+      <div className="block md:hidden w-full px-2 pt-4">
+        <FormSearchUI lang={(await props.params).locale} modeOptionsApi={modeOptionsApi} mobile />
+      </div>
+      <div className="flex flex-col md:flex-row min-h-screen max-w-screen-2xl mx-auto gap-6 px-2 md:px-4 py-4 md:py-8">
+        {/* Sidebar (only on md+) */}
+        <div className="hidden md:block md:basis-1/5 md:w-1/5">
+          <FormSearchUI lang={(await props.params).locale} modeOptionsApi={modeOptionsApi} />
+        </div>
+        {/* Main Content */}
+        <section className="flex-1 bg-white rounded-2xl shadow-lg p-4 md:p-8 min-w-0">
+          <div className="mb-6">
             <AnnoceTitle title={t("nav.Annoce")} />
-
-            <FormSearchUI modeOptionsApi={modeOptionsApi} />
           </div>
           {annonces ? (
             <ListAnnoncesUI
@@ -86,7 +110,7 @@ export default async function Home(props: {
               <LottieAnimation />
             </div>
           )}
-        </div>
+        </section>
       </div>
     </main>
   );

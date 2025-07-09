@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
 import FormSearch from "./Formsearch";
 import { useRouter } from "next/navigation";
+import { I18nProviderClient } from "@repo/locales/client";
 
 interface Filters {
   typeAnnonceId?: string;
@@ -14,93 +15,79 @@ interface Filters {
 }
 
 interface InputProps {
-  buttonLabel?: string;
-  filterIcon?: any;
+  lang: string;
   modeOptionsApi: "sqlite" | "tursor";
+  mobile?: boolean;
 }
 
-export function FormSearchUI({
-  buttonLabel = "Recherche",
-  filterIcon = faFilter,
-  modeOptionsApi = "sqlite", // Default to sqlite
-}: InputProps) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+export function FormSearchUI({ lang, modeOptionsApi = "sqlite", mobile = false }: InputProps) {
   const router = useRouter();
-
-  const openModal = () => {
-    setIsOpen(true);
-    setTimeout(() => setIsAnimating(true), 150);
-  };
-
-  const closeModal = () => {
-    setIsAnimating(false);
-    setTimeout(() => setIsOpen(false), 300);
-  };
+  const [modalOpen, setModalOpen] = useState(false);
 
   const handleSearchSubmit = async (filters: Filters) => {
-    // Type the filters argument
-    setIsLoading(true);
-    closeModal();
-
-    try {
       const params = new URLSearchParams(
-        Object.entries(filters).map(([key, value]) => [
-          key,
-          value?.toString() || "",
-        ]),
-      );
-      console.log("params=====", params.toString());
-      router.push(`?${params.toString()}`); // Redirect, no need to wait for API call here
-    } catch (error) {
-      console.error("Error during search:", error);
-      // Handle error (e.g., display a toast message)
-    } finally {
-      setIsLoading(false);
-    }
+      Object.entries(filters).map(([key, value]) => [key, value?.toString() || ""])
+    );
+    router.push(`?${params.toString()}`);
+    setModalOpen(false); // Close modal on mobile after search
   };
 
+  // Sidebar position: left for 'fr', right for 'ar'
+  const sidebarPosition = lang === "ar" ? "right-0" : "left-0";
+  const roundedSide = lang === "ar" ? "rounded-l-2xl" : "rounded-r-2xl";
+
+  if (mobile) {
+    // Mobile: Only render button and modal
   return (
-    <div>
+      <>
+        <div className="w-full flex justify-end mb-4">
       <button
-        onClick={openModal}
-        className="bg-blue-800 text-white outline-none rounded-2xl hover:bg-blue-700 py-2 px-3 shadow-xl flex items-center gap-2"
-      >
-        <FontAwesomeIcon icon={filterIcon} />
-        {buttonLabel}
-      </button>
-
-      {isOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div
-            className={`p-4 rounded-lg shadow-lg max-w-md w-full h-auto relative transform transition-all duration-300 ease-in-out ${
-              isAnimating ? "scale-100" : "scale-50 opacity-0"
-            }`}
+            onClick={() => setModalOpen(true)}
+            className="flex items-center gap-2 bg-blue-800 text-white rounded-xl px-4 py-2 shadow hover:bg-blue-700"
           >
+            <FontAwesomeIcon icon={faFilter} />
+            <span>Filtrer</span>
+          </button>
+        </div>
+        {modalOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+            <div className="bg-white rounded-2xl shadow-lg p-6 w-full max-w-md mx-2 relative">
             <button
-              onClick={closeModal}
-              className="absolute sm:bottom-55 bottom-80 rounded-lg px-3 right-10 text-red-600 hover:text-gray-900"
+                onClick={() => setModalOpen(false)}
+                className="absolute top-2 right-4 text-2xl text-gray-500 hover:text-red-600"
+                aria-label="Fermer"
             >
-              &#10005;
+                &times;
             </button>
-            <FormSearch
-              onSubmit={handleSearchSubmit}
-              modeOptionsApi={modeOptionsApi}
-            />{" "}
-            {/* Pass the function to FormSearch */}
+            <I18nProviderClient locale={lang}>
+              <FormSearch
+                lang={lang}
+                onSubmit={handleSearchSubmit}
+                modeOptionsApi={modeOptionsApi}
+              />
+            </I18nProviderClient>
           </div>
         </div>
       )}
+      </>
+    );
+  }
 
-      {/* Loader */}
-      {isLoading && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-white">
-            Loading Data .....
-          </div>
-        </div>
-      )}
+  // Desktop: Only render sidebar
+  return (
+<aside
+  className={`max-w-sm w-72 z-40 shadow-2xl ${sidebarPosition} ${roundedSide} flex flex-col items-center transition-transform duration-300 h-full bg-white rounded-2xl p-8 border border-gray-200`}
+>
+  <div className="flex flex-col h-full w-full">
+    <I18nProviderClient locale={lang}>
+      <FormSearch
+        lang={lang}
+        onSubmit={handleSearchSubmit}
+        modeOptionsApi={modeOptionsApi}
+      />
+    </I18nProviderClient>
     </div>
+</aside>
+
   );
 }
