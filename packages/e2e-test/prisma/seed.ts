@@ -185,9 +185,9 @@ async function main() {
         updatedAt: new Date(),
 
         // ✅ Ajouter les objets complets en JSON
-        typeAnnonce: randomType,
-        categorie: randomCategory,
-        subcategorie: randomSubCategory,
+        // typeAnnonce: randomType,
+        // categorie: randomCategory,
+        // subcategorie: randomSubCategory,
       },
     });
   }

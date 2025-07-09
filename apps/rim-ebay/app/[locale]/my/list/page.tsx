@@ -4,11 +4,16 @@ import { cookies } from "next/headers";
 import prisma from "../../../../lib/prisma";
 //import { Annonce } from "@/annonce.interface";
 import { Annonce } from "@repo/mytypes/types";
+import { FormSearchUI } from "@repo/ui/FormSearchUI";
 
 export default async function Home(props: {
   params: Promise<{ locale: string }>;
   searchParams?: Promise<{
     page?: string;
+    typeAnnonceId?: string;
+    categorieId?: string;
+    subCategorieId?: string;
+    price?: string;
   }>;
 }) {
   const searchParams = await props.searchParams;
@@ -17,11 +22,20 @@ export default async function Home(props: {
   const userid = (await cookies()).get("user");
   const userIdConverted = String(userid?.value || "");
 
-  const annoncesFromDB = await prisma.annonce.findMany({
-    where: {
-      userId: userIdConverted,
-    },
-  });
+  // Extract filter params from searchParams
+  const typeAnnonceId = searchParams?.typeAnnonceId;
+  const categorieId = searchParams?.categorieId;
+  const subCategorieId = searchParams?.subCategorieId;
+  const price = searchParams?.price;
+
+  // Build the where clause for filtering (always filter by userId)
+  const where: any = { userId: userIdConverted };
+  if (typeAnnonceId && typeAnnonceId !== "") where.typeAnnonceId = typeAnnonceId;
+  if (categorieId && categorieId !== "") where.categorieId = categorieId;
+  if (subCategorieId && subCategorieId !== "") where.subcategorieId = subCategorieId;
+  if (price && price !== "" && !isNaN(Number(price))) where.price = Number(price);
+
+  const annoncesFromDB = await prisma.annonce.findMany({ where });
 
   const annonces: Annonce[] = annoncesFromDB.map((annonce) => ({
     id: annonce.id,
@@ -59,8 +73,18 @@ export default async function Home(props: {
   const totalPages = Math.ceil(annonces.length / itemsPerPage); // Calculate total pages based on your logic
 
   return (
-    <main className="min-h-screen">
-      <div className="p-8">
+    <main className="min-h-screen bg-gray-100">
+      {/* Mobile Filter Button/Modal */}
+      <div className="block md:hidden w-full px-2 pt-4">
+        <FormSearchUI lang={params.locale} modeOptionsApi="sqlite" mobile />
+      </div>
+      <div className="flex flex-col md:flex-row min-h-screen max-w-screen-2xl mx-auto gap-6 px-2 md:px-4 py-4 md:py-8">
+        {/* Sidebar (only on md+) */}
+        <div className="hidden md:block md:basis-1/5 md:w-1/5">
+          <FormSearchUI lang={params.locale} modeOptionsApi="sqlite" />
+        </div>
+        {/* Main Content */}
+        <section className="flex-1 bg-white rounded-2xl shadow-lg p-4 md:p-8 min-w-0">
         {annonces ? (
           <MyListAnnoncesUI
             totalPages={totalPages}
@@ -73,6 +97,7 @@ export default async function Home(props: {
             <LottieAnimation />
           </div>
         )}
+        </section>
       </div>
     </main>
   );

@@ -1,5 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
+// import { useI18n } from "../../../apps/rim-ebay/locales/client";
+import { useI18n } from "@repo/locales/client";
 
 interface Filters {
   typeAnnonceId?: string;
@@ -25,11 +27,6 @@ interface FormSearchProps {
 export default function FormSearch({
   lang = "ar",
   onSubmit,
-  typeAnnonceLabel = "Type d'annonce",
-  categoryLabel = "Catégorie",
-  subCategoryLabel = "Sous-catégorie",
-  priceLabel = "Prix",
-  searchButtonLabel = "Rechercher",
   modeOptionsApi = "sqlite", // ✅ Ajout de la prop pour le mode API
 }: FormSearchProps) {
   let baseApiOptions = "/fr/p/api/tursor/";
@@ -45,6 +42,11 @@ export default function FormSearch({
   const [selectedSubCategoryId, setSelectedSubCategoryId] =
     useState<string>("");
   const [price, setPrice] = useState<number>();
+
+  const t = useI18n();
+
+  // Type assertion to match the working pattern in other components
+  const translate = (key: string) => (t as any)(key);
 
   // 🔹 Charger les types d'annonces au chargement
   useEffect(() => {
@@ -106,7 +108,12 @@ export default function FormSearch({
 
   const handleSearch = () => {
     const filters: Filters = {};
-    console.log("Recherche avec les filtres suivants:", price); // DEBUG
+    console.log("Recherche avec les filtres suivants:", {
+      selectedTypeId,
+      selectedCategoryId,
+      selectedSubCategoryId,
+      price
+    }); // DEBUG
 
     if (selectedTypeId) filters.typeAnnonceId = selectedTypeId.toString();
     if (selectedCategoryId) filters.categorieId = selectedCategoryId.toString();
@@ -127,20 +134,20 @@ export default function FormSearch({
       selectedCategoryId={selectedCategoryId}
       selectedSubCategoryId={selectedSubCategoryId}
       price={price !== undefined ? price.toString() : ""}
+      onSearch={handleSearch}
       onTypeChange={handleTypeChange}
       onCategoryChange={handleCategoryChange}
       onSubCategoryChange={setSelectedSubCategoryId}
       onPriceChange={handlePriceChange}
-      onSearch={handleSearch}
-      annonceTypeLabel={typeAnnonceLabel}
-      selectCategoryLabel={categoryLabel}
-      selectSubCategoryLabel={subCategoryLabel}
-      selectTypeLabel={typeAnnonceLabel}
-      formTitle="formTitle"
-      categoryLabel={categoryLabel}
-      subCategoryLabel={subCategoryLabel}
-      priceLabel={priceLabel}
-      searchButtonLabel={searchButtonLabel}
+      annonceTypeLabel={translate("filter.type")}
+      selectTypeLabel={translate("filter.type")}
+      categoryLabel={translate("filter.category")}
+      selectCategoryLabel={translate("filter.category")}
+      subCategoryLabel={translate("filter.subcategory")}
+      selectSubCategoryLabel={translate("filter.subcategory")}
+      formTitle={translate("filter.title")}
+      priceLabel={translate("filter.price")}
+      searchButtonLabel={translate("filter.search")}
     />
   );
 }
