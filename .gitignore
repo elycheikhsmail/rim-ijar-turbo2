@@ -45,3 +45,4 @@ yarn-error.log*
 
 # prisma client
 **/prisma-client
+prisma-client/**
