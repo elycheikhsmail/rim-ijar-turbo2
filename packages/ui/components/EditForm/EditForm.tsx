@@ -33,8 +33,8 @@ export interface EditFormProps {
   labelDescription?: string;
   labelPrice?: string;
   labelUpdate?: string;
-  labelCancel?: string; 
-  baseApiOptions:string
+  labelCancel?: string;
+  baseApiOptions: string;
 }
 
 const EditForm: React.FC<EditFormProps> = ({
@@ -57,11 +57,11 @@ const EditForm: React.FC<EditFormProps> = ({
   labelDescription = "Description",
   labelPrice = "Price",
   labelUpdate = "Update",
-  labelCancel = "Cancel", 
-  baseApiOptions=""
+  labelCancel = "Cancel",
+  baseApiOptions = "",
 }) => {
-  //const t = useI18n(); 
-  
+  //const t = useI18n();
+
   // baseApiOptions = "/fr/p/api/tursor";
   // if (modeOptionsApi === "sqlite") {
   //   baseApiOptions = "/fr1/p/api/sqlite";

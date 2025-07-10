@@ -2,17 +2,16 @@ import MyAnnonceDetailsUI from "./ui";
 import BackButton from "@repo/ui/Navigation";
 import { cookies } from "next/headers";
 
-
 export default async function AnnonceDetail(props: {
   params: Promise<{ locale: string; annonceId: string; id: string }>;
 }) {
   const params = await props.params;
   const userid = (await cookies()).get("user");
   const userIdConverted = String(userid?.value || "");
-  let modeOptionsApi: "sqlite" | "tursor"
-  modeOptionsApi = "sqlite"
+  let modeOptionsApi: "sqlite" | "tursor";
+  modeOptionsApi = "sqlite";
   if (process.env.NEXT_PUBLIC_OPTIONS_API_MODE !== "sqlite") {
-    modeOptionsApi = "tursor"
+    modeOptionsApi = "tursor";
   }
   let baseApiOptions = "/fr/p/api/tursor";
   if (modeOptionsApi === "sqlite") {
@@ -23,7 +22,11 @@ export default async function AnnonceDetail(props: {
       <div>
         <BackButton />
       </div>
-      <MyAnnonceDetailsUI lang={params.locale} annonceId={userIdConverted}   baseApiOptions={baseApiOptions} />
+      <MyAnnonceDetailsUI
+        lang={params.locale}
+        annonceId={userIdConverted}
+        baseApiOptions={baseApiOptions}
+      />
     </div>
   );
 }
