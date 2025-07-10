@@ -33,8 +33,8 @@ export interface EditFormProps {
   labelDescription?: string;
   labelPrice?: string;
   labelUpdate?: string;
-  labelCancel?: string;
-  modeOptionsApi: "sqlite" | "tursor";
+  labelCancel?: string; 
+  baseApiOptions:string
 }
 
 const EditForm: React.FC<EditFormProps> = ({
@@ -57,10 +57,15 @@ const EditForm: React.FC<EditFormProps> = ({
   labelDescription = "Description",
   labelPrice = "Price",
   labelUpdate = "Update",
-  labelCancel = "Cancel",
-  modeOptionsApi = "sqlite",
+  labelCancel = "Cancel", 
+  baseApiOptions=""
 }) => {
-  //const t = useI18n();
+  //const t = useI18n(); 
+  
+  // baseApiOptions = "/fr/p/api/tursor";
+  // if (modeOptionsApi === "sqlite") {
+  //   baseApiOptions = "/fr1/p/api/sqlite";
+  // }
   const [typeAnnonces, setTypeAnnonces] = useState<any[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [filteredSubCategories, setFilteredSubCategories] = useState<
@@ -82,7 +87,7 @@ const EditForm: React.FC<EditFormProps> = ({
   useEffect(() => {
     const fetchTypeAnnonces = async () => {
       try {
-        const response = await axios.get(`/fr/p/api/sqlite/options`);
+        const response = await axios.get(`${baseApiOptions}/options`);
         setTypeAnnonces(response.data);
       } catch (error) {
         toast.error(errorsFetchTypeAnnonces);
@@ -97,7 +102,7 @@ const EditForm: React.FC<EditFormProps> = ({
       if (selectedTypeId) {
         try {
           const response = await axios.get(
-            `/fr/p/api/sqlite/options?parentId=${selectedTypeId}`,
+            `${baseApiOptions}/options?parentId=${selectedTypeId}`,
           );
           setCategories(response.data);
         } catch (error) {
@@ -116,7 +121,7 @@ const EditForm: React.FC<EditFormProps> = ({
       if (selectedCategoryId) {
         try {
           const response = await axios.get(
-            `/fr/p/api/sqlite/options?parentId=${selectedCategoryId}`,
+            `${baseApiOptions}/options?parentId=${selectedCategoryId}`,
           );
           setFilteredSubCategories(response.data);
         } catch (error) {

@@ -29,6 +29,8 @@ interface CreateAnnonceRequest {
 
 // 1. Créer une annonce (POST)
 export async function POST(request: Request): Promise<NextResponse> {
+  // recuperer l'id de l'utilisateur depuis le token JWT ou la session
+  // recuprer le contacr de l'utilisateur depuis la base des donnnees
   try {
     const data: CreateAnnonceRequest = await request.json();
 

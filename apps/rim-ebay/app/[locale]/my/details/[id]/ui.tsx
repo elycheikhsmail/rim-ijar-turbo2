@@ -15,10 +15,13 @@ import MyAnnonceDetailsView from "./MyAnnonceDetailsView";
 export default function MyAnnonceDetailsCompo({
   lang = "ar",
   annonceId,
+  baseApiOptions
 }: {
   lang?: string;
-  annonceId: string;
+  annonceId: string; 
+   baseApiOptions:string
 }) {
+
   const hostServerForImages = "https://picsum.photos";
   const getImageUrl = (imagePath: string) =>
     `${hostServerForImages}/${imagePath}`;
@@ -123,8 +126,8 @@ export default function MyAnnonceDetailsCompo({
           annonceId={String(id)}
           initialData={initialData}
           onClose={() => setEditModalOpen(false)}
-          onUpdate={handleUpdate}
-          modeOptionsApi="sqlite"
+          onUpdate={handleUpdate} 
+          baseApiOptions={baseApiOptions}
         />
       )}
     </>
