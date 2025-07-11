@@ -1,6 +1,7 @@
 import MyAnnonceDetailsUI from "./ui";
 import BackButton from "@repo/ui/Navigation";
 import { cookies } from "next/headers";
+import prisma from "../../../../../lib/prisma";
 
 export default async function AnnonceDetail(props: {
   params: Promise<{ locale: string; annonceId: string; id: string }>;
@@ -8,6 +9,22 @@ export default async function AnnonceDetail(props: {
   const params = await props.params;
   const userid = (await cookies()).get("user");
   const userIdConverted = String(userid?.value || "");
+  let contact = ""
+  const user = await prisma.user.findUnique({
+    where: {
+      id: userIdConverted,
+    },
+  }).catch((err) => {
+    console.error("Error fetching user:", err);
+    // Handle the error as needed, e.g., redirect or show an error message
+  });
+  console.log("User ID:", userIdConverted);
+  console.log("User:", user); 
+if (user) {
+  contact = user.contact || ""; 
+}
+
+
   let modeOptionsApi: "sqlite" | "tursor";
   modeOptionsApi = "sqlite";
   if (process.env.NEXT_PUBLIC_OPTIONS_API_MODE !== "sqlite") {
@@ -24,7 +41,7 @@ export default async function AnnonceDetail(props: {
       </div>
       <MyAnnonceDetailsUI
         lang={params.locale}
-        annonceId={userIdConverted}
+        annonceId={contact}
         baseApiOptions={baseApiOptions}
       />
     </div>

@@ -120,7 +120,7 @@ const MyAnnonceDetailsView: React.FC<MyAnnonceDetailsViewProps> = ({
               {i18nContact}
             </h2>
             <p className="text-md font-semibold text-blue-600">
-              {annonce?.contact}
+              {parseInt(String(annonce?.contact)) }
             </p>
           </div>
           <div className="border-t border-green-800 my-2"></div>

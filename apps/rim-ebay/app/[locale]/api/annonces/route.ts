@@ -2,6 +2,7 @@
 
 import { NextResponse } from "next/server";
 import prisma from "../../../../lib/prisma";
+import { cookies } from "next/headers";
 const SiteBaseUrl = process.env.SITE_BASE_URL || "";
 console.log("Site Base URL:", SiteBaseUrl);
 let baseApi = "fr/p/api/tursor";
@@ -31,6 +32,23 @@ interface CreateAnnonceRequest {
 export async function POST(request: Request): Promise<NextResponse> {
   // recuperer l'id de l'utilisateur depuis le token JWT ou la session
   // recuprer le contacr de l'utilisateur depuis la base des donnnees
+  const userid = (await cookies()).get("user");
+  const userIdConverted = String(userid?.value || "");
+  let contact = ""
+  const user = await prisma.user.findUnique({
+    where: {
+      id: userIdConverted,
+    },
+  }).catch((err) => {
+    console.error("Error fetching user:", err);
+    // Handle the error as needed, e.g., redirect or show an error message
+  });
+  console.log("User ID:", userIdConverted);
+  console.log("User:", user);
+  if (user) {
+    contact = user.contact || "";
+  }
+
   try {
     const data: CreateAnnonceRequest = await request.json();
 
@@ -41,11 +59,13 @@ export async function POST(request: Request): Promise<NextResponse> {
         subcategorieId: data.subcategorieId,
         categorieId: data.categorieId,
         lieuId: data.lieuId,
-        userId: data.userId,
+        userId: userIdConverted,
+        //data.userId,
         title: data.title,
         description: data.description,
         price: data.price,
-        contact: data.contact,
+        contact, 
+        //data.contact,
         haveImage: data.haveImage,
         firstImagePath: data.firstImagePath,
 

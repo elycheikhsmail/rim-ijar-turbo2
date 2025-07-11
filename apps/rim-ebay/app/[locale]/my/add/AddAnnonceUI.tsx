@@ -169,11 +169,11 @@ export default function AddAnnonceUI({
         categorieId: selectedCategoryId.toString(),
         subcategorieId: selectedSubCategoryId.toString(),
         lieuId: selectedSubCategoryId.toString(),
-        userId: userid.toString(),
+        //userId: userid.toString(),
         title: description.substring(0, 50), // Use first 50 chars of description as title
         description: description,
         price: Number(price),
-        contact: userid.toString(), // Use userId as contact for now
+        //contact: userid.toString(), // Use userId as contact for now
         haveImage: false,
         firstImagePath: "",
         images: [],

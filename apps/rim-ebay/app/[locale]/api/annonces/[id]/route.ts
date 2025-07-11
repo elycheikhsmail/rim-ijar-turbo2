@@ -17,6 +17,7 @@ export async function GET(
     const annonce = await prisma.annonce.findUnique({
       where: { id },
     });
+    console.log(annonce, "annonce");
 
     if (!annonce) {
       return NextResponse.json({ error: "Annonce not found" }, { status: 404 });
