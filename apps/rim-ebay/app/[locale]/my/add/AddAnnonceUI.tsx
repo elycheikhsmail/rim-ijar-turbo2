@@ -6,7 +6,7 @@ import axios from "axios";
 import { Category, SubCategory, TypeAnnonce } from "@repo/mytypes/types";
 import toast, { Toaster } from "react-hot-toast";
 import { useSearchParams } from "next/navigation";
-const baseAnnonceApi = "/fr/api/annonces";
+const baseAnnonceApi = "/fr/api/my/annonces";
 let baseApiOptions = "/fr/p/api/tursor/";
 if (process.env.NEXT_PUBLIC_OPTIONS_API_MODE === "sqlite") {
   baseApiOptions = "/fr/p/api/sqlite/";

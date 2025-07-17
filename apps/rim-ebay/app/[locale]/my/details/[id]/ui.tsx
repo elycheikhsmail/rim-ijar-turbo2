@@ -50,7 +50,7 @@ export default function MyAnnonceDetailsCompo({
   const fetchAnnonce = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`/${lang}/api/annonces/${id}`);
+      const response = await axios.get(`/${lang}/api/my/annonces/${id}`);
       setAnnonce(response.data);
       setError(null);
     } catch (err) {
@@ -66,7 +66,7 @@ export default function MyAnnonceDetailsCompo({
   const handleDelte = async () => {
     const loadingToast = toast.loading(t("notifications.creating"));
     try {
-      const res = await axios.delete(`/fr/api/annonces/${id}`);
+      const res = await axios.delete(`/fr/api/my/annonces/${id}`);
       if (res.status === 200) {
         toast.success(t("notifications.successdelete"), {
           id: loadingToast,
