@@ -54,6 +54,8 @@ export async function POST(request: Request) {
           {
             id: user.id,
             email: user.email,
+            roleName:user.roleName,
+            roleId:user.roleId,
             sessionToken: sessionToken, // Ajout de l'UUID
           },
           process.env.JWT_SECRET,

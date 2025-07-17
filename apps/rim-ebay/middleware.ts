@@ -3,39 +3,12 @@ import { createI18nMiddleware } from "next-international/middleware";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { cookies } from "next/headers";
-import jwt from "jsonwebtoken";
+import { jwtVerify } from 'jose'
 
 const I18nMiddleware = createI18nMiddleware({
   locales: ["ar", "fr"],
   defaultLocale: "ar",
 });
-
-
-
-
-
-      // const sessionToken = uuidv4(); // Génère un UUID unique
-      // // Créer un nouveau token
-      // const token = jwt.sign(
-      //   {
-      //     id: user.id,
-      //     email: user.email,
-      //     sessionToken: sessionToken, // Ajout de l'UUID
-      //   },
-      //   process.env.JWT_SECRET || "secret-key",
-      //   { expiresIn: "1d" },
-      // );
-
-      // // Créer une nouvelle session
-      // const newSession = await tx.userSession.create({
-      //   data: {
-      //     userId: user.id,
-      //     token: token,
-      //     isExpired: false,
-      //     lastAccessed: new Date(),
-      //   },
-      // });
-
 
 export async function middleware(request: NextRequest) {
   const url = request.nextUrl.clone();
@@ -52,13 +25,20 @@ export async function middleware(request: NextRequest) {
     try {
       // Vérifier la validité du JWT
       if (typeof process.env.JWT_SECRET === "string") {
-        jwt.verify(jwtStore.value, process.env.JWT_SECRET);
+        const secret = new TextEncoder().encode(process.env.JWT_SECRET)
+        const token = jwtStore.value
+        const { payload } = await jwtVerify(token, secret)
+
+        console.log("decoded token")
+        console.log(payload)
         // Si le JWT est valide, on peut continuer
       } else {
         throw new Error("JWT_SECRET environment variable is not defined");
       }
     } catch (error) {
-      throw new Error(`JWT verification failed: ${error instanceof Error ? error.message : String(error)}`);
+
+      console.log(`JWT verification failed: ${error instanceof Error ? error.message : String(error)}`);
+      // throw new Error(`JWT verification failed: ${error instanceof Error ? error.message : String(error)}`);
     }
   }
 

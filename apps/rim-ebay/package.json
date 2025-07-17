@@ -38,6 +38,7 @@
     "better-sqlite3": "^12.2.0",
     "dotenv": "^16.4.7",
     "intl-locale-textinfo-polyfill": "^2.1.1",
+    "jose": "^6.0.12",
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.2",
     "lottie-react": "^2.4.0",

@@ -176,7 +176,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "O:\\L2\\s4\\stage\\project\\rim-ijar-turbo2\\packages\\mytypes\\prisma-client",
+      "value": "/home/ely/Documents/rim-ijar-6-7-2024/rim-ijar-turbo2/packages/mytypes/prisma-client",
       "fromEnvVar": null
     },
     "config": {
@@ -185,12 +185,12 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "windows",
+        "value": "debian-openssl-3.0.x",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "O:\\L2\\s4\\stage\\project\\rim-ijar-turbo2\\packages\\mytypes\\prisma\\schema.prisma",
+    "sourceFilePath": "/home/ely/Documents/rim-ijar-6-7-2024/rim-ijar-turbo2/packages/mytypes/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
