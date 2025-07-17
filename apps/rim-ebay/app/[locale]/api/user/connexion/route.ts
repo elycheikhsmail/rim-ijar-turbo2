@@ -48,15 +48,20 @@ export async function POST(request: Request) {
 
       const sessionToken = uuidv4(); // Génère un UUID unique
       // Créer un nouveau token
-      const token = jwt.sign(
-        {
-          id: user.id,
-          email: user.email,
-          sessionToken: sessionToken, // Ajout de l'UUID
-        },
-        process.env.JWT_SECRET || "secret-key",
-        { expiresIn: "1d" },
-      );
+      let token: string;
+      if (typeof process.env.JWT_SECRET === "string") {
+        token = jwt.sign(
+          {
+            id: user.id,
+            email: user.email,
+            sessionToken: sessionToken, // Ajout de l'UUID
+          },
+          process.env.JWT_SECRET,
+          { expiresIn: "1d" },
+        );
+      } else {
+        throw new Error("JWT_SECRET environment variable is not defined");
+      }
 
       // Créer une nouvelle session
       const newSession = await tx.userSession.create({
