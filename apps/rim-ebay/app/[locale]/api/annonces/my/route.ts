@@ -1,7 +1,7 @@
 // app/api/annonces/route.ts
 
 import { NextResponse } from "next/server";
-import prisma from "../../../../lib/prisma";
+import prisma from "../../../../../lib/prisma";
 import { cookies } from "next/headers";
 const SiteBaseUrl = process.env.SITE_BASE_URL || "";
 console.log("Site Base URL:", SiteBaseUrl);
