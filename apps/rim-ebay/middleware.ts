@@ -21,6 +21,7 @@ export async function middleware(request: NextRequest) {
   const jwtStore = cookieStore.get("jwt");
   console.log("jwtStore", jwtStore?.value);
   // Vérifier si le cookie jwt existe
+  let userData: Record<string, any> | null = null;
   if (jwtStore) {
     try {
       // Vérifier la validité du JWT
@@ -31,6 +32,18 @@ export async function middleware(request: NextRequest) {
 
         console.log("decoded token")
         console.log(payload)
+        // Récupérer les données essentielles de l'utilisateur
+        userData = {
+          id: payload.id,
+          email: payload.email,
+          role: payload.role,
+        };
+        // Injecter dans les headers
+        if (userData) {
+          request.headers.set("x-user-id", String(userData.id ?? ""));
+          request.headers.set("x-user-email", String(userData.email ?? ""));
+          request.headers.set("x-user-role", String(userData.role ?? ""));
+        }
         // Si le JWT est valide, on peut continuer
       } else {
         throw new Error("JWT_SECRET environment variable is not defined");
