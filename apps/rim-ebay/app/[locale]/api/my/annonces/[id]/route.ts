@@ -2,6 +2,15 @@
 
 import prisma from "../../../../../../lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
+import { getUserFromCookies } from "../../../../../../utiles/getUserFomCookies";
+
+function getUserFromHeaders(request: NextRequest) {
+  return {
+    id: request.headers.get("x-user-id"),
+    email: request.headers.get("x-user-email"),
+    role: request.headers.get("x-user-role"),
+  };
+}
 
 // 1. Récupérer une annonce par ID (GET)
 // export async function GET(
@@ -10,14 +19,17 @@ export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> },
 ) {
+  const userData = await getUserFromCookies();
+  console.log("User Data:", userData);
+  const userId = userData && userData.id ? userData.id : ""
+
   try {
     const { id } = await params;
     console.log("id", id);
 
     const annonce = await prisma.annonce.findUnique({
-      where: { id },
+      where: { id, userId },
     });
-    console.log(annonce, "annonce");
 
     if (!annonce) {
       return NextResponse.json({ error: "Annonce not found" }, { status: 404 });
@@ -38,6 +50,10 @@ export async function PUT(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> },
 ) {
+
+  const userData = await getUserFromCookies();
+  console.log("User Data:", userData);
+  const userId = userData && userData.id ? userData.id : ""
   const { id } = await params;
   console.log("id", id);
   try {
@@ -52,7 +68,7 @@ export async function PUT(
       where: { id: data.categorie, depth: 2 },
     });
     const updatedAnnonce = await prisma.annonce.update({
-      where: { id },
+      where: { id, userId },
       data: {
         typeAnnonceId: data.typeAnnonceId,
         categorieId: data.categorieId,
@@ -84,6 +100,9 @@ export async function DELETE(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> },
 ) {
+  const user = getUserFromHeaders(request);
+  console.log("User from headers:", user);
+
   const { id } = await params;
   console.log("id", id);
   try {

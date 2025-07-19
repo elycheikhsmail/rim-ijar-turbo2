@@ -5,6 +5,9 @@ import prisma from "../../../../lib/prisma";
 //import { Annonce } from "@/annonce.interface";
 import { Annonce } from "@repo/mytypes/types";
 import { FormSearchUI } from "@repo/ui/FormSearchUI";
+import { getUserFromCookies } from "../../../../utiles/getUserFomCookies";
+
+
 
 export default async function Home(props: {
   params: Promise<{ locale: string }>;
@@ -16,12 +19,14 @@ export default async function Home(props: {
     price?: string;
   }>;
 }) {
+
+  const userData = await getUserFromCookies();
+  console.log("User Data:", userData);
+  const userId = userData && userData.id ? userData.id : ""
+
   const searchParams = await props.searchParams;
   const params = await props.params;
   const currentPage = Number(searchParams?.page) || 1;
-  const userid = (await cookies()).get("user");
-  const userIdConverted = String(userid?.value || "");
-
   // Extract filter params from searchParams
   const typeAnnonceId = searchParams?.typeAnnonceId;
   const categorieId = searchParams?.categorieId;
@@ -29,7 +34,7 @@ export default async function Home(props: {
   const price = searchParams?.price;
 
   // Build the where clause for filtering (always filter by userId)
-  const where: any = { userId: userIdConverted };
+  const where: any = { userId };
   if (typeAnnonceId && typeAnnonceId !== "") where.typeAnnonceId = typeAnnonceId;
   if (categorieId && categorieId !== "") where.categorieId = categorieId;
   if (subCategorieId && subCategorieId !== "") where.subcategorieId = subCategorieId;
@@ -85,18 +90,18 @@ export default async function Home(props: {
         </div>
         {/* Main Content */}
         <section className="flex-1 bg-white rounded-2xl shadow-lg p-4 md:p-8 min-w-0">
-        {annonces ? (
-          <MyListAnnoncesUI
-            totalPages={totalPages}
-            currentPage={currentPage}
-            annonces={annonces}
-            lang={params.locale}
-          />
-        ) : (
-          <div className="flex justify-center items-center">
-            <LottieAnimation />
-          </div>
-        )}
+          {annonces ? (
+            <MyListAnnoncesUI
+              totalPages={totalPages}
+              currentPage={currentPage}
+              annonces={annonces}
+              lang={params.locale}
+            />
+          ) : (
+            <div className="flex justify-center items-center">
+              <LottieAnimation />
+            </div>
+          )}
         </section>
       </div>
     </main>

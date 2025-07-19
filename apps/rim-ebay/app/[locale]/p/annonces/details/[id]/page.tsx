@@ -12,8 +12,7 @@ export default async function AnnonceDetail(props: {
   // Recherche de l'annonce en base de données
   const annonce = await prisma.annonce.findUnique({
     where: { id: params.id },
-  });
-  console.log("annonce :::: ", annonce);
+  }); 
 
   // Vérification si l'annonce existe
   if (!annonce) {
@@ -29,9 +28,7 @@ export default async function AnnonceDetail(props: {
     lieuStrAr: "",
     images: [],
   };
-
-  //const annonce = await handleGetOneAnnonce(params.id)
-  console.log("annonce :::: ", annonce);
+ 
 
   if (!annonce) {
     return (

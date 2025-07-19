@@ -1,6 +1,5 @@
 // app/api/annonces/route.ts
-
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import prisma from "../../../../../lib/prisma";
 import { cookies } from "next/headers";
 const SiteBaseUrl = process.env.SITE_BASE_URL || "";
@@ -10,6 +9,15 @@ if (process.env.NEXT_PUBLIC_OPTIONS_API_MODE === "sqlite") {
   baseApi = "fr/p/api/sqlite";
 }
 console.log("Base API URL:", baseApi);
+
+function getUserFromHeaders(request: NextRequest) {
+  return {
+    id: request.headers.get("x-user-id"),
+    email: request.headers.get("x-user-email"),
+    role: request.headers.get("x-user-role"),
+  };
+}
+
 
 // Définition des types pour la requête
 interface CreateAnnonceRequest {
@@ -29,9 +37,12 @@ interface CreateAnnonceRequest {
 }
 
 // 1. Créer une annonce (POST)
-export async function POST(request: Request): Promise<NextResponse> {
+export async function POST(request: NextRequest): Promise<NextResponse> {
   // recuperer l'id de l'utilisateur depuis le token JWT ou la session
   // recuprer le contacr de l'utilisateur depuis la base des donnnees
+    const userInheaders = getUserFromHeaders(request);
+  console.log("User from headers:", userInheaders);
+
   const userid = (await cookies()).get("user");
   const userIdConverted = String(userid?.value || "");
   let contact = ""

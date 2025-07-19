@@ -59,7 +59,7 @@ function AnnonceItemUI({
   annonce: Annonce;
   lang?: string;
 }) {
-  console.log("annonceUI", annonce);
+  //console.log("annonceUI", annonce);
 
   const t = useI18n();
 
@@ -135,7 +135,7 @@ export function MyListAnnoncesUI({
   currentPage: number;
   annonces: Annonce[];
 }) {
-  console.log("annonces:::::", annonces);
+ // console.log("annonces:::::", annonces);
   const t = useI18n();
 
   return (
