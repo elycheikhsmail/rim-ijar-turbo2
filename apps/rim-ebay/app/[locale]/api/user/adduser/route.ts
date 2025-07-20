@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcrypt";
 import prisma from "../../../../../lib/prisma";
 import { Roles } from "../../../../../DATA/roles";
+import { sendVerificationEmailLocal } from "../../../../../lib/mailer";
 
 export async function POST(request: NextRequest) {
   try {
@@ -25,6 +26,8 @@ export async function POST(request: NextRequest) {
 
     // Hash the password
     const hashedPassword = await bcrypt.hash(password, 10);
+    const token = crypto.randomUUID();
+    const expires = new Date(Date.now() + 30 * 60 * 1000); // 30 min
 
     const user = await prisma.user.create({
       data: {
@@ -32,9 +35,14 @@ export async function POST(request: NextRequest) {
         contact,
         password: hashedPassword,
         roleId: String(Roles[1].id),
-        roleName: Roles[1].name
+        roleName: Roles[1].name,
+        verifyToken: token, 
+        emailVerified:false,
+        verifyTokenExpires: expires
       },
     });
+
+    await sendVerificationEmailLocal(email, token);
 
     return NextResponse.json(
       { message: "User registered successfully", user },

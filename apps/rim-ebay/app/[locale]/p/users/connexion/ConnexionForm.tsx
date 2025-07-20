@@ -14,9 +14,30 @@ export default function ConnexionForm({ lang = "ar" }) {
   //"user1@example.com";
   const defaultPassword = "";
   //"password123";
+    const userForTest = {
+    email:"ely@gmail.com",
+    contact: "22334455",
+    password: "password123",
+    confirmPassword: "password123",
+  }
+  const defaultUser = {
+    email: "",
+    contact: "",
+    password: "",
+    confirmPassword: "",
+  };
+  // en mode de test, on peut utiliser userForTest
+  defaultUser.email = userForTest.email;
+  defaultUser.contact = userForTest.contact;
+  defaultUser.password = userForTest.password;
+  defaultUser.confirmPassword = userForTest.confirmPassword;
+  
 
-  const [email, setEmail] = useState(defaultEmail);
-  const [password, setPassword] = useState(defaultPassword);
+  const [email, setEmail] = useState(defaultUser.email); 
+  const [password, setPassword] = useState(defaultUser.password); 
+
+  // const [email, setEmail] = useState(defaultEmail);
+  // const [password, setPassword] = useState(defaultPassword);
   const [errors, setErrors] = useState({ email: "", password: "" });
   const [submitStatus, setSubmitStatus] = useState("");
   const [isLoading, setIsLoading] = useState(false);

@@ -8,11 +8,29 @@ export default function RegisterForm({ lang = "ar" }) {
   const router = useRouter();
   const t = useI18n();
   console.log("lang", lang);
+  const userForTest = {
+    email:"ely@gmail.com",
+    contact: "22334455",
+    password: "password123",
+    confirmPassword: "password123",
+  }
+  const defaultUser = {
+    email: "",
+    contact: "",
+    password: "",
+    confirmPassword: "",
+  };
+  // en mode de test, on peut utiliser userForTest
+  defaultUser.email = userForTest.email;
+  defaultUser.contact = userForTest.contact;
+  defaultUser.password = userForTest.password;
+  defaultUser.confirmPassword = userForTest.confirmPassword;
+  
 
-  const [email, setEmail] = useState("");
-  const [contact, setContact] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [email, setEmail] = useState(defaultUser.email);
+  const [contact, setContact] = useState(defaultUser.contact);
+  const [password, setPassword] = useState(defaultUser.password);
+  const [confirmPassword, setConfirmPassword] = useState(defaultUser.confirmPassword);
   const [errors, setErrors] = useState({
     email: "",
     password: "",
