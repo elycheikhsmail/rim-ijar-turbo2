@@ -11,7 +11,11 @@ const transporter = nodemailer.createTransport(
 );
 
 export async function sendVerificationEmailLocal(to: string, token: string) {
-  const url = `${process.env.NEXTAUTH_URL}/verify-email?token=${token}`;
+  let baseUrl = process.env.NEXTAUTH_URL || "http://localhost:3000";
+  const url = `${baseUrl}/fr/api/mail/verify?token=${token}`;
+ // console.log("Envoi de l'email de vérification à", to, "avec le lien", url);
+
+  console.log( "avec le lien", url);
   await transporter.sendMail({
     from: '"Ton App" <no-reply@ton-domaine.com>',
     to,

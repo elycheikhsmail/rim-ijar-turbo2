@@ -1,4 +1,4 @@
-import { sendVerificationEmailLocal } from "../../../../lib/mailer";
+import { sendVerificationEmailLocal } from "../../../../../lib/mailer";
 
 export async function GET(request: Request) {
    await sendVerificationEmailLocal("onboard@gmail.com", "test-token");
