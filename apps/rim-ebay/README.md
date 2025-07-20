@@ -74,3 +74,16 @@ Voir le workflow GitHub `.github/workflows/deploy-nextjs-postgress.yml` pour :
 - Intégration continue
 - Déploiement automatisé
 ````
+
+5. Utiliser MailHog (via Docker)
+MailHog est un “fake” SMTP server : il capte tous les mails que tu lui envoies et les expose dans une interface web.
+
+Lance MailHog
+
+bash
+Copy
+Edit
+docker run -d -p 1025:1025 -p 8025:8025 mailhog/mailhog
+SMTP écoute sur localhost:1025
+
+UI web sur http://localhost:8025
