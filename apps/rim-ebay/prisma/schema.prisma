@@ -35,6 +35,19 @@ model User {
   //annonces  Annonce[]
 }
 
+model PasswordReset {
+  id                 String    @id @default(auto()) @map("_id") @db.ObjectId
+  //id         String   @id @default(cuid())
+  //user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId     String
+  token      String   //@unique
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+
+  //@@index([token])
+  //@@index([expiresAt])
+}
+
 
 model Contact {
   id                 String    @id @default(auto()) @map("_id") @db.ObjectId

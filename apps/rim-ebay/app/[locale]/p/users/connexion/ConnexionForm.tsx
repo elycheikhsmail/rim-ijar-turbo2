@@ -45,7 +45,10 @@ export default function ConnexionForm({ lang = "ar" }) {
   const handleNavigate = () => {
     router.push(`/${lang}/p/users/register`);
   };
-
+ const handleNavigateToForgetPassword = () => {
+  // fr/p/users/forgot-password
+    router.push(`/${lang}/p/users/forgot-password`);
+  };
   const validateForm = () => {
     let isValid = true;
     const newErrors = { email: "", password: "" };
@@ -190,6 +193,13 @@ export default function ConnexionForm({ lang = "ar" }) {
           className="cursor-pointer text-gray-400 font-medium"
         >
           s'inscrire
+        </div>
+         <div
+          id="forget-password"
+          onClick={handleNavigateToForgetPassword }
+          className="cursor-pointer text-gray-400 font-medium"
+        >
+          oublie mot de passe ?
         </div>
       </div>
 
