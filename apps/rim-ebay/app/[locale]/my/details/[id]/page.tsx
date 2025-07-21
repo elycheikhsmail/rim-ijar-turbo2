@@ -21,7 +21,7 @@ export default async function AnnonceDetail(props: {
   console.log("User ID:", userIdConverted);
   console.log("User:", user); 
 if (user) {
-  contact = user.contact || ""; 
+  contact =   ""; 
 }
 
 

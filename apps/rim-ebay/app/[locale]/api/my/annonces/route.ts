@@ -57,7 +57,15 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   console.log("User ID:", userIdConverted);
   console.log("User:", user);
   if (user) {
-    contact = user.contact || "";
+    //contact = user.contact || "";
+    const contactObject = await prisma.contact.findFirst(
+      {where : {
+        userId:user.id
+      }}
+    )
+    if(contactObject){
+      contact = contactObject.contact ? contactObject.contact: ""
+    }
   }
 
   try {

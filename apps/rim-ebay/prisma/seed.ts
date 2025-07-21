@@ -41,6 +41,7 @@ async function main() {
           createdAt: new Date(),
           lastLogin: new Date(),
           isActive: true,
+          verifyToken:""
         },
       }),
     ),
