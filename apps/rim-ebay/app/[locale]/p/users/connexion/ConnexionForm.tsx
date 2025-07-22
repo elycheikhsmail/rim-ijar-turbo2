@@ -78,7 +78,7 @@ export default function ConnexionForm({ lang = "ar" }) {
     setIsLoading(true);
 
     try {
-      const response = await axios.post(`/${lang}/api/user/connexion`, {
+      const response = await axios.post(`/${lang}/api/p/users/connexion`, {
         email,
         password,
       });

@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcrypt";
-import prisma from "../../../../../lib/prisma";
-import { Roles } from "../../../../../DATA/roles";
-import { sendVerificationEmailLocal } from "../../../../../lib/mailer";
+import prisma from "../../../../../../lib/prisma";
+import { Roles } from "../../../../../../DATA/roles";
+import { sendVerificationEmailLocal } from "../../../../../../lib/mailer";
 
 export async function POST(request: NextRequest) {
   try {

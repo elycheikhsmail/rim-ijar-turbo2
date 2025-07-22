@@ -23,7 +23,7 @@ export const NavAuthUI = ({ lang = "ar" }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const handleLogout = async () => {
-    const response = await fetch(`/${lang}/api/user/logout`, {
+    const response = await fetch(`/${lang}/api/p/users/logout`, {
       method: "POST",
     });
     if (response.ok) {
