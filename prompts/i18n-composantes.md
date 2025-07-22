@@ -1,0 +1,1 @@
+i18n doit etre externaliser pour les composantes enfants donc la location doit passer via les props

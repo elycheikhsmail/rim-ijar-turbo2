@@ -19,11 +19,20 @@ export default async function AnnonceDetail(props: {
     // Handle the error as needed, e.g., redirect or show an error message
   });
   console.log("User ID:", userIdConverted);
-  console.log("User:", user); 
-if (user) {
-  contact =   ""; 
-}
+  console.log("User:", user);
 
+  let contactObject = null;
+  if (user) {
+    contactObject = await prisma.contact.findFirst({
+      where: { userId: userIdConverted },
+    });
+    if (contactObject && contactObject.contact) {
+      contact = contactObject.contact;
+    }
+    else {
+      contact = "Contact non trouvé";
+    }
+  }
 
   let modeOptionsApi: "sqlite" | "tursor";
   modeOptionsApi = "sqlite";

@@ -41,6 +41,14 @@ export async function POST(request: NextRequest) {
         verifyTokenExpires: expires
       },
     });
+    const tokenContact = crypto.randomUUID();
+    await prisma.contact.create({
+      data: {
+        userId: user.id,
+        contact,
+        verifyCode:tokenContact,
+      },
+    });
 
     await sendVerificationEmailLocal(email, token);
 

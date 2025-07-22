@@ -2,8 +2,7 @@
 import BackButton from "@repo/ui/Navigation";
 import AnnonceDetailCompo from "@repo/ui/All_AnnonceDetaille/AnnonceDetailUI";
 import { Annonce } from "@repo/mytypes/types";
-import prisma from "../../../../../../lib/prisma";
-import { OptionsModel } from "@repo/mytypes/prisma-client";
+import prisma from "../../../../../../lib/prisma"; 
 
 export default async function AnnonceDetail(props: {
   params: Promise<{ id: string }>;
@@ -13,6 +12,9 @@ export default async function AnnonceDetail(props: {
   const annonce = await prisma.annonce.findUnique({
     where: { id: params.id },
   }); 
+  const contactObject = await prisma.contact.findFirst({
+    where: { userId: annonce?.userId },
+  });
 
   // Vérification si l'annonce existe
   if (!annonce) {
@@ -28,6 +30,12 @@ export default async function AnnonceDetail(props: {
     lieuStrAr: "",
     images: [],
   };
+  if (contactObject && contactObject.contact) {
+    formattedAnnonce.contact = contactObject.contact;
+  } else {
+    formattedAnnonce.contact = "Contact non trouvé";
+  } 
+  
  
 
   if (!annonce) {
