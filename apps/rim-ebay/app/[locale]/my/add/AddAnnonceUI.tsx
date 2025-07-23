@@ -6,18 +6,20 @@ import axios from "axios";
 import { Category, SubCategory, TypeAnnonce } from "@repo/mytypes/types";
 import toast, { Toaster } from "react-hot-toast";
 import { useSearchParams } from "next/navigation";
-const baseAnnonceApi = "/fr/api/my/annonces";
-let baseApiOptions = "/fr/p/api/tursor/";
-if (process.env.NEXT_PUBLIC_OPTIONS_API_MODE === "sqlite") {
-  baseApiOptions = "/fr/p/api/sqlite/";
-}
+
+
+//const baseAnnonceApi = "/fr/api/my/annonces";
+
 export default function AddAnnonceUI({
-  lang = "ar",
-  userid,
+  lang = "ar", 
+  relavieUrlOptionsModel ="",
+  relavieUrlAnnonce = "/fr/api/my/annonces",
 }: {
-  lang?: string;
-  userid: string;
+  lang?: string; 
+  relavieUrlOptionsModel: string;
+   relavieUrlAnnonce: string;
 }) {
+//}) {
   const router = useRouter();
   const t = useI18n();
 
@@ -41,9 +43,8 @@ export default function AddAnnonceUI({
 
   useEffect(() => {
     const fetchTypeAnnonces = async () => {
-      try {
-        //const res = await fetch(`${baseApi}/typeAnnonce`);
-        const res = await fetch(`${baseApiOptions}/options`);
+      try { 
+        const res = await fetch(`${relavieUrlOptionsModel}/options`);
         if (!res.ok) {
           throw new Error("Network response was not ok");
         }
@@ -62,9 +63,8 @@ export default function AddAnnonceUI({
     const fetchCategories = async () => {
       if (selectedTypeId !== undefined) {
         try {
-          const response = await axios.get(
-            //`${baseApi}/categories?typeAnnonceId=${encodeURIComponent(selectedTypeId)}`,
-            `${baseApiOptions}/options?parentId=${encodeURIComponent(selectedTypeId)}`,
+          const response = await axios.get( 
+            `${relavieUrlOptionsModel}/options?parentId=${encodeURIComponent(selectedTypeId)}`,
           );
           setCategories(response.data);
         } catch (error) {
@@ -83,10 +83,8 @@ export default function AddAnnonceUI({
     const fetchSubCategories = async () => {
       if (selectedCategoryId !== undefined) {
         try {
-          const response = await axios.get(
-            //`${baseApi}/subCategories?CategoryId=${encodeURIComponent(selectedCategoryId)}`,
-            //${baseApiOptions}/options?parentId=
-            `${baseApiOptions}/options?parentId=${encodeURIComponent(selectedCategoryId)}`,
+          const response = await axios.get( 
+            `${relavieUrlOptionsModel}/options?parentId=${encodeURIComponent(selectedCategoryId)}`,
           );
 
           setFilteredSubCategories(response.data);
@@ -180,7 +178,7 @@ export default function AddAnnonceUI({
         status: "active",
       };
 
-      const res = await fetch(`${baseAnnonceApi}`, {
+      const res = await fetch(`${relavieUrlAnnonce}}`, {
         method: "POST",
         body: JSON.stringify(annonceData),
         headers: {
