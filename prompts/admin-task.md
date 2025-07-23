@@ -1,5 +1,8 @@
 - creer un script qui creer un utilisateur dans la base des donnees ayant comme role admin et un mot de passe dure
+ page d'admin des annonces et users
+
 - chaque utilisateur a un seul role (pour simplifier) (remarque )
+-
 - page de visualisation des trafic du site :
  - nombre des visiteur par jours (integre dans vercel) 
  - nombre des annonce par jours

@@ -21,7 +21,7 @@ model User {
   //id String @id @default(uuid())
   email              String    @unique
   password           String
- // contact            String?
+  // contact            String?
   roleId             String?
   roleName           String?
   createdAt          DateTime  @default(now())
@@ -36,29 +36,28 @@ model User {
 }
 
 model PasswordReset {
-  id                 String    @id @default(auto()) @map("_id") @db.ObjectId
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   //id         String   @id @default(cuid())
   //user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  userId     String
-  token      String   //@unique
-  expiresAt  DateTime
-  createdAt  DateTime @default(now())
+  userId    String
+  token     String //@unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
 
   //@@index([token])
   //@@index([expiresAt])
 }
 
-
 model Contact {
   id                 String    @id @default(auto()) @map("_id") @db.ObjectId
   //userId      String @db.ObjectId 
-  userId       String
-  contact            String? 
-  createdAt          DateTime  @default(now()) 
+  userId             String
+  contact            String?
+  createdAt          DateTime  @default(now())
   isActive           Boolean   @default(false)
-  isVerified      Boolean   @default(false)
-  verifyCode       String
-  verifyTokenExpires DateTime? 
+  isVerified         Boolean   @default(false)
+  verifyCode         String
+  verifyTokenExpires DateTime?
 }
 
 model UserSession {
@@ -100,24 +99,35 @@ model Image {
 
 model Annonce {
   //id String @id @default(uuid())
-  id             String   @id @default(auto()) @map("_id") @db.ObjectId
-  typeAnnonceId  String //@db.ObjectId 
-  categorieId    String //@db.ObjectId 
-  lieuId         String //@db.ObjectId 
-  userId         String //@db.ObjectId 
-  subcategorieId String //@db.ObjectId 
-  title          String
-  description    String
-  price          Float?
-  contact        String
-  haveImage      Boolean  @default(false)
-  firstImagePath String?
-  status         String
-  updatedAt      DateTime @default(now()) @updatedAt
-  createdAt      DateTime @default(now())
+  id                     String   @id @default(auto()) @map("_id") @db.ObjectId
+  typeAnnonceId          String //@db.ObjectId 
+  categorieId            String //@db.ObjectId 
+  lieuId                 String //@db.ObjectId 
+  userId                 String //@db.ObjectId 
+  subcategorieId         String //@db.ObjectId 
+  title                  String
+  description            String
+  price                  Float?
+  contact                String
+  haveImage              Boolean  @default(false)
+  firstImagePath         String?
+  status                 String
+  isPublished            Boolean  @default(false)
+  updatedAt              DateTime @default(now()) @updatedAt
+  createdAt              DateTime @default(now())
 
   //user              User        @relation(fields: [userId], references: [id])
   annonceImages AnnonceImage[]
+}
+
+model AnnoncePublicationChechList {
+  id                           String  @id @default(auto()) @map("_id") @db.ObjectId
+  annonceId                    String 
+  isContactVerified            Boolean @default(false)
+  isAnnonceVerifiedByIA        Boolean @default(false)
+  isAnnonceVerifiedByAdmin     Boolean @default(false)
+  isAnnonceVerifiedByAssistant Boolean @default(false)
+  isAllowedToBePublished       Boolean @default(false)
 }
 
 model AnnonceImage {

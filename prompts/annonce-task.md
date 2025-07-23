@@ -1,3 +1,5 @@
+- admin verifie  la confirmite d'une annonce avec nos regle
+
 - verifier via l'IA la confirmite d'une annonce avec nos regle
 
 ------------------------------

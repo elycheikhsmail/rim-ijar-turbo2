@@ -41,6 +41,7 @@ export default async function Home(props: {
 
   // Build the where clause for filtering
   const where: any = {};
+  where.isPublished = true; // Assuming you want to filter only published annonces 
   if (typeAnnonceId && typeAnnonceId !== "") where.typeAnnonceId = typeAnnonceId;
   if (categorieId && categorieId !== "") where.categorieId = categorieId;
   if (subCategorieId && subCategorieId !== "") where.subcategorieId = subCategorieId;

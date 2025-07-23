@@ -10,8 +10,22 @@ inviter l'utilisateur a consulter son email pour la verification => ok
  
 
  
-- une fois l'utilisateur ajoute son premier annonce verifier le numero de telephone de l'utilisateur. dans le MVP il telephone a un numero donne plus on va automatiser cette tache
+- l'annoce ne doit etre visible par le public avant la verification du numero de telephone.
+- pour que son numero soit verifier il doit nous contacter (version MVP plus on va automatiser cette tache)
+ 
+details technique : 
+check l'etat du contact de l'utilisateur en cours isVerified isActive si = false alors Annonce.isPublish = false
+
+Annonce :
+ isAllowedToBePublished : defalaut false
+
+AnnoncePublicationChechList
+id
+isContactVerified
+isAnnonceVerifiedByIA
+isAnnonceVerifiedByAdmin
+isAnnonceVerifiedByAssistant
+isAllowedToBePublished
 
 
-
-
+- aller vers les taches admin
