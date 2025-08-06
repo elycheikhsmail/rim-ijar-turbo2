@@ -3,8 +3,8 @@
   "private": true,
   "scripts": {
     "prepare": "husky",
-    "build": "turbo run build",
-    "generate": "turbo run generate",
+    "build": "pnpm run build",
+    "generate": "pnpm run generate",
     "seed": "turbo run seed",
     "build:only": "turbo run build:only",
     "dev": "turbo run dev",
