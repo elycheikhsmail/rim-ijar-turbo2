@@ -1,12 +1,10 @@
 "use client";
 
 import { Annonce } from "@repo/mytypes/types";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { useParams, usePathname } from "next/navigation";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import { useEffect, useState } from "react";
 import axios from "axios";
-import toast from "react-hot-toast";
-import { useI18n } from "../../../../../locales/client";
+import toast from "react-hot-toast"; 
 import { useRouter } from "next/navigation";
 import EditForm from "@repo/ui/EditForm/EditForm";
 import { LottieAnimation } from "@repo/ui/LottieAnimation";
@@ -16,23 +14,32 @@ export default function MyAnnonceDetailsCompo({
   lang = "ar",
   annonceId,
   baseApiOptions,
+  retiveUrldetailsAnnonce,
+  i18nAnnonce,
+  i18nContact,
+  i18nPrix,
+  i18nNotificationsCreating,
+  i18nNotificationsSuccessDelete,
+  i18nNotificationsErrorDelete,
 }: {
   lang?: string;
   annonceId: string;
   baseApiOptions: string;
+  retiveUrldetailsAnnonce: string;
+  i18nAnnonce: string;
+  i18nContact: string;
+  i18nPrix: string;
+  i18nNotificationsCreating: string;
+  i18nNotificationsSuccessDelete: string;
+  i18nNotificationsErrorDelete: string;
 }) {
   const hostServerForImages = "https://picsum.photos";
   const getImageUrl = (imagePath: string) =>
-    `${hostServerForImages}/${imagePath}`;
-
-  //const anonnceById = annonce?.filter(annonce=> annonce.id=annonceId)
-  const params = useParams();
+    `${hostServerForImages}/${imagePath}`; 
+  //const params = useParams();
   // console.log("params : ", params)
   const router = useRouter();
-  const t = useI18n();
-  // console.log("le lang ::", t)
-  const { id, locale } = params;
-  // console.log("id::", id)
+  //const t = useI18n(); 
   const [annonces, setAnnonce] = useState<Annonce | null>(null); // State to hold the fetched annonce
   const [loading, setLoading] = useState(true); // State to manage loading state
   const [error, setError] = useState<string | null>(null); // State to manage error messages
@@ -44,13 +51,12 @@ export default function MyAnnonceDetailsCompo({
     description: annonces?.description ?? "",
     price: annonces?.price ?? 0,
   }); // État pour les données initiales
-
-  const pathname = usePathname();
+ 
 
   const fetchAnnonce = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`/${lang}/api/my/annonces/${id}`);
+      const response = await axios.get(`/${retiveUrldetailsAnnonce}`);
       setAnnonce(response.data);
       setError(null);
     } catch (err) {
@@ -61,21 +67,21 @@ export default function MyAnnonceDetailsCompo({
   };
   useEffect(() => {
     fetchAnnonce(); // Call the fetch function
-  }, [annonceId, pathname, id, lang]);
+  }, [ ]);
 
   const handleDelte = async () => {
-    const loadingToast = toast.loading(t("notifications.creating"));
+    const loadingToast = toast.loading(i18nNotificationsCreating);
     try {
-      const res = await axios.delete(`/fr/api/my/annonces/${id}`);
+      const res = await axios.delete(`/fr/api/my/annonces/${annonceId}`);
       if (res.status === 200) {
-        toast.success(t("notifications.successdelete"), {
+        toast.success(i18nNotificationsSuccessDelete, {
           id: loadingToast,
         });
         router.push("/my/list");
         router.refresh();
       }
     } catch (error) {
-      toast.error(t("notifications.errordelete"), {
+      toast.error(i18nNotificationsErrorDelete, {
         id: loadingToast,
       });
       console.error("Erreur:", error);
@@ -108,9 +114,9 @@ export default function MyAnnonceDetailsCompo({
         <MyAnnonceDetailsView
           lang={lang}
           annonce={annonces}
-          i18nAnnonce={t("annonce")}
-          i18nContact={t("Contact")}
-          i18nPrix={t("prix")}
+          i18nAnnonce={i18nAnnonce}
+          i18nContact={i18nContact}
+          i18nPrix={i18nPrix}
           getImageUrl={getImageUrl}
           handleDelte={handleDelte}
           handleEdit={handleEdit}
@@ -121,8 +127,8 @@ export default function MyAnnonceDetailsCompo({
       {isEditModalOpen && (
         <EditForm
           lang={lang}
-          userid={annonceId}
-          annonceId={String(id)}
+          userid={""}
+          annonceId={annonceId}
           initialData={initialData}
           onClose={() => setEditModalOpen(false)}
           onUpdate={handleUpdate}

@@ -2,10 +2,13 @@ import MyAnnonceDetailsUI from "./ui";
 import BackButton from "@repo/ui/Navigation";
 import { cookies } from "next/headers";
 import prisma from "../../../../../lib/prisma";
-
+import { getI18n } from "../../../../../locales/server";
+ 
+      //`/${lang}/api/my/annonces/${id}`
 export default async function AnnonceDetail(props: {
   params: Promise<{ locale: string; annonceId: string; id: string }>;
-}) {
+}) { 
+  
   const params = await props.params;
   const userid = (await cookies()).get("user");
   const userIdConverted = String(userid?.value || "");
@@ -42,16 +45,24 @@ export default async function AnnonceDetail(props: {
   let baseApiOptions = "/fr/p/api/tursor";
   if (modeOptionsApi === "sqlite") {
     baseApiOptions = "/fr/p/api/sqlite";
-  }
+  } 
+  const t = await getI18n();
   return (
     <div className="p-4 sm:p-6 md:p-9 overflow-hidden">
       <div>
         <BackButton />
       </div>
       <MyAnnonceDetailsUI
+      i18nAnnonce={t("annonce")}
+        i18nContact={t("Contact")}
+        i18nPrix={t("prix")}
+        i18nNotificationsCreating={t("notifications.creating")}
+        i18nNotificationsErrorDelete={t("notifications.errordelete")}
+        i18nNotificationsSuccessDelete={t("notifications.successdelete")}
         lang={params.locale}
         annonceId={contact}
         baseApiOptions={baseApiOptions}
+        retiveUrldetailsAnnonce={`${params.locale}/api/my/annonces/${userIdConverted}`}
       />
     </div>
   );

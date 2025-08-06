@@ -49,15 +49,15 @@ export default function PaginationUI(props: {
 }
 
 const fallbackImageUrl = "/noimage.jpg";
-function getValidImageUrl(url: string | undefined): string {
-  return typeof url === "string" && url.trim() !== "" ? url : fallbackImageUrl;
-}
+// function getValidImageUrl(url: string | undefined): string {
+//   return typeof url === "string" && url.trim() !== "" ? url : fallbackImageUrl;
+// }
 function AnnonceItemUI({
   annonce,
   lang = "ar",
 }: {
   annonce: Annonce;
-  lang?: string;
+  lang: string;
 }) {
   //console.log("annonceUI", annonce);
 
@@ -147,7 +147,7 @@ export function MyListAnnoncesUI({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {annonces.map((annonce) => (
             <Link
-              href={`/my/details/${annonce.id}`}
+              href={`/${lang}/my/details/${annonce.id}`}
               key={annonce.id}
               className="block"
             >
