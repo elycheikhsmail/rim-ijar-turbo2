@@ -13,7 +13,7 @@ import { useSearchParams } from "next/navigation";
 export default function AddAnnonceUI({
   lang = "ar", 
   relavieUrlOptionsModel ="",
-  relavieUrlAnnonce = "/fr/api/my/annonces",
+  relavieUrlAnnonce  
 }: {
   lang?: string; 
   relavieUrlOptionsModel: string;
@@ -178,7 +178,7 @@ export default function AddAnnonceUI({
         status: "active",
       };
 
-      const res = await fetch(`${relavieUrlAnnonce}}`, {
+      const res = await fetch(`${relavieUrlAnnonce}`, {
         method: "POST",
         body: JSON.stringify(annonceData),
         headers: {
