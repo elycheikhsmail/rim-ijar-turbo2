@@ -8,7 +8,6 @@
     "seed": "turbo run seed",
     "build:only": "pnpm  --filter ./apps/rim-ebay run build:only",
     "dev": "pnpm --filter ./apps/rim-ebay dev",
-
     "start": "pnpm --filter ./apps/rim-ebay start",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
@@ -22,6 +21,7 @@
     "@types/react": "^19.1.6",
     "husky": "^9.1.7",
     "prettier": "^3.5.3",
+    "prisma": "^6.13.0",
     "turbo": "^2.4.4",
     "typescript": "5.8.2"
   },
