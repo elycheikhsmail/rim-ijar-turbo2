@@ -3,11 +3,13 @@
   "private": true,
   "scripts": {
     "prepare": "husky",
-    "build": "pnpm run build",
-    "generate": "pnpm run generate",
+    "build": "pnpm --filter ./apps/rim-ebay  run build",
+    "generate": "pnpm --filter ./apps/rim-ebay  run generate && pnpm --filter ./packages/mytypes  run generate ",
     "seed": "turbo run seed",
-    "build:only": "turbo run build:only",
-    "dev": "turbo run dev",
+    "build:only": "pnpm  --filter ./apps/rim-ebay run build:only",
+    "dev": "pnpm --filter ./apps/rim-ebay dev",
+
+    "start": "pnpm --filter ./apps/rim-ebay start",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types --cache=local:r "
