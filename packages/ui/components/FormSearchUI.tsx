@@ -3,8 +3,7 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
 import FormSearch from "./Formsearch";
-import { useRouter } from "next/navigation";
-import { I18nProviderClient } from "@repo/locales/client";
+import { useRouter } from "next/navigation"; 
 
 interface Filters {
   typeAnnonceId?: string;
@@ -59,13 +58,13 @@ export function FormSearchUI({ lang, modeOptionsApi = "sqlite", mobile = false }
             >
                 &times;
             </button>
-            <I18nProviderClient locale={lang}>
+            {/* <I18nProviderClient locale={lang}> */}
               <FormSearch
                 lang={lang}
                 onSubmit={handleSearchSubmit}
                 modeOptionsApi={modeOptionsApi}
               />
-            </I18nProviderClient>
+            {/* </I18nProviderClient> */}
           </div>
         </div>
       )}
@@ -79,13 +78,13 @@ export function FormSearchUI({ lang, modeOptionsApi = "sqlite", mobile = false }
   className={`max-w-sm w-72 z-40 shadow-2xl ${sidebarPosition} ${roundedSide} flex flex-col items-center transition-transform duration-300 h-full bg-white rounded-2xl p-8 border border-gray-200`}
 >
   <div className="flex flex-col h-full w-full">
-    <I18nProviderClient locale={lang}>
+    {/* <I18nProviderClient locale={lang}> */}
       <FormSearch
         lang={lang}
         onSubmit={handleSearchSubmit}
         modeOptionsApi={modeOptionsApi}
       />
-    </I18nProviderClient>
+    {/* </I18nProviderClient> */}
     </div>
 </aside>
 

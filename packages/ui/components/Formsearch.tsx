@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 // import { useI18n } from "../../../apps/rim-ebay/locales/client";
-import { useI18n } from "@repo/locales/client";
+ 
 
 interface Filters {
   typeAnnonceId?: string;
@@ -42,12 +42,7 @@ export default function FormSearch({
   const [selectedSubCategoryId, setSelectedSubCategoryId] =
     useState<string>("");
   const [price, setPrice] = useState<number>();
-
-  const t = useI18n();
-
-  // Type assertion to match the working pattern in other components
-  const translate = (key: string) => (t as any)(key);
-
+ 
   // 🔹 Charger les types d'annonces au chargement
   useEffect(() => {
     fetch(`${baseApiOptions}/options`)
@@ -139,15 +134,15 @@ export default function FormSearch({
       onCategoryChange={handleCategoryChange}
       onSubCategoryChange={setSelectedSubCategoryId}
       onPriceChange={handlePriceChange}
-      annonceTypeLabel={translate("filter.type")}
-      selectTypeLabel={translate("filter.type")}
-      categoryLabel={translate("filter.category")}
-      selectCategoryLabel={translate("filter.category")}
-      subCategoryLabel={translate("filter.subcategory")}
-      selectSubCategoryLabel={translate("filter.subcategory")}
-      formTitle={translate("filter.title")}
-      priceLabel={translate("filter.price")}
-      searchButtonLabel={translate("filter.search")}
+      annonceTypeLabel="filter.type"
+      selectTypeLabel="filter.type"
+      categoryLabel="filter.category"
+      selectCategoryLabel="filter.category"
+      subCategoryLabel="filter.subcategory"
+      selectSubCategoryLabel="filter.subcategory"
+      formTitle="filter.title"
+      priceLabel="filter.price"
+      searchButtonLabel="filter.search"
     />
   );
 }

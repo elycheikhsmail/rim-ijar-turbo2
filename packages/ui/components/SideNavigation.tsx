@@ -14,7 +14,11 @@ export default function SideNavigation() {
       <div className="flex flex-1 flex-col overflow-y-scroll py-5 navbar">
         <div className="relative z-0 px-2 flex md:px-4">
           <div className="flex-shrink-0 flex items-center justify-center">
+
+            {/* @ts-ignore Headless UI types are not yet compatible with React 19 */}
             <Link href="/" className="cursor-pointer">
+
+              {/* @ts-ignore Headless UI types are not yet compatible with React 19 */}
               <Image
                 className="block h-auto w-auto" // Supprimer mt-5 pour aligner en haut
                 src="/images/logo.png" // Remplacer par votre logo
@@ -33,18 +37,23 @@ export default function SideNavigation() {
         </span>
         <nav className="flex-1 px-2 space-y-1" aria-label="Sidebar">
           {headerLinks.map(({ link, name, icon }) => (
-            <Link
-              key={link}
-              href={link}
-              className="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-emerald-100 hover:bg-white hover:text-black focus:text-black focus:bg-white"
-            >
-              <span className="mr-3 text-lg group-hover:text-black group-focus:text-black">
-                {icon} {/* Icon avant le texte du lien */}
-              </span>
-              <span className="group-hover:text-black group-focus:text-black">
-                {name} {/* Texte du lien */}
-              </span>
-            </Link>
+            <>
+
+              {/* @ts-ignore Headless UI types are not yet compatible with React 19 */}
+              <Link
+                key={link}
+                href={link}
+                className="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-emerald-100 hover:bg-white hover:text-black focus:text-black focus:bg-white"
+              >
+                <span className="mr-3 text-lg group-hover:text-black group-focus:text-black">
+                  {icon} {/* Icon avant le texte du lien */}
+                </span>
+                <span className="group-hover:text-black group-focus:text-black">
+                  {name} {/* Texte du lien */}
+                </span>
+              </Link>
+            </>
+
           ))}
         </nav>
       </div>

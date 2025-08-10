@@ -8,13 +8,14 @@ export default function AnnonceItemUI(annonce: Annonce) {
     const hostServerForImages = "https://picsum.photos";
     const imgUrl = `${hostServerForImages}/${annonce.firstImagePath}`;
     return (
-      <Image
-        src={imgUrl}
-        alt={annonce.description}
-        fill
-        unoptimized
-        style={{ objectFit: "cover" }}
-      />
+      // <Image
+      //   src={imgUrl}
+      //   alt={annonce.description}
+      //   fill
+      //   unoptimized
+      //   style={{ objectFit: "cover" }}
+      // />
+      <img src={imgUrl} alt="" />
     );
   };
   const createdAt = new Date(annonce.createdAt);
@@ -31,13 +32,14 @@ export default function AnnonceItemUI(annonce: Annonce) {
         {annonce.haveImage ? (
           getImage()
         ) : (
-          <Image
-            src={fallbackImageUrl}
-            alt={annonce.description}
-            fill
-            unoptimized
-            style={{ objectFit: "cover" }}
-          />
+          // <Image
+          //   src={fallbackImageUrl}
+          //   alt={annonce.description}
+          //   fill
+          //   unoptimized
+          //   style={{ objectFit: "cover" }}
+          // />
+          <img src={fallbackImageUrl} alt="" />
         )}
       </div>
 

@@ -42,7 +42,10 @@ export default async function RootLayout(
       >
         <Providers locale={params.locale}>
           <ConditionalNav lang={params.locale} isAuthenticated={hasSession} />
-          {children}
+          <>
+           {children}
+          </>
+         
         </Providers>
       </body>
     </html>

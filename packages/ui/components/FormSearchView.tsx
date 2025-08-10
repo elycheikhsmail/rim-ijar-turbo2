@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Listbox } from '@headlessui/react';
-import { Fragment } from 'react';
+import { Listbox } from '@headlessui/react'; 
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 
 interface FormSearchViewProps {
@@ -79,6 +78,7 @@ export default function FormSearchView({
             </select>
             {/* Mobile custom Listbox */}
             <div className="block md:hidden">
+              {/* @ts-ignore Headless UI types are not yet compatible with React 19 */}
               <Listbox value={selectedTypeId} onChange={onTypeChange}>
                 <div className="relative">
                   <Listbox.Button className="relative w-full border rounded bg-white py-2 px-3 text-left shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-base font-normal">
@@ -88,6 +88,8 @@ export default function FormSearchView({
                           : typeAnnonces.find(t => t.id === selectedTypeId)?.name)
                       : selectTypeLabel}
                     <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+
+                     {/* @ts-ignore Headless UI types are not yet compatible with React 19 */}  
                       <ChevronUpDownIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
                     </span>
                   </Listbox.Button>
@@ -131,6 +133,7 @@ export default function FormSearchView({
             </select>
             {/* Mobile custom Listbox */}
             <div className="block md:hidden">
+               {/* @ts-ignore Headless UI types are not yet compatible with React 19 */}
               <Listbox value={selectedCategoryId} onChange={onCategoryChange} disabled={!selectedTypeId}>
                 <div className="relative">
                   <Listbox.Button className="relative w-full border rounded bg-white py-2 px-3 text-left shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-base font-normal disabled:bg-gray-100 disabled:text-gray-400">
@@ -140,6 +143,7 @@ export default function FormSearchView({
                           : categories.find(c => c.id === selectedCategoryId)?.name)
                       : selectCategoryLabel}
                     <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+                      {/* @ts-ignore Headless UI types are not yet compatible with React 19 */}
                       <ChevronUpDownIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
                     </span>
                   </Listbox.Button>
@@ -182,6 +186,7 @@ export default function FormSearchView({
             </select>
             {/* Mobile custom Listbox */}
             <div className="block md:hidden">
+              {/* @ts-ignore Headless UI types are not yet compatible with React 19 */}
               <Listbox value={selectedSubCategoryId} onChange={onSubCategoryChange}>
                 <div className="relative">
                   <Listbox.Button className="relative w-full border rounded bg-white py-2 px-3 text-left shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-base font-normal">
@@ -191,6 +196,7 @@ export default function FormSearchView({
                           : subCategories.find(s => s.id === selectedSubCategoryId)?.name)
                       : selectSubCategoryLabel}
                     <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+                        {/* @ts-ignore Headless UI types are not yet compatible with React 19 */}
                       <ChevronUpDownIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
                     </span>
                   </Listbox.Button>

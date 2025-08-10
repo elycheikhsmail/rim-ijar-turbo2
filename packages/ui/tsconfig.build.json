@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": false,
+    "composite": true,
+    "module": "ESNext",
+    "target": "ES2022",
+    "moduleResolution": "nodenext",
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": false
+  },
+  "include": ["src/**/*", "components/**/*", "index.ts", "src/**/*"],
+  "exclude": ["node_modules", "dist", "tests"]
+}

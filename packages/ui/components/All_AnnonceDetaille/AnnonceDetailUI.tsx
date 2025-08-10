@@ -2,7 +2,7 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import Image from "next/image";
+//import Image from "next/image";
 import { Annonce } from "@repo/mytypes/types";
 const fallbackImageUrl = "/noimage.jpg";
 
@@ -21,25 +21,28 @@ export default function AnnonceDetailUI({
     const imgUrl = getImageUrl(imagePath);
     return (
       <div className="relative h-40 sm:h-60 w-full">
-        <Image
+
+
+        {/* <Image
           src={imgUrl}
-          alt={imageDescription}
           fill
           unoptimized
           style={{ objectFit: "cover" }}
-          className="rounded-lg"
-        />
+
+        /> */}
+        <img src={imgUrl} alt="" />
+
+
       </div>
     );
   };
 
   const NoImage = () => (
     <div className="relative h-40 sm:h-60 w-full">
-      <Image
+      <img
         src={fallbackImageUrl}
         alt="no image uploaded by user"
-        fill
-        unoptimized
+
         style={{ objectFit: "cover" }}
         className="rounded-lg"
       />
